@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>My Alert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css"> 	
+
+</head>
+
+<body>
+
+    <div class="container" style="height: 1000px">
+
+        <div class="row">
+            <div class="col-md-12" style="background-color: gray; height: 1000px">
+            <form method="post" id="f-contato" action="mailto:elthonferreira18@gmail.com">
+                <fieldset>
+                <legend>Identificação do Usuário</legend>
+                    <p><label for="c-nome">Nome:</label><input type="text" name="t-nome" id="c-nome" size="20" maxlength="30" placeholder="Nome completo"></p>
+                    <p><label for="c-senha">Senha:</label><input type="password" name="t-senha" id="c-senha" size="8"
+                    maxlength="8" placeholder="8 Digitos"></p>
+                    <p><label for="c-email">E-mail:</label><input type="email" name="t-email" id="c-email" size="20"
+                    maxlength="30" placeholder="E-mail"></p>
+                    <fieldset id="sexo"><legend>Sexo:</legend>
+                        <input type="radio" name="t-sexo" id="c-masc" checked>
+                        <label for="c-masc">Masculino</label>
+                        <input  type="radio" name="t-sexo" id="c-fem">
+                        <label for="c-fem">Feminino</label>
+                    </fieldset>
+                    <p>Data de Nascimento:<input type="date" name="t-nasc" id="c-nasc"><p>
+                </fieldset>
+                
+                <fieldset>
+                <legend>Endereço do Usuário</legend>
+                    <p><label for="c-loga">Logradouro: <input type="text" name="t-loga" id="c-loga" size="15" maxlength="80" placeholder="Rua, Av, Travessa..."></label></p>
+                    <p><label for="c-num">Número: <input type="number" name="t-num" id="c-num" 
+                     min="0" placeholder="Número"></label></p>
+                    <p><label for="c-estado">Estado: </label>
+                    <select name="t-estado" id="c-estado">
+                        <option value="AC">Acre - AC</option>
+                        <option value="AL">Alagoas - AL</option>
+                        <option value="AP">Amapá - AP</option>
+                        <option value="AM">Amazonas - AM</option>
+                        <option value="BA">Bahia  - BA</option>
+                        <option value="CE">Ceará - CE</option>
+                        <option value="DF">Distrito Federal  - DF</option>
+                        <option value="ES">Espírito Santo - ES</option>
+                        <option value="GO">Goiás - GO</option>
+                        <option value="MA">Maranhão - MA</option>
+                        <option value="MT">Mato Grosso - MT</option>
+                        <option value="MS">Mato Grosso do Sul - MS</option>
+                        <option value="MG">Minas Gerais - MG</option>
+                        <option value="PA">Pará - PA</option>
+                        <option value="PB">Paraíba - PB</option>
+                        <option value="PR">Paraná - PR</option>
+                        <option value="PE" selected>Pernambuco - PE</option>
+                        <option value="PI">Piauí - PI</option>
+                        <option value="RJ">Rio de Janeiro - RJ</option>
+                        <option value="RN">Rio Grande do Norte - RN</option>
+                        <option value="RS">Rio Grande do Sul - RS</option>
+                        <option value="RO">Rondônia - RO</option>
+                        <option value="RR">Roraima - RR</option>
+                        <option value="SC">Santa Catarina - SC</option>
+                        <option value="SP">São Paulo - SP</option>
+                        <option value="SE">Sergipe - SE</option>
+                        <option value="TO">Tocantins - TO</option>
+            
+                    </select></p>
+                    <p><label for="c-city">Cidade: <input type="text" name="t-city" id="c-city"
+                    size="20" maxlength="40" placeholder="Cidade" list="cidades"></label></p>
+                    <datalist id="cidades">
+                        <option value="Rio de Janeiro"></option>
+                    
+                    </datalist>
+                    
+                </fieldset>
+                
+                <fieldset>
+                <legend>Mensagem do Usuário</legend>
+                    <p><label for="c-grau">Grau de Urgência: Min<input type="range" name="t-grau" 
+                    id="c-grau">Máx</label></p>
+                    <p><label for="c-msg">Mensagem: </label>
+                        <textarea name="t-msg" id="c-msg" cols="45" rows="5" 
+                        placeholder="Deixe aqui sua mensagem"></textarea></p>
+                </fieldset>
+            
+                [BOTÃO ENVIAR]
+            </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <!-- JavaScript -->
+        <script scr="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script scr="../js/bootstrap.min.js" type="text/javascript"></script>
+
+    </footer>
+
+
+</body>
+
+</html>
