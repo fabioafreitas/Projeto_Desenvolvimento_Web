@@ -12,7 +12,12 @@ Sprint 1:
 <a href="https://marvelapp.com/4i90286">Telas WEB</a>
 <br>
 
-## Available Scripts
+## Estrutura de Arquivos do Projeto
+
+Os arquivos do Front-End devem ser adicionados no folder source
+
+
+## Available Scripts (Como Rodar o Back-End)
 
 In the project directory, you can run:
 
