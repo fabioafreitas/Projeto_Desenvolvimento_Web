@@ -1,6 +1,6 @@
 [![Bootstrap version](https://flat.badgen.net/badge/bootstrap/4.3.x/563d7c)](https://getbootstrap.com/docs)
 [![Vue.js version](https://flat.badgen.net/badge/vue.js/2.6.x/4fc08d)](https://vuejs.org)
-[![Package quality](https://npm.packagequality.com/shield/bootstrap-vue.svg?style=flat-square)](http://packagequality.com/#?package=bootstrap-vue)
+[![Package quality](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)](http://packagequality.com/#?package=bootstrap-vue)
 
 # Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
