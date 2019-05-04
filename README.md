@@ -1,11 +1,6 @@
 [![Bootstrap version](https://flat.badgen.net/badge/bootstrap/4.3.x/563d7c)](https://getbootstrap.com/docs)
-
-  <a href="https://vuejs.org">
-    <img src="https://flat.badgen.net/badge/vue.js/2.6.x/4fc08d" alt="Vue.js version">
-  </a>
-  <a href="http://packagequality.com/#?package=bootstrap-vue">
-    <img src="https://npm.packagequality.com/shield/bootstrap-vue.svg?style=flat-square" alt="Package quality">
-  </a>
+[![Vue.js version](https://flat.badgen.net/badge/vue.js/2.6.x/4fc08d)](https://vuejs.org)
+[![Package quality](https://npm.packagequality.com/shield/bootstrap-vue.svg?style=flat-square)](http://packagequality.com/#?package=bootstrap-vue)
 
 # Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
