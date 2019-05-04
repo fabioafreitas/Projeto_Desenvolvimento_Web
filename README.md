@@ -1,20 +1,19 @@
 # Projeto_Desenvolvimento_Web 2019.1
-<br>
-<a href="bit.ly/MyAlert-IHM-WEB">bit.ly/MyAlert-IHM-WEB</a> 
-<br>
-<br>
-Sprint 1:
-<br>
-<a href="https://marvelapp.com/8d4chib">Telas IHM</a> 
-<br>
-<a href="https://drive.google.com/drive/folders/1U7h-68QPXF1d1G1QWx4O2X3_-EF4PnZc">Telas Papel</a> 
-<br>
-<a href="https://marvelapp.com/4i90286">Telas WEB</a>
-<br>
 
-## Estrutura de Arquivos do Projeto
+A documentação do projeto está no arquivo Web-IHM-MyAlert.pdf
 
-Os arquivos do Front-End devem ser adicionados no folder source
+## links importantes: <a href="https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web">Documentação do Projeto</a>
+<br>
+<ul>
+  <li>
+    <h4>Strint 1:</h4>
+    <ul>
+      <li><a href="https://drive.google.com/drive/folders/1U7h-68QPXF1d1G1QWx4O2X3_-EF4PnZc">Protótipos de telas - Papel</a></li>
+      <li><a href="https://marvelapp.com/8d4chib">Protótipos de tela - IHM Marvel</a></li>
+      <li><a href="https://marvelapp.com/4i90286">Telas IHM</a></li>
+    </ul>
+  </li>
+</ul> 
 
 
 ## Available Scripts (Como Rodar o Back-End)
