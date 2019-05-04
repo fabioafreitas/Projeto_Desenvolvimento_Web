@@ -16,11 +16,6 @@ A documentação do projeto está no arquivo Web-IHM-MyAlert.pdf
   - Single Page Application
   - 
 
-## Estrutura de Arquivos do Projeto
-
-Os arquivos do Front-End devem ser adicionados no folder source
-
-
 ## Executando o Back-End
 
 In the project directory, you can run:
