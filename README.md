@@ -1,4 +1,4 @@
-# Projeto_Desenvolvimento_Web 2019.1
+# Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
 A documentação do projeto está no arquivo Web-IHM-MyAlert.pdf
 
