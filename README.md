@@ -1,3 +1,12 @@
+[![Bootstrap version](https://flat.badgen.net/badge/bootstrap/4.3.x/563d7c)](https://getbootstrap.com/docs)
+
+  <a href="https://vuejs.org">
+    <img src="https://flat.badgen.net/badge/vue.js/2.6.x/4fc08d" alt="Vue.js version">
+  </a>
+  <a href="http://packagequality.com/#?package=bootstrap-vue">
+    <img src="https://npm.packagequality.com/shield/bootstrap-vue.svg?style=flat-square" alt="Package quality">
+  </a>
+
 # Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
 A documentação do projeto está no arquivo Web-IHM-MyAlert.pdf
@@ -9,14 +18,16 @@ A documentação do projeto está no arquivo Web-IHM-MyAlert.pdf
   - [Protótipos de tela - IHM Marvel](https://marvelapp.com/8d4chib)
   - [Protótipos de tela - WEB Marvel](https://marvelapp.com/4i90286)
   
- 2. Sprint 2: 
+ 2. Sprint 2:
+  - Single Page Application
+  - 
 
 ## Estrutura de Arquivos do Projeto
 
 Os arquivos do Front-End devem ser adicionados no folder source
 
 
-## Available Scripts (Como Rodar o Back-End)
+## Executando o Back-End
 
 In the project directory, you can run:
 
