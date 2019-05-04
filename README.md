@@ -1,8 +1,7 @@
-<center>
+<div style="text-align:center">
   [![Bootstrap version](https://flat.badgen.net/badge/bootstrap/4.3.x/563d7c)](https://getbootstrap.com/docs)
   [![Vue.js version](https://flat.badgen.net/badge/vue.js/2.6.x/4fc08d)](https://vuejs.org)
-</center>
-
+</div>
 # Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
 [Documentação do Projeto](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/Web-IHM-MyAlert.pdf)
