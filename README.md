@@ -1,23 +1,21 @@
-# Projeto_Desenvolvimento_Web 2019.1
-<br>
-<a href="bit.ly/MyAlert-IHM-WEB">bit.ly/MyAlert-IHM-WEB</a> 
-<br>
-<br>
-Sprint 1:
-<br>
-<a href="https://marvelapp.com/8d4chib">Telas IHM</a> 
-<br>
-<a href="https://drive.google.com/drive/folders/1U7h-68QPXF1d1G1QWx4O2X3_-EF4PnZc">Telas Papel</a> 
-<br>
-<a href="https://marvelapp.com/4i90286">Telas WEB</a>
-<br>
+[![Bootstrap version](https://flat.badgen.net/badge/bootstrap/4.3.x/563d7c)](https://getbootstrap.com/docs)
+[![Vue.js version](https://flat.badgen.net/badge/vue.js/2.6.x/4fc08d)](https://vuejs.org)
 
-## Estrutura de Arquivos do Projeto
+# Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
-Os arquivos do Front-End devem ser adicionados no folder source
+[Documentação do Projeto](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/Web-IHM-MyAlert.pdf)
 
+## links importantes: 
+1. Sprint 1:
+  - [Protótipos de telas - Papel](https://drive.google.com/drive/folders/1U7h-68QPXF1d1G1QWx4O2X3_-EF4PnZc)
+  - [Protótipos de tela - IHM Marvel](https://marvelapp.com/8d4chib)
+  - [Protótipos de tela - WEB Marvel](https://marvelapp.com/4i90286)
+  
+ 2. Sprint 2:
+  - Single Page Application
+  - 
 
-## Available Scripts (Como Rodar o Back-End)
+## Executando o Back-End
 
 In the project directory, you can run:
 
