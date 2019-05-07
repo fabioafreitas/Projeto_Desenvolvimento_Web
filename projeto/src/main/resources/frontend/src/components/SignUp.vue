@@ -1,5 +1,5 @@
 <template>
-  <div class="submitform mb-5">
+  <div class="submitform mb-5 col-auto">
     <div v-if="!submitted">
       <h2 class="text-center mb-5">Registre-se no MyAlert</h2>
 
@@ -63,8 +63,8 @@
         >
       </div>
 
-      <button class="btn btn-danger px-3">Registrar</button>
-      <a class="float-right" href="#">Já possui uma conta? Entre aqui!</a>
+      <button class="btn btn-danger px-2">Registrar</button>
+      <a class="float-right" href="/login">Já possui uma conta? Entre aqui!</a>
     </div>
 
     <div v-else>

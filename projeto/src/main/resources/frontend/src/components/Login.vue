@@ -1,5 +1,5 @@
 <template>
-  <div class="submitform">
+  <div class="submitform col-auto">
     <div v-if="!submitted">
         <h2 class="text-center mb-5">Entrar no MyAlert</h2>
 
@@ -26,7 +26,7 @@
           name="senha"
         >
       </div>
-      <button class="btn btn-danger">Entrar</button>
+      <button class="btn btn-danger" v-on:click="submitted=true">Entrar</button>
       <a class="float-right" href="#">Esqueceu sua senha?</a>
     </div>
 
