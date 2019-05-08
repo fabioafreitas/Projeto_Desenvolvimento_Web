@@ -26,11 +26,13 @@
           name="senha"
         >
       </div>
-      <button class="btn btn-danger" v-on:click="submitted=true">Entrar</button>
-      <a class="float-right" href="#">Esqueceu sua senha?</a>
+      <button class="btn btn-info" style="background-color:#01a3a4" v-on:click="submitted=true" href="/logado">Entrar</button>
+      <a class="btn btn-info" href="/logado">logar</a> 
+        <a class="float-right" href="/registrar">Esqueceu sua senha?</a>
     </div>
 
     <div v-else>
+        
       <h4>Usuário logado...!</h4>
     </div>
   </div>
