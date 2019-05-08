@@ -27,22 +27,25 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item active mr-2">
-                  <a class="nav-link" href="/registrar">Registre-se</a>
+                  <a class="nav-link border btn btn-outline-danger" href="/registrar">Registre-se</a>
                 </li>
                 <li class="active nav-item">
-                  <a href="/login" class="nav-link btn btn-danger px-3">Login</a>
+                  <a href="/login" class="nav-link btn rounded-pill btn-outline-danger border px-3">Login</a>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
         <br/>
-
+    
         <router-view/>
         <!--
           Aqui vai ficar o componente do mapa. É necessário utilizar a API do google para obter as chaves.
           -->
-        <map-index></map-index>
+        
+        <map-index>
+            
+        </map-index>
       </div>
       
 </template>
@@ -55,6 +58,10 @@
     export default {
       name: "app"
     };
+    
+        
+    
+    
 </script>
 
 <style>
