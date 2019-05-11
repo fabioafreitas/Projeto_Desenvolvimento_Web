@@ -25,7 +25,6 @@ class UsuarioController {
         Usuario _usuario = new Usuario();
         _usuario.setNome(usuario.getNome());
         usuarioDAO.save(_usuario);
-
         return _usuario;
     }
 

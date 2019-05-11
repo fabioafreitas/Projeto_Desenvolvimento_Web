@@ -6,6 +6,8 @@ import SignUp from "./components/SignUp.vue";
 import Duvidas from "./components/Duvidas.vue";
 import LoggedIn from "./components/LoggedIn.vue";
 import MapIndex from "./components/MapIndex.vue";
+import Index from "./components/Index.vue";
+
 Vue.use(Router);
  
 // o router simula a multiplicidade de páginas na aplicação.
@@ -43,8 +45,8 @@ export default new Router({
     },
       {
       path: "/",
-      name: "map-index",
-      component: MapIndex
+      name: "index",
+      component: Index
     }
   ]
 });

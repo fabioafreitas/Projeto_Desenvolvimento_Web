@@ -87,7 +87,7 @@ export default {
 <style>
 .submitform {
   max-width: 400px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .logo-brand {

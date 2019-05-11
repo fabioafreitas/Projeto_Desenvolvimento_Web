@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
@@ -26,42 +27,38 @@
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <li class="nav-item active mr-2">
-                  <a class="nav-link border btn btn-outline-danger" href="/registrar">Registre-se</a>
+                <li class="active nav-item  mr-2">
+                  <a href="/login" class="nav-link btn rounded-pill btn-outline-dark border px-3">Login</a>
                 </li>
-                <li class="active nav-item">
-                  <a href="/login" class="nav-link btn rounded-pill btn-outline-danger border px-3">Login</a>
+                <li class="nav-item active">
+                  <a class="nav-link btn btn-danger" href="/registrar">Registre-se</a>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
-        <br/>
-    
+
         <router-view/>
-        <!--
-          Aqui vai ficar o componente do mapa. É necessário utilizar a API do google para obter as chaves.
-          -->
-        
-        <map-index>
-            
-        </map-index>
+        <foot></foot>
+
       </div>
       
 </template>
 
 <script>
+    import Footer from "./components/Footer.vue";
+    import Index from "./components/Index.vue";
     // Módulo principal. Todo o projeto é um Single Page App.
     // O arquivo main.js renderiza essa módulo por meio da id "App"
     // Para simular multiplas páginas é usado o router do Vue.JS e a partir do router é possível
     // acessar outras páginas que estão modularizadas em componentes na pasta components.
+    
     export default {
+      components: {
+        'foot': Footer
+      },
       name: "app"
-    };
-    
-        
-    
-    
+    };    
 </script>
 
 <style>
@@ -71,6 +68,71 @@
     }
 
     .navbar{
-      background-color: #01a3a4;
+      background-color: #2980b9;
     }
+
+    .about{
+      font-size: 13pt;
+      width: 100%;
+      color: #414141;
+      background-color: aliceblue;
+    }
+
+    .icon-small{
+      transition-duration: .6s;
+      padding-top: 35%;
+      width: 250px;
+    }
+
+    .icon-small:hover{
+      transition-duration: .6s;
+      padding-top: 30%;
+      width: 270px;
+    }
+
+    .icon-small-2{
+      position: relative;
+      top: 50px;
+      width: 500px;
+    }
+
+    .icon-med{
+      width: 550px;
+    }
+
+    .p-section-icon{
+      width: 500px;
+    }
+
+    .video-section{
+      width: 100%;
+      height: 500px;
+      background-image: url("./assets/favela.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .video-section h2{
+      color: aliceblue;
+    }
+
+    .title-section{
+      width: 500px;
+    }
+
+    .info-section{
+      width: 100%;
+      height: 400px;
+      font-size: 13pt;
+      color: #414141;
+      background-color: aliceblue;
+    }
+
+    .callback-section{
+      width: 100%;
+      height: 100px;
+      color: #414141;
+      background-color: #d1ccc0;
+    }
+
 </style>

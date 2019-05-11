@@ -2,9 +2,6 @@
   <div class="submitform mb-5 col-auto">
     <div v-if="!submitted">
       <h2 class="text-center mb-5">Usuário</h2>
-
-      
-
       <button class="btn btn-success px-2">Registrar</button>
       <a class="float-right" href="/login">Já possui uma conta? Entre aqui!</a>
     </div>
