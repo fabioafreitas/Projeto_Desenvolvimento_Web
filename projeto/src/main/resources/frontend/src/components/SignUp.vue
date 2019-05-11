@@ -1,5 +1,5 @@
 <template>
-  <div class="submitform mb-5 col-auto">
+  <div class="submitform mt-4 mb-5 col-auto">
     <div v-if="!submitted">
       <h2 class="text-center mb-5">Registre-se no MyAlert</h2>
 
@@ -97,6 +97,7 @@ export default {
 .submitform {
   max-width: 400px;
   margin: auto;
+  color: #424242;
 }
 
 .logo-brand {
