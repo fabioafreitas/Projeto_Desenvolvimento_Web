@@ -14,18 +14,18 @@ export default {
         zoom: 16,
         center: uluru,
         styles: [
-            {elementType: 'geometry', stylers: [{color: '#f1f2f6'}]},
+            {elementType: 'geometry', stylers: [{color: '#dfe4ea'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#232323'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {elementType: 'labels.text.fill', stylers: [{visibility: 'off'}]},
             {
               featureType: 'administrative.locality',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#2980b9'}]
+              stylers: [{color: '#2980b9', visibility: 'off'}]
             },
             {
               featureType: 'poi',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#f1f1f1'}]
+              stylers: [{visibility: 'off'}]
             },
             {
               featureType: 'poi.park',
@@ -80,7 +80,7 @@ export default {
             {
               featureType: 'water',
               elementType: 'geometry',
-              stylers: [{color: '#227093'}]
+              stylers: [{color: '#74b9ff'}]
             },
             {
               featureType: 'water',

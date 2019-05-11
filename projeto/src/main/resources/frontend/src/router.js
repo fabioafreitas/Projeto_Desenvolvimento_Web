@@ -7,6 +7,7 @@ import Duvidas from "./components/Duvidas.vue";
 import LoggedIn from "./components/LoggedIn.vue";
 import MapIndex from "./components/MapIndex.vue";
 import Index from "./components/Index.vue";
+import Sobre from "./components/Sobre.vue";
 
 Vue.use(Router);
  
@@ -42,6 +43,11 @@ export default new Router({
       path: "/logado",
       name: "logado",
       component: LoggedIn
+    },
+    {
+      path: "/institucional",
+      name: "institucional",
+      component: Sobre
     },
       {
       path: "/",

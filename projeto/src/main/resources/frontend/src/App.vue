@@ -15,7 +15,7 @@
                   <a class="nav-link" href="/">Página Inicial <span class="sr-only">(Página atual)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Institucional</a>
+                  <a class="nav-link" href="/institucional">Institucional</a>
                 </li>
                 <li class="nav-item" >
                   <a class="nav-link" href="/duvidas">Dúvidas Frequentes</a>
@@ -42,7 +42,6 @@
         <foot></foot>
 
       </div>
-      
 </template>
 
 <script>
