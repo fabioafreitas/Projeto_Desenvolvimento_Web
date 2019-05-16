@@ -61,6 +61,72 @@
         <div class="card-body">...</div>
       </div>
     </div>
+
+    <div class="card mb-2">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link collapsed"
+            data-toggle="collapse"
+            data-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >Dúvida 4</button>
+        </h5>
+      </div>
+      <div
+        id="collapseThree"
+        class="collapse"
+        aria-labelledby="headingThree"
+        data-parent="#accordion"
+      >
+        <div class="card-body">...</div>
+      </div>
+    </div>
+
+    <div class="card mb-2">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link collapsed"
+            data-toggle="collapse"
+            data-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >Dúvida 5</button>
+        </h5>
+      </div>
+      <div
+        id="collapseThree"
+        class="collapse"
+        aria-labelledby="headingThree"
+        data-parent="#accordion"
+      >
+        <div class="card-body">...</div>
+      </div>
+    </div>
+
+    <div class="card mb-2">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link collapsed"
+            data-toggle="collapse"
+            data-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >Dúvida 6</button>
+        </h5>
+      </div>
+      <div
+        id="collapseThree"
+        class="collapse"
+        aria-labelledby="headingThree"
+        data-parent="#accordion"
+      >
+        <div class="card-body">...</div>
+      </div>
+    </div>
   </div>
 </template>
  
@@ -85,6 +151,10 @@ export default {
 </script>
  
 <style>
+
+#accordion{
+  min-height: 500px;
+}
 
 .submitform {
   max-width: 400px;
