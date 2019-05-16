@@ -8,6 +8,8 @@ import LoggedIn from "./components/LoggedIn.vue";
 import MapIndex from "./components/MapIndex.vue";
 import Index from "./components/Index.vue";
 import Sobre from "./components/Sobre.vue";
+import Servicos from "./components/Servicos.vue";
+
 
 Vue.use(Router);
  
@@ -48,6 +50,11 @@ export default new Router({
       path: "/institucional",
       name: "institucional",
       component: Sobre
+    },
+    {
+      path: "/servicos",
+      name: "servicos",
+      component: Servicos
     },
       {
       path: "/",

@@ -21,7 +21,7 @@
                   <a class="nav-link" href="/duvidas">Dúvidas Frequentes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Serviços</a>
+                  <a class="nav-link" href="/servicos">Serviços</a>
                 </li>
               </ul>
             </div>
