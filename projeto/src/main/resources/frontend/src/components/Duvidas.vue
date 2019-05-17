@@ -151,8 +151,7 @@ export default {
 </script>
  
 <style>
-
-#accordion{
+#accordion {
   min-height: 500px;
 }
 
