@@ -1,48 +1,12 @@
  
  <template>
-
   <div class="container">
     <div class="row">
-      <div class="col-3">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >Menu</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Tasks</a>
-                  <a class="dropdown-item" href="#">Ranking</a>
-                  <a class="dropdown-item" href="#">Feedy</a>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>CONTA
-                  <br>
-                  <br>
-                  <button type="button" class="btn btn-danger">LOGOUT</button>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-
-      <div class="col-9">
+      <div class="col-6">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-1"></div>
             <div class="col-10">
-              <h1>To Do &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; HOME</h1>
               <div class="container">
                 <div class="row">
                   <div id="botao" class="col-12">
@@ -52,7 +16,7 @@
                       class="btn btn-primary"
                       data-toggle="modal"
                       data-target="#exampleModal"
-                    >+ ADD List</button>
+                    >Registrar Ocorrência</button>
 
                     <!-- Modal -->
                     <div
@@ -66,7 +30,7 @@
                       <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">ADD List</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Registrar Ocorrência</h5>
                             <button
                               type="button"
                               class="close"
@@ -82,58 +46,47 @@
                                 <!-- col 1 -->
                                 <div class="col-4">
                                   <form>
-                                    <!-- CAMPO TÍTULO -->
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Título</label>
-                                      <input
-                                        type="email"
-                                        class="form-control"
-                                        id="exampleInputEmail1"
-                                        aria-describedby="emailHelp"
-                                        placeholder="Informe seu título"
-                                      >
-                                    </div>
-                                    <!-- CAMPO NOTA/OBS -->
-                                    <div class="form-group">
-                                      <label for="exampleFormControlTextarea1">Nota / OBS</label>
-                                      <textarea
-                                        class="form-control"
-                                        id="exampleFormControlTextarea1"
-                                        rows="3"
-                                        placeholder="Deixe aqui sua observação"
-                                      ></textarea>
-                                    </div>
-                                    <!-- CAMPO DATA -->
-                                    <input id="date" type="date">
-                                    <!-- CAMPO OUTRA PESSOA -->
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Outra pessoa?</label>
-                                      <input
-                                        type="email"
-                                        class="form-control"
-                                        id="exampleInputEmail1"
-                                        aria-describedby="emailHelp"
-                                        placeholder="Outra pessoa?"
-                                      >
-                                    </div>
+                                    <!-- CAMPO TIPO OCORRÊNCIA -->
+                                    <select class="custom-select">
+                                      <option selected>Selecione o tipo de ocorrência</option>
+                                      <option value="1">Criminal</option>
+                                      <option value="2">Desastre natural</option>
+                                      <option value="3">Incêncio</option>
+                                      <option value="4">Acidente</option>
+                                      <option value="5">Animal na rua</option>
+                                      <option value="6">Outro</option>
+                                    </select>
                                   </form>
-                                  <!-- FIM FORM -->
+                                  <!-- CAMPO TÍTULO -->
+                                  <div class="form-group">
+                                    <label for="titulo">Título</label>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="titulo"
+                                      placeholder="Informe seu título"
+                                    >
+                                  </div>
+                                  <!-- CAMPO DESCRIÇÃO -->
+                                  <div class="form-group">
+                                    <label for="descricao">Descrição do fato</label>
+                                    <textarea
+                                      class="form-control"
+                                      id="descricao"
+                                      rows="3"
+                                      placeholder="Informe aqui a descrição do fato com detalhes..."
+                                    ></textarea>
+                                  </div>
+                                  <!-- CAMPO DATA -->
+                                  <input id="date" type="date">
                                 </div>
 
                                 <!-- col 2 -->
-                                <div class="col-4"></div>
-
-                                <!-- col 3 -->
                                 <div class="col-4">
-                                  <!-- INPUT IMAGEM -->
-                                  <input type="file">
-
-                                  <!-- IMPORTANCIA -->
-                                  <br>
-                                  <br>
+                                  <!-- URGÊNCIA -->
                                   <form>
                                     <div class="form-group">
-                                      <label for="formControlRange">Importância</label>
+                                      <label for="formControlRange">Urgência</label>
                                       <input
                                         type="range"
                                         class="form-control-range"
@@ -142,6 +95,9 @@
                                     </div>
                                   </form>
                                 </div>
+
+                                <!-- col 3 -->
+                                <div class="col-4"></div>
                               </div>
                             </div>
                           </div>
