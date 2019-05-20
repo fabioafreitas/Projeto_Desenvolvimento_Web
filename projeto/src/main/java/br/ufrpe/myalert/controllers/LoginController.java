@@ -12,12 +12,18 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/login")
 public class LoginController {
 
-    @GetMapping(path="/{login}")
-    public ResponseEntity<?> getLoginConfirmation(@PathVariable("username") Login login) {
+    /**
+     * TODO adicionar criptografia no corpo da requisição post
+     * TODO retornar um objeto usuário
+     * @param login
+     * @return
+     */
+    @PostMapping
+    public ResponseEntity<?> loginConfirmation(@RequestBody Login login) {
         int index = Login.loginList.indexOf(login);
         if(index == -1) {
             return new ResponseEntity<>(
-                    new CustomErrorType("Login ou Senha incorretos!"),
+                    new CustomErrorType("Login não existe!"),
                     HttpStatus.NOT_FOUND
             );
         }
