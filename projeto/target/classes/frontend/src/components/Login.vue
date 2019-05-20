@@ -1,5 +1,5 @@
 <template>
-  <div class="submitform col-auto">
+  <div class="login submitform col-auto mt-4 mb-5">
     <div v-if="!submitted">
         <h2 class="text-center mb-5">Entrar no MyAlert</h2>
 
@@ -26,8 +26,7 @@
           name="senha"
         >
       </div>
-      <button class="btn btn-info" style="background-color:#01a3a4" v-on:click="submitted=true" href="/logado">Entrar</button>
-      <a class="btn btn-info" href="/logado">logar</a> 
+      <button class="btn btn-info" v-on:click="submitted=true" href="/logado">Entrar</button>
         <a class="float-right" href="/registrar">Esqueceu sua senha?</a>
     </div>
 
@@ -59,6 +58,13 @@ export default {
 </script>
  
 <style>
+
+        .login{
+          width: 100%;
+          min-height: 500px;
+          color: #424242;
+        }
+
         .submitform {
                 max-width: 400px;
                 margin: auto;
@@ -66,5 +72,9 @@ export default {
 
         .logo-brand{
                 width: 120px;
+        }
+
+        button{
+          background-color: #01a3a4;
         }
 </style>
