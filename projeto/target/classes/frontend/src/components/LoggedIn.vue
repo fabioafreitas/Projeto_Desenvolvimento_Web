@@ -22,7 +22,7 @@ export default {
         name: "",
         active: false
       },
-      submitted: true
+      submitted: false
     };
   },
   methods: {
