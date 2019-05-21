@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ae63630-6db2-4562-8fcc-af61d69fbfe8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/projeto/src/main/resources/frontend/src/services/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projeto/src/main/resources/frontend/src/services/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto/src/main/resources/frontend/src/components/LoggedIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projeto/src/main/resources/frontend/src/components/LoggedIn.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto/src/main/resources/frontend/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projeto/src/main/resources/frontend/src/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto/target/classes/br/ufrpe/myalert/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/projeto/target/classes/br/ufrpe/myalert/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto/target/classes/frontend/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projeto/target/classes/frontend/src/components/Login.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/projeto/src/main/resources/frontend/node_modules/" />
@@ -29,20 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="72" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/models/Login.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="289">
+              <caret line="21" column="72" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,10 +31,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/models/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projeto/src/main/resources/frontend/src/components/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+            <state relative-caret-position="748">
+              <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -124,6 +116,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -224,7 +217,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,17 +277,18 @@
       <workItem from="1558367419739" duration="6993000" />
       <workItem from="1558375309726" duration="204000" />
       <workItem from="1558375965746" duration="2931000" />
+      <workItem from="1558410186975" duration="641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13815000" />
+    <option name="totallyTimeSpent" value="14456000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20604026" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20877458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -561,26 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="72" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/models/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projeto/src/main/resources/frontend/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -591,10 +564,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="72" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projeto/src/main/resources/frontend/src/components/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+        <state relative-caret-position="748">
+          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projeto/src/main/java/br/ufrpe/myalert/models/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
