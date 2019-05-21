@@ -12,7 +12,7 @@
             <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/">Página Inicial <span class="sr-only">(Página atual)</span></a>
+                  <a class="nav-link" href="/">Página Inicial<span class="sr-only">(Página atual)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/institucional">Institucional</a>
@@ -46,7 +46,7 @@
 
 <script>
     import Footer from "./components/Footer.vue";
-    import Index from "./components/Index.vue";
+    import { mapState } from 'vuex';
     // Módulo principal. Todo o projeto é um Single Page App.
     // O arquivo main.js renderiza essa módulo por meio da id "App"
     // Para simular multiplas páginas é usado o router do Vue.JS e a partir do router é possível
@@ -56,7 +56,12 @@
       components: {
         Footer
       },
-      name: "app"
+      name: "app",
+      computed: {
+        ...mapState([
+        ]),
+
+      }
     };    
 </script>
 
