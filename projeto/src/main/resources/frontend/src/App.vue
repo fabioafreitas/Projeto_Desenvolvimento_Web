@@ -39,7 +39,7 @@
         </nav>
 
         <router-view/>
-        <foot></foot>
+        <Footer/>
 
       </div>
 </template>
@@ -54,7 +54,7 @@
     
     export default {
       components: {
-        'foot': Footer
+        Footer
       },
       name: "app"
     };    
