@@ -1,8 +1,14 @@
 
 <template>
   <div id="footer">
-          <p class="text-center">Copyright&copy; - 2019 - myalert.org</p>
-        </div>
+    <p class="text-center">Copyright&copy; - 2019 - myalert.org</p>
+
+    <center> 
+
+        
+
+    </center>
+  </div>
 </template>
  
 <script>
@@ -12,15 +18,15 @@ export default {
 </script>
  
 <style>
-        #footer {
-        width: 100%;
-        height: 60px;
-        background-color: #2980b9;
-        color: aliceblue;
-        }
+#footer {
+  width: 100%;
+  height: 80px;
+  background-color: #2980b9;
+  color: aliceblue;
+}
 
-        #footer p{
-                position: relative;
-                top: 15px;
-        }
+#footer p {
+  position: relative;
+  top: 15px;
+}
 </style>
