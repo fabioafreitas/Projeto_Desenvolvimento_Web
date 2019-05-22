@@ -42,9 +42,9 @@ Run MyalertApplication.java with a Spring Boot IDE
 
 ## Learn More
 
-To learn VueJs, check out the [Vue.JS documentation](https://vuejs.org/v2/guide/).
-To learn SpringBoot, check out the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
-To learn Bootstrap, checkout out the [Bootstrap documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+To learn VueJs, check out the [Vue.JS documentation](https://vuejs.org/v2/guide/)<br>
+To learn SpringBoot, check out the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)<br>
+To learn Bootstrap, checkout out the [Bootstrap documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)<br>
 
 
 
