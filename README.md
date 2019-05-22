@@ -38,7 +38,7 @@ You will also see any lint errors in the console.
 
 ## Running Back-End
 
-Run MyalertApplication.java with a Spring Boot IDE
+Run MyAlertApplication.java with a Spring Boot IDE
 
 ## Learn More
 
