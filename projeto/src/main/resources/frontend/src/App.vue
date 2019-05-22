@@ -11,16 +11,16 @@
             </button>
             <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item" v-on:click="setActive('principal')" :class="{ active: isActive('principal')}">
                   <a class="nav-link" href="/">Página Inicial<span class="sr-only">(Página atual)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" v-on:click="setActive('institucional')" :class="{ active: isActive('institucional')}">
                   <a class="nav-link" href="/institucional">Institucional</a>
                 </li>
-                <li class="nav-item" >
+                <li class="nav-item" v-on:click="setActive('duvidas')" :class="{ active: isActive('duvidas')}">
                   <a class="nav-link" href="/duvidas">Dúvidas Frequentes</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" v-on:click="setActive('servicos')" :class="{ active: isActive('servicos')}">
                   <a class="nav-link" href="/servicos">Serviços</a>
                 </li>
               </ul>
@@ -46,7 +46,7 @@
 
 <script>
     import Footer from "./components/Footer.vue";
-    import { mapState } from 'vuex';
+    import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
     // Módulo principal. Todo o projeto é um Single Page App.
     // O arquivo main.js renderiza essa módulo por meio da id "App"
     // Para simular multiplas páginas é usado o router do Vue.JS e a partir do router é possível
@@ -57,10 +57,31 @@
         Footer
       },
       name: "app",
+      data(){
+        return {
+          active: this.isActive
+        }
+      },
       computed: {
         ...mapState([
+          'title',
+          'navActive'
         ]),
-
+        ...mapGetters([
+          'countLinks',
+          'isActive'
+        ])
+      },
+      methods: {
+        ...mapMutations([
+          'NAV_ATIVO'
+        ]),
+        ...mapActions([
+          'navAtivo'
+        ]),
+        setActive: function(menuItem){
+          this.NAV_ATIVO(menuItem)
+        }
       }
     };    
 </script>

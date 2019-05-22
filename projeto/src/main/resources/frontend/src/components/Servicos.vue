@@ -161,3 +161,17 @@
     </div>
   </div>
 </template>
+<script>
+  import { mapMutations } from 'vuex';
+    export default {
+      name: "servicos",
+      methods: {
+        ...mapMutations([
+          'NAV_ATIVO'
+        ])
+      },
+      created(){
+        this.NAV_ATIVO('servicos')
+      }
+    };    
+</script>
