@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        navActive: 'principal'
+        navActive: 'principal',
+        logado: false
     },
     mutations: {
         NAV_ATIVO: (state,menuItem) => {
             return state.navActive = menuItem
+        },
+        LOGOU: (state,log) => {
+            state.logado = log
         }
     },
     actions: { 
@@ -20,6 +24,9 @@ export default new Vuex.Store({
     getters: {
         isActive: state => menuItem => {
             return state.navActive == menuItem
+        },
+        isLoggedIn(state) {
+            return state.logado
         }
     }
 })
