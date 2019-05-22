@@ -131,23 +131,18 @@
 </template>
  
 <script>
-export default {
-  name: "login",
-  data() {
-    return {
-      usuario: {
-        id: 0,
-        name: "",
-        active: false
+  import {  mapMutations } from 'vuex';
+    export default {
+      name: "servicos",
+      methods: {
+        ...mapMutations([
+          'NAV_ATIVO'
+        ]),
       },
-      submitted: false
-    };
-  },
-  methods: {
-    /* eslint-disable no-console */
-    /* eslint-enable no-console */
-  }
-};
+      created(){
+        this.NAV_ATIVO('duvidas')
+      }
+    };    
 </script>
  
 <style>
