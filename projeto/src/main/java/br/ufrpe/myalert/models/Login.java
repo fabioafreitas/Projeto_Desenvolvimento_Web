@@ -1,6 +1,7 @@
 package br.ufrpe.myalert.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 //import sun.rmi.runtime.Log;
 
@@ -9,27 +10,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+@Document(collection = "login")
 public class Login {
 
+    @Id
     private String id;
-    // TODO adicionar user_id: <ObjectId1>
+    //TODO @DBRef private Usuario usuario;
     private String username;
     private String password;
-    public static List<Login> loginList;
-
-    static {
-        loginRepository();
-    }
-
-    public static void loginRepository() {
-        loginList = new ArrayList<>(Arrays.asList(
-                new Login("1", "maik", "maik123"),
-                new Login("2", "elthon", "elthon123"),
-                new Login("3", "gabriel", "gabriel123"),
-                new Login("4", "eder", "eder123"),
-                new Login("5", "fabio", "fabio123")
-        ));
-    }
 
     public Login(String id, String username, String password) {
         this.id = id;
