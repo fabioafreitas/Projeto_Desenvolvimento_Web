@@ -5,11 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        title: 'My custom title',
-        links: [
-            'www.google.com',
-            'www.gsmarena.com'
-        ],
         navActive: 'principal'
     },
     mutations: {
@@ -17,15 +12,12 @@ export default new Vuex.Store({
             return state.navActive = menuItem
         }
     },
-    actions: {
-        navAtivo: (context) => {
+    actions: { 
+        navAtivo: (context) => { //Exemplo de um action
             context.commit("NAV_ATIVO")
         }
     },
     getters: {
-        countLinks: state => {
-            return state.links.length
-        },
         isActive: state => menuItem => {
             return state.navActive == menuItem
         }

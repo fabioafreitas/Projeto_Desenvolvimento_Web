@@ -64,20 +64,15 @@
       },
       computed: {
         ...mapState([
-          'title',
           'navActive'
         ]),
         ...mapGetters([
-          'countLinks',
           'isActive'
         ])
       },
       methods: {
         ...mapMutations([
           'NAV_ATIVO'
-        ]),
-        ...mapActions([
-          'navAtivo'
         ]),
         setActive: function(menuItem){
           this.NAV_ATIVO(menuItem)
