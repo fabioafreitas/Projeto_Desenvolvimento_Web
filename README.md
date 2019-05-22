@@ -20,6 +20,7 @@
   - Componentização do Front-end
   - Implementação do Back-end I
   - Integração Front/Back/Banco
+  - [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
   
   
 
