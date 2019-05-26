@@ -1,5 +1,7 @@
-[![Bootstrap version](https://flat.badgen.net/badge/bootstrap/4.3.x/563d7c)](https://getbootstrap.com/docs)
-[![Vue.js version](https://flat.badgen.net/badge/vue.js/2.6.x/4fc08d)](https://vuejs.org)
+[![Bootstrap version](https://img.shields.io/badge/bootstrap-4.3.x-563d7c.svg)](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+[![Vue.js version](https://img.shields.io/badge/vue.js-3.7.0-4fc08d.svg)](https://vuejs.org/v2/guide/)
+[![Spring Boot Version](https://img.shields.io/badge/spring%20boot-2.1.4-brightgreen.svg)](https://spring.io/guides/gs/spring-boot/)
+[![MongoDB Atlas](https://img.shields.io/badge/mongoDB-atlas-13aa52.svg)](https://www.mongodb.com/)
 
 # Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
@@ -22,6 +24,7 @@
   - Integração Front/Back/Banco
   - [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
   
+4. Sprint 4:
   
 
 ## Running Front-End
@@ -40,12 +43,6 @@ You will also see any lint errors in the console.
 ## Running Back-End
 
 Run MyalertApplication.java with a Spring Boot IDE
-
-## Learn More
-
-To learn VueJs, check out the [Vue.JS documentation](https://vuejs.org/v2/guide/)<br>
-To learn SpringBoot, check out the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)<br>
-To learn Bootstrap, checkout out the [Bootstrap documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)<br>
 
 
 
