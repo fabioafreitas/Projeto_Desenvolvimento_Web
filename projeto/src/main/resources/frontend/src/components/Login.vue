@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import Login from '../services/login'
-import { mapMutations } from 'vuex'
+//import Login from '../services/login'
+import { mapMutations, mapActions } from 'vuex'
 export default {
   name: "login",
   data() {
@@ -64,8 +64,16 @@ export default {
     ...mapMutations([
        'LOGOU'
     ]),
+    ...mapActions([
+      'logar'
+    ]),
     realizarLogin() {
-      Login.realizarLogin(this.login).then(resposta => {
+      this.logar(this.login).then(response => {
+        this.booleanLogin=response.data
+        this.$router.push('/logado')
+      })
+
+      /*Login.realizarLogin(this.login).then(resposta => {
 
         this.booleanLogin = resposta.data
         if(this.booleanLogin) {
@@ -76,7 +84,7 @@ export default {
         }
       }).catch(e => {
         this.error = e.response.data.errorMessage
-      })
+      })*/
     }
   }
 };
