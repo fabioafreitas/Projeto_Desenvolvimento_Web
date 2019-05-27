@@ -3,7 +3,7 @@
     <div v-if="!submitted">
         <div class="form-group">
           <label for="nome">Nome do Usuário</label>
-          <input type="text" class="form-control" id="nome" required v-model="usuario.nome" name="nome">
+          <input type="text" class="form-control" id="nome" required v-model="usuario.name" name="nome">
         </div>
         <button v-on:click="saveUsuario" class="btn btn-success">Cadastrar</button>
     </div>
@@ -15,8 +15,8 @@
 </template>
  
 <script>
-  import http from "../http-common";
-  
+  //import http from "../http-common";
+  import { mapActions } from 'vuex'
   export default {
     name: "add-usuario",
     data() {
@@ -30,13 +30,20 @@
       };
     },
     methods: {
+      ...mapActions([
+        'addUsuarios'
+      ]),
       /* eslint-disable no-console */
       saveUsuario() {
         var data = {
-          name: this.usuario.nome,
+          nome: this.usuario.name, //manda o json como name mas na verdade eh pra ser nome
         };
-  
-        http
+        this.addUsuarios(data).then(response => {
+          this.usuario.id = response.data.id;
+          this.$router.push('/servicos')
+
+        })
+        /*http
           .post("/usuario", data)
           .then(response => {
             this.usuario.id = response.data.id;
@@ -46,7 +53,7 @@
             console.log(e);
           });
   
-        this.submitted = true;
+        this.submitted = true;*/
       }
       /* eslint-enable no-console */
     }
