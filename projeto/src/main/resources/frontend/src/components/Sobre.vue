@@ -45,9 +45,18 @@
 </template>
  
 <script>
-export default {
-  name: "sobre"
-};
+  import { mapMutations } from 'vuex';
+    export default {
+      name: "sobre",
+        methods: {
+         ...mapMutations([
+         'NAV_ATIVO'
+         ]),
+        },
+        created(){
+          this.NAV_ATIVO('institucional')
+        }
+    };    
 </script>
  
 <style>

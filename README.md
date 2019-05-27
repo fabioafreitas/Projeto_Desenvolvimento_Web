@@ -14,11 +14,21 @@
  2. Sprint 2:
   - Single Page Application
   - [Arquivos de IHM da sprint](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/tree/master/arquivos-ihm)
+  
+3. Sprint 3:
+  - Definição do modelo de dados
+  - Componentização do Front-end
+  - Implementação do Back-end I
+  - Integração Front/Back/Banco
+  - [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
+  
+  
 
-## Executando o Back-End
+## Running Front-End
 
-In the project directory, you can run:
+In the folder: projeto/src/main/resources/frontend, run the command:
 
+#### `npm install`
 #### `npm run serve`
 
 Runs the app in the development mode.<br>
@@ -27,8 +37,15 @@ Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
+## Running Back-End
+
+Run MyalertApplication.java with a Spring Boot IDE
+
 ## Learn More
 
-To learn Vue, check out the [Vue.JS documentation](https://vuejs.org/v2/guide/).
+To learn VueJs, check out the [Vue.JS documentation](https://vuejs.org/v2/guide/)<br>
+To learn SpringBoot, check out the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)<br>
+To learn Bootstrap, checkout out the [Bootstrap documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)<br>
+
 
 

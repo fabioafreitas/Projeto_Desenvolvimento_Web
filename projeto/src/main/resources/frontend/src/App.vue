@@ -11,27 +11,30 @@
             </button>
             <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">Página Inicial <span class="sr-only">(Página atual)</span></a>
+                <li class="nav-item" v-on:click="setActive('principal')" :class="{ active: isActive('principal')}">
+                  <a class="nav-link" href="/">Página Inicial<span class="sr-only">(Página atual)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" v-on:click="setActive('institucional')" :class="{ active: isActive('institucional')}">
                   <a class="nav-link" href="/institucional">Institucional</a>
                 </li>
-                <li class="nav-item" >
+                <li class="nav-item" v-on:click="setActive('duvidas')" :class="{ active: isActive('duvidas')}">
                   <a class="nav-link" href="/duvidas">Dúvidas Frequentes</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Serviços</a>
+                <li class="nav-item" v-on:click="setActive('servicos')" :class="{ active: isActive('servicos')}">
+                  <a class="nav-link" href="/servicos">Serviços</a>
                 </li>
               </ul>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <li class="active nav-item  mr-2">
+                <li v-if="!isLoggedIn" class="active nav-item  mr-2">
                   <a href="/login" class="nav-link btn rounded-pill btn-outline-dark border px-3">Login</a>
                 </li>
-                <li class="nav-item active">
+                <li v-if="!isLoggedIn" class="nav-item active">
                   <a class="nav-link btn btn-danger" href="/registrar">Registre-se</a>
+                </li>
+                <li v-if="isLoggedIn" class="active nav-item  mr-2">
+                  <a href="/login" class="nav-link btn btn-outline-dark border px-3">Sair</a>
                 </li>
               </ul>
             </div>
@@ -39,14 +42,14 @@
         </nav>
 
         <router-view/>
-        <foot></foot>
+        <Footer/>
 
       </div>
 </template>
 
 <script>
     import Footer from "./components/Footer.vue";
-    import Index from "./components/Index.vue";
+    import { mapState, mapGetters, mapMutations } from 'vuex';
     // Módulo principal. Todo o projeto é um Single Page App.
     // O arquivo main.js renderiza essa módulo por meio da id "App"
     // Para simular multiplas páginas é usado o router do Vue.JS e a partir do router é possível
@@ -54,9 +57,30 @@
     
     export default {
       components: {
-        'foot': Footer
+        Footer
       },
-      name: "app"
+      name: "app",
+      data(){
+        return {
+          active: this.isActive
+        }
+      },
+      computed: {
+        ...mapState([
+          'navActive'
+        ]),
+        ...mapGetters([
+          'isActive', 'isLoggedIn'
+        ])
+      },
+      methods: {
+        ...mapMutations([
+          'NAV_ATIVO'
+        ]),
+        setActive: function(menuItem){
+          this.NAV_ATIVO(menuItem)
+        }
+      }
     };    
 </script>
 
