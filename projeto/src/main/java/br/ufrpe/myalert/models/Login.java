@@ -5,31 +5,39 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 //import sun.rmi.runtime.Log;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 @Document(collection = "login")
 public class Login {
 
     @Id
-    private String id;
+    private String _id;
     //TODO @DBRef private Usuario usuario;
     private String username;
     private String password;
 
-    public Login(String id, String username, String password) {
-        this.id = id;
+    public Login(String  _id, String username, String password) {
+        this._id = _id;
         this.username = username;
         this.password = password;
     }
-
-    public Login(String id) {
-        this.id = id;
+    /*public Login(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
+    /*
+    public Login(ObjectId  _id) {
+        this._id = _id;
+    }*/
 
     public Login() {
+    }
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public String get_id() {
+        return this._id;
     }
 
     public String getUsername() {
