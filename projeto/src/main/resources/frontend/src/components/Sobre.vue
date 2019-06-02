@@ -1,5 +1,7 @@
 
 <template>
+        <div class="about-wrapper">
+                <Navbar/>
   <div id="sobre" class="container mt-5 mb-4 display">
           <img id="logo-dark" class="d-flex mb-5" src="../assets/logo_mylaert_dark.png"/>
 
@@ -42,11 +44,17 @@
                 aut perferendis doloribus asperiores repellat
             </p>
         </div>
+        </div>
 </template>
  
 <script>
   import { mapMutations } from 'vuex';
-    export default {
+  import Navbar from "./Navbar.vue";
+
+export default {
+  components: {
+    Navbar
+  },
       name: "sobre",
         methods: {
          ...mapMutations([

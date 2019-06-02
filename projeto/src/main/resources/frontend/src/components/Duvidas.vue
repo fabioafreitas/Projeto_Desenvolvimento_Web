@@ -1,4 +1,6 @@
 <template>
+  <div class="duvidas-wrapper">
+    <Navbar/>
   <div id="accordion" class="container mt-4 mb-4">
     <h3 class="mb-5">Dúvidas Frequentes</h3>
     <div class="card mb-2">
@@ -128,11 +130,17 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
  
 <script>
   import {  mapMutations } from 'vuex';
-    export default {
+  import Navbar from "./Navbar.vue";
+
+  export default {
+    components: {
+      Navbar
+    },
       name: "servicos",
       methods: {
         ...mapMutations([
