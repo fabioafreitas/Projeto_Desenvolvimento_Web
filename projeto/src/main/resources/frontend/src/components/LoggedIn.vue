@@ -1,10 +1,11 @@
 <template>
     <div class="row no-gutters">
-      <div class="d-flex col-3 sidebar justify-content-center">
-        <div class="list-group">
+      <div class="col-3 sidebar">
+        <div class="list-group mx-auto">
+
           <div class="sidebar-header">
             <a class="navbar-brand" href="/">
-              <img class="logo-brand mx-auto d-bloc" src="../assets/logo_mylaert_dark.png"/>
+              <img class="logo-brand" src="../assets/logo_mylaert_dark.png"/>
             </a>
             <form class="search_dashboard">
               <input type="text" placeholder="Search..">
@@ -33,7 +34,12 @@
             </div>
 
             <div class="col-4 latest-occurences">
-              
+              <p class="title-alert-elements">Alertas</p>
+              <AlertElement/>
+              <AlertElement/>
+              <AlertElement/>
+              <AlertElement/>
+              <AlertElement/>
             </div>
           </div>
         </div>
@@ -46,11 +52,13 @@
 <script>
 import NavbarDash from "./NavbarDashboard.vue";
 import Map from "./MapIndex.vue";
+import AlertElement from "./dashboard/AlertaElement.vue";
 
 export default {
   components: {
     NavbarDash,
-    Map
+    Map,
+    AlertElement
   },
   name: "logado",
   data() {
@@ -89,6 +97,8 @@ margin: 10px;
 }
 
 .search_dashboard input{
+  width: 250px;
+  height: 30px;
   padding-left: 10px;
   padding-right: 10px;
   border: 1px solid #cecece;
@@ -101,7 +111,13 @@ margin: 10px;
 }
 
 .latest-occurences{
+  overflow: scroll;
   border: 1px solid #ccc;
+  height: 350px;
+}
+
+.title-alert-elements{
+  font-size: 13pt;
 }
 
 </style>
