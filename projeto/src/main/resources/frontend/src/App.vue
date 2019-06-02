@@ -1,54 +1,14 @@
 /* eslint-disable */
 <template>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-          <div class="container">
-            <a class="navbar-brand" href="/">
-              <img class="logo-brand" src="./assets/logo_mylaert.png"/>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item" v-on:click="setActive('principal')" :class="{ active: isActive('principal')}">
-                  <a class="nav-link" href="/">Página Inicial<span class="sr-only">(Página atual)</span></a>
-                </li>
-                <li class="nav-item" v-on:click="setActive('institucional')" :class="{ active: isActive('institucional')}">
-                  <a class="nav-link" href="/institucional">Institucional</a>
-                </li>
-                <li class="nav-item" v-on:click="setActive('duvidas')" :class="{ active: isActive('duvidas')}">
-                  <a class="nav-link" href="/duvidas">Dúvidas Frequentes</a>
-                </li>
-                <li class="nav-item" v-on:click="setActive('servicos')" :class="{ active: isActive('servicos')}">
-                  <a class="nav-link" href="/servicos">Serviços</a>
-                </li>
-              </ul>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li v-if="!isLoggedIn" class="active nav-item  mr-2">
-                  <a href="/login" class="nav-link btn rounded-pill btn-outline-dark border px-3">Login</a>
-                </li>
-                <li v-if="!isLoggedIn" class="nav-item active">
-                  <a class="nav-link btn btn-danger" href="/registrar">Registre-se</a>
-                </li>
-                <li v-if="isLoggedIn" class="active nav-item  mr-2">
-                  <a href="/login" class="nav-link btn btn-outline-dark border px-3">Sair</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
         <router-view/>
         <Footer/>
-
       </div>
 </template>
 
 <script>
     import Footer from "./components/Footer.vue";
+    import Navbar from "./components/Navbar.vue";
     import { mapState, mapGetters, mapMutations } from 'vuex';
     // Módulo principal. Todo o projeto é um Single Page App.
     // O arquivo main.js renderiza essa módulo por meio da id "App"
@@ -57,7 +17,8 @@
     
     export default {
       components: {
-        Footer
+        Footer,
+        Navbar
       },
       name: "app",
       data(){

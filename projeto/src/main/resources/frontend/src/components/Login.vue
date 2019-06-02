@@ -1,5 +1,7 @@
 <template>
-  <div class="login submitform col-auto mt-4 mb-5">
+  <div class="login-wrapper">
+    <Navbar/>
+  <div class="login submitform col-4 mt-4 mb-5">
     <h2 class="text-center mb-5">Entrar no MyAlert</h2>
     <form action="#" @submit.prevent="realizarLogin">
 
@@ -39,12 +41,18 @@
 
     </form>
   </div>
+  </div>
 </template>
 
 <script>
 //import Login from '../services/login'
 import { mapMutations, mapActions } from 'vuex'
+import Navbar from "./Navbar.vue";
+
 export default {
+  components: {
+    Navbar
+  },
   name: "login",
   data() {
     return {

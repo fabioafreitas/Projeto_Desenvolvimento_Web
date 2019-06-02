@@ -1,8 +1,6 @@
-*{
-        margin: 0px auto;
-        padding: 0px auto;
-}
 
-body{
-        background-color: black;
+.sidebar{
+        width: 100px;
+        height: 100px;
+        background-color: #CCC;
 }

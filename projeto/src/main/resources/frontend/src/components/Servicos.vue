@@ -1,5 +1,8 @@
  
  <template>
+
+ <div class="service=wrapper">
+   <Navbar/>
   <div class="container">
     <div class="row">
       <div class="col-6">
@@ -160,10 +163,16 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 <script>
   import { mapMutations } from 'vuex';
-    export default {
+  import Navbar from "./Navbar.vue";
+
+export default {
+  components: {
+    Navbar
+  },
       name: "servicos",
       methods: {
         ...mapMutations([
