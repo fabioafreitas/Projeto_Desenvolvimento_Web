@@ -1,80 +1,57 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-2">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >Menu</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#"> [username]</a>
-                  <a class="dropdown-item" href="#"> [...] </a>
-                  <a class="dropdown-item" href="#"> [...] </a>
-                  <br>
-                  <br>
-                  <br> 
-                  <br> [emailuser]
-                  <br>
-                  <button type="button" class="btn btn-danger">LOGOUT</button>
-                </div>
-              </li>
-            </ul>
+    <div class="row no-gutters">
+      <div class="d-flex col-3 sidebar justify-content-center">
+        <div class="list-group">
+          <div class="sidebar-header">
+            <a class="navbar-brand" href="/">
+              <img class="logo-brand mx-auto d-bloc" src="../assets/logo_mylaert_dark.png"/>
+            </a>
+            <form class="search_dashboard">
+              <input type="text" placeholder="Search..">
+            </form>
           </div>
-        </nav>
-      </div>
 
-      <div class="col-3">
-        <div class="card" style="width: 18rem;">
-          <img
-            src="../assets/enchentes.png"
-            class="card-img-top"
-            alt="..."
-            width="150"
-            height="150"
-          >
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p
-              class="card-text"
-            >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Acessar</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card" style="width: 18rem;">
-          <img src="../assets/user.png" class="card-img-top" alt="..." width="150" height="150">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p
-              class="card-text"
-            >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Acessar</a>
-          </div>
+          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
+          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
+          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
+          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
         </div>
       </div>
 
-      <div class="col-4">
-        <br>
-        <center>feed noticias (?)</center>
+      <div class="col-9">
+        <NavbarDash/>
+        <div class="container">
+          <div class="main_head">
+            <button class="btn btn-dark btn-head btn-main">Registrar Ocorrência</button>
+            <button class="btn btn-dark btn-head">Funcionalidade2</button>
+            <button class="btn btn-dark btn-head">Funcionalidade3</button>
+          </div>
+          
+          <div class="row content-dash">
+            <div class="col-8 map_dashboard">
+              <Map/>
+            </div>
+
+            <div class="col-4 latest-occurences">
+              
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   <!--</div>
   </div>-->
 </template>
  
 <script>
+import NavbarDash from "./NavbarDashboard.vue";
+import Map from "./MapIndex.vue";
+
 export default {
+  components: {
+    NavbarDash,
+    Map
+  },
   name: "logado",
   data() {
     return {
@@ -94,12 +71,37 @@ export default {
 </script>
  
 <style>
-.submitform {
-  max-width: 400px;
-  margin: auto;
+
+.logo-brand{
+width: 160px;
+margin: 10px;
+
 }
 
-.logo-brand {
-  width: 120px;
+.map_dashboard{
+  
+  width: 600px;
+  height: 350px;
 }
+
+.content-dash{
+  padding: 20px;
+}
+
+.search_dashboard input{
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #cecece;
+  border-radius: 40px;
+}
+
+.search_dashboard input:focus{
+  outline: none;
+
+}
+
+.latest-occurences{
+  border: 1px solid #ccc;
+}
+
 </style>

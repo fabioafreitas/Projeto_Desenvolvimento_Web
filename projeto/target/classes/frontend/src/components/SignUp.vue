@@ -1,7 +1,5 @@
 <template>
-  <div class="signup-wrapper">
-    <Navbar/>
-  <div class="submitform mt-4 mb-5 col-4">
+  <div class="submitform mt-4 mb-5 col-auto">
     <div v-if="!submitted">
       <h2 class="text-center mb-5">Registre-se no MyAlert</h2>
 
@@ -73,16 +71,10 @@
       <h4>Usuário cadastrado...!</h4>
     </div>
   </div>
-  </div>
 </template>
  
 <script>
-import Navbar from "./Navbar.vue";
-
 export default {
-  components: {
-    Navbar
-  },
   name: "login",
   data() {
     return {

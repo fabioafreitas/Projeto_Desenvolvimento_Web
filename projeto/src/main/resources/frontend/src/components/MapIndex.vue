@@ -107,7 +107,7 @@ export default {
 <style>
 #map {
   width: 100%;
-  height: 600px;
+  height: 100%;
   background-color: grey;
 }
 </style>

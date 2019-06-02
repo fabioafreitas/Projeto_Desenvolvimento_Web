@@ -4,14 +4,8 @@
     <list default="true" id="36a2cc95-ec32-44d0-95a1-95fce3c985b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/controllers/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/controllers/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/models/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frontend/src/components/Duvidas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frontend/src/components/Duvidas.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frontend/src/components/MapIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frontend/src/components/MapIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/ufrpe/myalert/controllers/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ufrpe/myalert/controllers/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/ufrpe/myalert/models/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ufrpe/myalert/models/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/frontend/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/frontend/src/components/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/frontend/src/components/MapIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/frontend/src/components/MapIndex.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="17">
+              <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -48,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/dao/UsuarioDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -56,22 +50,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/controllers/UsuarioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+            <state relative-caret-position="119">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/models/Usuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            <state relative-caret-position="119">
+              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mongo</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -82,8 +81,8 @@
         <option value="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/view/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/MyalertApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/models/Usuario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/controllers/UsuarioController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/controllers/UsuarioController.java" />
       </list>
     </option>
   </component>
@@ -99,8 +98,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,10 +173,25 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="myalert" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myalert" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,16 +253,24 @@
       <workItem from="1557360313827" duration="533000" />
       <workItem from="1557530090423" duration="186000" />
       <workItem from="1557530325364" duration="625000" />
+      <workItem from="1557858140603" duration="668000" />
+      <workItem from="1557970734179" duration="680000" />
+      <workItem from="1558054494842" duration="1112000" />
+      <workItem from="1558063198785" duration="284000" />
+      <workItem from="1558122399171" duration="620000" />
+      <workItem from="1558131519817" duration="2439000" />
+      <workItem from="1558651700141" duration="748000" />
+      <workItem from="1558967198003" duration="108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14751000" />
+    <option name="totallyTimeSpent" value="21410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="20" width="1382" height="756" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28441754" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -260,7 +280,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38683787" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39325842" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -297,10 +317,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projeto.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="978">
+          <caret line="92" column="93" lean-forward="true" selection-start-line="92" selection-start-column="93" selection-end-line="92" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-683" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="17">
+          <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -317,21 +349,21 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/dao/UsuarioDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/controllers/UsuarioController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="119">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrpe/myalert/models/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="119">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
         </state>
       </provider>
     </entry>

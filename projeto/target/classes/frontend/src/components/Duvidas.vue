@@ -1,6 +1,4 @@
 <template>
-  <div class="duvidas-wrapper">
-    <Navbar/>
   <div id="accordion" class="container mt-4 mb-4">
     <h3 class="mb-5">Dúvidas Frequentes</h3>
     <div class="card mb-2">
@@ -130,31 +128,31 @@
       </div>
     </div>
   </div>
-  </div>
 </template>
  
 <script>
-  import {  mapMutations } from 'vuex';
-  import Navbar from "./Navbar.vue";
-
-  export default {
-    components: {
-      Navbar
-    },
-      name: "servicos",
-      methods: {
-        ...mapMutations([
-          'NAV_ATIVO'
-        ]),
+export default {
+  name: "login",
+  data() {
+    return {
+      usuario: {
+        id: 0,
+        name: "",
+        active: false
       },
-      created(){
-        this.NAV_ATIVO('duvidas')
-      }
-    };    
+      submitted: false
+    };
+  },
+  methods: {
+    /* eslint-disable no-console */
+    /* eslint-enable no-console */
+  }
+};
 </script>
  
 <style>
-#accordion {
+
+#accordion{
   min-height: 500px;
 }
 
