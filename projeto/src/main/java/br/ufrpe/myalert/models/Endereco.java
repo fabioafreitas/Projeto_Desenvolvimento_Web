@@ -3,17 +3,30 @@ package br.ufrpe.myalert.models;
 import java.util.Objects;
 
 public class Endereco {
-    private String logradouro;
     private String cep;
+    private String logradouro;  //RUA
+    private String bairro;
+    private String localidade;  //Cidade /Município
     private String referencia;
 
-    public Endereco(String logradouro, String cep, String referencia) {
-        this.logradouro = logradouro;
+    public Endereco(String cep, String logradouro, String bairro, String localidade, String referencia) {
         this.cep = cep;
+        this.logradouro = logradouro;
+        this.bairro = bairro;
+        this.localidade = localidade;
         this.referencia = referencia;
     }
 
-    public Endereco() {
+    public Endereco(String cep) {
+        this.cep = cep;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getLogradouro() {
@@ -24,12 +37,20 @@ public class Endereco {
         this.logradouro = logradouro;
     }
 
-    public String getCep() {
-        return cep;
+    public String getBairro() {
+        return bairro;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getLocalidade() {
+        return localidade;
+    }
+
+    public void setLocalidade(String localidade) {
+        this.localidade = localidade;
     }
 
     public String getReferencia() {
@@ -56,8 +77,10 @@ public class Endereco {
     @Override
     public String toString() {
         return "Endereco{" +
-                "logradouro='" + logradouro + '\'' +
-                ", cep='" + cep + '\'' +
+                "cep='" + cep + '\'' +
+                ", logradouro='" + logradouro + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", localidade='" + localidade + '\'' +
                 ", referencia='" + referencia + '\'' +
                 '}';
     }

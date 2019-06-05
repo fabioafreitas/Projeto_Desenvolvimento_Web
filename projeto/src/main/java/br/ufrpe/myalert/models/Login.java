@@ -12,11 +12,11 @@ public class Login {
 
     @Id
     private String _id;
-    //TODO @DBRef private Usuario usuario;
+    //private String email; // TODO "Foreign Key" para associar um login a um ADM ou USER
     private String username;
     private String password;
 
-    public Login(String  _id, String username, String password) {
+    public Login(String _id, String username, String password) {
         this._id = _id;
         this.username = username;
         this.password = password;

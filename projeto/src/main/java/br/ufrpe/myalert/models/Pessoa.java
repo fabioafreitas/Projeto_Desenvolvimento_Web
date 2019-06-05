@@ -1,21 +1,35 @@
 package br.ufrpe.myalert.models;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Date;
 import java.util.Objects;
 
-public abstract class Pessoa {
+public class Pessoa {
+    enum Genero {
+        MASCULINO("M"), FEMININO("F"), NAO_DEFINIDO("N");
+        private String genero;
+        Genero(String genero) {
+            this.genero = genero;
+        }
+        public String getGenero() {
+            return this.genero;
+        }
+    }
+
     // dúvida com relação ao id de pessoa
     private String first_name;
     private String last_name;
-    //private enum sexo {M,F}; TODO
+    private Genero genero;
     private Date data_nascimento;
     private String cpf;
     private Endereco endereco;
     private Telefone telefone;
 
-    public Pessoa(String first_name, String last_name, Date data_nascimento, String cpf, Endereco endereco, Telefone telefone) {
+    public Pessoa(String first_name, String last_name, Genero genero, Date data_nascimento, String cpf, Endereco endereco, Telefone telefone) {
         this.first_name = first_name;
         this.last_name = last_name;
+        this.genero = genero;
         this.data_nascimento = data_nascimento;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -39,6 +53,14 @@ public abstract class Pessoa {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
     }
 
     public Date getData_nascimento() {
