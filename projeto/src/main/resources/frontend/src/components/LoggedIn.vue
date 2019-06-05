@@ -42,6 +42,10 @@
               <AlertElement/>
             </div>
           </div>
+
+          <div class="graph">
+            <img src="../assets/graph.png">
+          </div>
         </div>
       </div>
     </div>
@@ -87,7 +91,6 @@ margin: 10px;
 }
 
 .map_dashboard{
-  
   width: 600px;
   height: 350px;
 }
@@ -118,6 +121,10 @@ margin: 10px;
 
 .title-alert-elements{
   font-size: 13pt;
+}
+
+.graph img{
+  width: 100%;
 }
 
 </style>
