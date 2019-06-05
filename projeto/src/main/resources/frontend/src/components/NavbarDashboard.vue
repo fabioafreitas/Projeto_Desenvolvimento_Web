@@ -24,6 +24,7 @@
                   <a class="nav-link" href="/perfil">Usuario Mil Graus</a>
                 </li>
                   <a class="nav-link" href="/servicos"><img class="img_profile" src="../assets/default_user.png"/></a>
+                  <button @click="sair" class="btn btn-primary">Sair</button>
               </ul>
             </div>
             
@@ -33,7 +34,7 @@
 </template>
 
 <script>
-    import { mapState, mapGetters, mapMutations } from 'vuex';
+    import { mapState, mapGetters, mapActions } from 'vuex';
 
     export default {
       name: "navbar",
@@ -48,7 +49,15 @@
         ]),
         ...mapGetters([
           'isActive', 'isLoggedIn'
+        ]),
+        ...mapActions([
+          'deslogar'
         ])
+      },
+      methods: {
+        sair() {
+          this.deslogar()
+        }
       }
     };    
 </script>
