@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+        token: localStorage.getItem('access_token') || null,
         navActive: 'principal',
         logado: false
     },
@@ -15,6 +16,12 @@ export default new Vuex.Store({
         },
         LOGOU: (state,log) => {
             state.logado = log
+        },
+        retrieveToken(state,token) {
+            state.token = token
+        },
+        destroyToken(state) {
+            state.token = null
         }
     },
     actions: { 
@@ -39,17 +46,34 @@ export default new Vuex.Store({
             return new Promise((resolve, reject) => {
                 http.post("/login", data)
                     .then(response => {
+                        const tokens = response.headers['authorization']
+                        var a = tokens.split(' ')[1]
+                        //var a = tokens.split(' ')[1]
+                        localStorage.setItem('access_token',a)
+                        context.commit('retrieveToken',a)
                         //this.LOGOU(true)
                         context.commit("LOGOU",response.data)
+                        //console.log(response)
                     //this.usuario.id = response.data.id;
                     resolve(response)
                     //console.log(response.data);
-                })
-        .catch(error => {
+                    })
+                    .catch(error => {
                 //console.log(error);
-                reject(error)
-            });
-        })
+                        reject(error)
+                    });
+            })
+        },
+        deslogar(context) {
+            //Enviar o seguinte código abaixo em uma requisição que precise de token para poder ser acessada.
+            //Axios.//http.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token 
+            if(context.getters.isLoggedIn) {
+                //takvez colocar num new promise para apagar do backend o token
+                //aí colocar as duas linhas no sucesso e no erro
+                localStorage.removeItem('access_token')
+                context.commit('destroyToken')
+                
+            }
         }
     },
     getters: {
@@ -57,7 +81,7 @@ export default new Vuex.Store({
             return state.navActive == menuItem
         },
         isLoggedIn(state) {
-            return state.logado
+            return state.token != null
         }
     }
 })

@@ -29,12 +29,18 @@ export default new Router({
     {
       path: "/login",
       name: "login",
-      component: Login
+      component: Login,
+      meta: {
+        requiresVisitor: true,
+      }
     },
     {
       path: "/registrar",
       name: "registrar",
-      component: SignUp
+      component: SignUp,
+      meta: {
+        requiresVisitor: true,
+      }
     },
     {
       path: "/duvidas",
@@ -44,7 +50,10 @@ export default new Router({
       {
       path: "/logado",
       name: "logado",
-      component: LoggedIn
+      component: LoggedIn,
+      meta: {
+        requiresAuth: true,
+      }
     },
     {
       path: "/institucional",

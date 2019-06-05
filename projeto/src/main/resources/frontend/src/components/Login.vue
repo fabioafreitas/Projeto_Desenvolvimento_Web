@@ -60,7 +60,7 @@ export default {
       booleanLogin: false,
       error: "",
       login: {
-        id:"",
+        //id:"",
         username:"",
         password:""
       }
@@ -77,6 +77,7 @@ export default {
     ]),
     realizarLogin() {
       this.logar(this.login).then(response => {
+        this.enderecoLogin=response.headers.Authorization
         this.booleanLogin=response.data
         this.$router.push('/logado')
       })
