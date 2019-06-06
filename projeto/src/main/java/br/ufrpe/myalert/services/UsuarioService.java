@@ -1,12 +1,9 @@
 package br.ufrpe.myalert.services;
 
 import br.ufrpe.myalert.dao.UsuarioDAO;
-import br.ufrpe.myalert.models.Endereco;
 import br.ufrpe.myalert.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class UsuarioService {
@@ -31,8 +28,7 @@ public class UsuarioService {
         if(usuarioAux == null) {
             return null;
         }
-        usuarioAux.setFirst_name(usuario.getFirst_name());
-        usuarioAux.setLast_name(usuario.getLast_name());
+        usuarioAux.setNome(usuario.getNome());
         usuarioAux.setGenero(usuario.getGenero());
         usuarioAux.setData_nascimento(usuario.getData_nascimento());
         usuarioAux.setEndereco(usuario.getEndereco());

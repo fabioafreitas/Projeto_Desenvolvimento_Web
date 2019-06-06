@@ -1,6 +1,8 @@
 package br.ufrpe.myalert.controllers;
 
+import br.ufrpe.myalert.dao.LoginDAO;
 import br.ufrpe.myalert.dao.UsuarioDAO;
+import br.ufrpe.myalert.models.Login;
 import br.ufrpe.myalert.models.Usuario;
 import br.ufrpe.myalert.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +13,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/usuarios")
 class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
+    @Autowired
+    private LoginDAO loginDAO;
 
     @GetMapping("/{cpf}")
     public ResponseEntity<?> getByCpf(@PathVariable("cpf") String cpf) {
@@ -30,6 +35,7 @@ class UsuarioController {
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Usuario usuario) {
         Usuario usuarioAux = usuarioService.create(usuario);
+        Login login = loginDAO.save(new Login(usuario.getUsername(), usuario.getPassword()));
         if(usuarioAux == null) {
             return new ResponseEntity<>("Usuário já cadastrado", HttpStatus.BAD_REQUEST);
         }

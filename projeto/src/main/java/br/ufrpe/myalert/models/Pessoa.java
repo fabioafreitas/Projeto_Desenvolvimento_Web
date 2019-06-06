@@ -6,29 +6,18 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Pessoa {
-    enum Genero {
-        MASCULINO("M"), FEMININO("F"), NAO_DEFINIDO("N");
-        private String genero;
-        Genero(String genero) {
-            this.genero = genero;
-        }
-        public String getGenero() {
-            return this.genero;
-        }
-    }
+
 
     // dúvida com relação ao id de pessoa
-    private String first_name;
-    private String last_name;
-    private Genero genero;
+    private String nome;
+    private String genero;
     private Date data_nascimento;
     private String cpf;
     private Endereco endereco;
     private Telefone telefone;
 
-    public Pessoa(String first_name, String last_name, Genero genero, Date data_nascimento, String cpf, Endereco endereco, Telefone telefone) {
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Pessoa(String nome, String genero, Date data_nascimento, String cpf, Endereco endereco, Telefone telefone) {
+        this.nome = nome;
         this.genero = genero;
         this.data_nascimento = data_nascimento;
         this.cpf = cpf;
@@ -36,30 +25,28 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
+    public Pessoa(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+
     public Pessoa() {
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getLast_name() {
-        return last_name;
-    }
-
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
-
-    public Genero getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(Genero genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
