@@ -11,9 +11,24 @@ public class Usuario extends Pessoa{
 
     @Id
     private String id;
+    private String username;
+    private String password;
 
-    public Usuario(String first_name, String last_name, Genero genero, Date data_nascimento, String cpf, Endereco endereco, Telefone telefone) {
-        super(first_name, last_name, genero, data_nascimento, cpf, endereco, telefone);
+    public Usuario(String nome, String genero, Date data_nascimento,
+                   String cpf, Endereco endereco, Telefone telefone,
+                   String username, String password) {
+        super(nome, genero, data_nascimento, cpf, endereco, telefone);
+        this.username = username;
+        this.password = password;
+    }
+
+    public Usuario(String nome, String cpf, String username, String password) {
+        super(nome, cpf);
+        this.username = username;
+        this.password = password;
+    }
+
+    public Usuario() {
     }
 
     public String getId() {
@@ -22,6 +37,22 @@ public class Usuario extends Pessoa{
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

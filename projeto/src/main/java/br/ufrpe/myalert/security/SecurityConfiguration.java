@@ -28,7 +28,8 @@ import java.util.Arrays;
 //@EnableConfigurationProperties
 @EnableGlobalMethodSecurity(securedEnabled = true)
 @EnableWebSecurity
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     MongoUserDetailsService userDetailsService;
