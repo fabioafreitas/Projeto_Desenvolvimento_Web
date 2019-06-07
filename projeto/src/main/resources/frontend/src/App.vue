@@ -51,17 +51,6 @@
       width: 120px;
     }
 
-    .navbar{
-      background-color: #2980b9;
-    }
-
-    .about{
-      font-size: 13pt;
-      width: 100%;
-      color: #414141;
-      background-color: aliceblue;
-    }
-
     .icon-small{
       transition-duration: .6s;
       padding-top: 35%;

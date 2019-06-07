@@ -34,7 +34,8 @@ export default {
 };
 </script>
  
-<style>
+<style scoped>
+
 .map_index{
   width: 100%;
   height: 600px;
