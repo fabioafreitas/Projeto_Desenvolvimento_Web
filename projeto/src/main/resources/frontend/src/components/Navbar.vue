@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li v-if="!isLoggedIn" class="active nav-item  mr-2">
-                  <a href="/login" class="nav-link btn rounded-pill btn-outline-dark border px-3">Login</a>
+                  <a href="/login" class="nav-link btn btn-outline-dark border px-3">Login</a>
                 </li>
                 <li v-if="!isLoggedIn" class="nav-item active">
                   <a class="nav-link btn btn-danger" href="/registrar">Registre-se</a>

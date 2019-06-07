@@ -27,7 +27,7 @@ export default {
 </script>
  
 <style>
-       .about{
+    .about{
       font-size: 13pt;
       width: 100%;
       color: #414141;

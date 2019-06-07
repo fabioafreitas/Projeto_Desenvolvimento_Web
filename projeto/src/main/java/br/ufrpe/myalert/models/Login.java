@@ -12,7 +12,6 @@ public class Login {
 
     @Id
     private String _id;
-    //private String email; // TODO "Foreign Key" para associar um login a um ADM ou USER
     private String username;
     private String password;
 
@@ -21,14 +20,11 @@ public class Login {
         this.username = username;
         this.password = password;
     }
-    /*public Login(String username, String password) {
+
+    public Login(String username, String password) {
         this.username = username;
         this.password = password;
     }
-    /*
-    public Login(ObjectId  _id) {
-        this._id = _id;
-    }*/
 
     public Login() {
     }
