@@ -9,6 +9,7 @@ import MapIndex from "./components/MapIndex.vue";
 import Index from "./components/Index.vue";
 import Sobre from "./components/Sobre.vue";
 import Servicos from "./components/Servicos.vue";
+import Ocorrencia from "./components/Ocorrencia.vue";
 
 
 Vue.use(Router);
@@ -69,6 +70,11 @@ export default new Router({
       path: "/",
       name: "index",
       component: Index
+    },
+    {
+    path: "/ocorrencia",
+    name: "ocorrencia",
+    component: Ocorrencia
     }
   ]
 });

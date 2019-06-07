@@ -37,7 +37,7 @@ export default {
 };
 </script>
  
-<style>
+<style scoped>
 
 .alert-element{
         width: 100%;

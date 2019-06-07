@@ -23,7 +23,7 @@
         <NavbarDash/>
         <div class="container">
           <div class="main_head">
-            <button class="btn btn-dark btn-head btn-main">Registrar Ocorrência</button>
+            <a href="/ocorrencia"><button class="btn btn-dark btn-head btn-main">Registrar Ocorrência</button></a>
             <button class="btn btn-dark btn-head">Funcionalidade2</button>
             <button class="btn btn-dark btn-head">Funcionalidade3</button>
           </div>
