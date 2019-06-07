@@ -25,6 +25,9 @@
   - [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
   
 4. Sprint 4:
+  - [Task 10](https://docs.google.com/document/d/1eW4HEi4riAPxemU5XjPSJO2pi8u4ll52QXxF3bMQgsc/edit)
+  - [Task 16](https://docs.google.com/document/d/1KNI_hE90SN9R3uyK5QdZ6UmKqxyeqiQ5NPfgviqaklU/edit)
+  - [Task 17](https://docs.google.com/document/d/1oywq4TdkCy-yOdA86Oy-wrLfhKjtNQwhz879e5hYY10/edit)
   
 
 ## Running Front-End
