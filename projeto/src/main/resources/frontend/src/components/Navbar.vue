@@ -27,7 +27,7 @@
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <li v-if="!isLoggedIn" class="active nav-item  mr-2">
+                <li v-if="!isLoggedIn" class="active nav-item  mr-2" v-on:click="setActive('login')">
                   <a href="/login" class="nav-link btn btn-outline-dark border px-3">Login</a>
                 </li>
                 <li v-if="!isLoggedIn" class="nav-item active">

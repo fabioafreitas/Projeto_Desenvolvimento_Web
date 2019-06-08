@@ -10,7 +10,7 @@
         <label for="email-usuario">Email do usuário</label>
         <input
                 type="text"
-                placeholder="Digite seu email..."
+                placeholder="Digite seu email"
                 class="form-control"
                 id="email-usuario"
                 required
@@ -33,8 +33,6 @@
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-info">Login</button>
-                           <!--<form v-bind:action="enderecoLogin"></form>
-          <input type="submit" value="Entrar" class="btn btn-info" v-on:click="realizarLogin">-->
         <a class="float-right" href="/registrar">Esqueceu sua senha?</a>
 
       </div>
@@ -46,7 +44,7 @@
 
 <script>
 //import Login from '../services/login'
-import { mapMutations, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 import Navbar from "./Navbar.vue";
 
 export default {
@@ -60,7 +58,6 @@ export default {
       booleanLogin: false,
       error: "",
       login: {
-        //id:"",
         username:"",
         password:""
       }
@@ -69,9 +66,6 @@ export default {
   methods: {
     /* eslint-disable no-console */
     /* eslint-enable no-console */
-    ...mapMutations([
-       'LOGOU'
-    ]),
     ...mapActions([
       'logar'
     ]),
@@ -81,7 +75,6 @@ export default {
         this.booleanLogin=response.data
         this.$router.push('/logado')
       })
-
       /*Login.realizarLogin(this.login).then(resposta => {
 
         this.booleanLogin = resposta.data

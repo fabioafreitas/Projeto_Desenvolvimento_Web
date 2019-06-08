@@ -22,32 +22,39 @@
       <div class="col-9">
         <NavbarDash/>
         <div class="container mt-4">
-                <h5 class="mb-4">Registrar Ocorrência</h5>
-                <div class="row">
-                        <div class="col-9">
-                                <form action="#" @submit.prevent="cadastroOcorrencia" class="form_ocorrencia mb-4">
-                                        <div class="form-row">
-                                        <div class="col">
-                                        <input type="text" class="form-control" v-model="ocorrencia.titulo" placeholder="Título da Ocorrência">
-                                        </div>
-                                    
-                                        </div>
-
-                                        
-                                        
-                                        
-                                        
-                                        <label for="exampleFormControlSelect1">Selecione uma imagem:</label>
-                                        <br/>
-                                        <input type="file" multiple>
-                                        <br/>
-                                        <label for="exampleFormControlTextarea1">Informe a data:</label>
-                                        <input type="date" v-model:"ocorrencia.date">
-                                        <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                        </div>
-                                        <button class="btn btn-primary">Registrar Ocorrencia</button>
+            <h5 class="mb-4">Registrar Ocorrência</h5>
+              <div class="row">
+                <div class="col-9">
+                   <form action="#" @submit.prevent="cadastroOcorrencia" class="form_ocorrencia mb-4">
+                        <div class="form-row">
+                          <div class="col">
+                              <input
+                               type="text"
+                               class="form-control" 
+                               v-model="ocorrencia.titulo" 
+                               placeholder="Título da Ocorrência"
+                               required
+                              >
+                          </div>          
+                        </div>
+                          <label for="exampleFormControlSelect1">Selecione uma imagem:</label>
+                          <br/>
+                            <input 
+                              type="file" 
+                              multiple
+                            >
+                            <br/>
+                              <label for="exampleFormControlTextarea1">Informe a data:</label>
+                              <input 
+                                type="date"
+                                v-model="ocorrencia.date"
+                                required
+                              >
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                              </div>
+                              <button class="btn btn-primary">Registrar Ocorrencia</button>
                                 </form>
                         </div>
                         <div class="col">
@@ -79,8 +86,8 @@ import { mapActions } from 'vuex';
 export default {
   components: {
     NavbarDash,
-    Map,
-    AlertElement
+   // Map,
+    //AlertElement
   },
   name: "logado",
   data() {
@@ -103,7 +110,7 @@ export default {
     ]),
     cadastroOcorrencia() {
       this.registrarOcorrencia(this.ocorrencia).then(response => {
-        console.log('ocorrencia registrada')
+       
       })
     }
     /* eslint-disable no-console */

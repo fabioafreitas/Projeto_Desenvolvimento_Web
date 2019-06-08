@@ -91,6 +91,7 @@ export default new Vuex.Store({
             })
         },
         registrarOcorrencia(context, ocorrencia){
+            http.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token 
             return new Promise((resolve, reject) => {
                 http.post("/ocorrencias",ocorrencia)
                     .then(response => {
