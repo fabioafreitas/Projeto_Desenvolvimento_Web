@@ -1,17 +1,13 @@
 package br.ufrpe.myalert.controllers;
 
 import br.ufrpe.myalert.dao.LoginDAO;
-import br.ufrpe.myalert.dao.UsuarioDAO;
 import br.ufrpe.myalert.models.Login;
 import br.ufrpe.myalert.models.Usuario;
 import br.ufrpe.myalert.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 //@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin("*")
