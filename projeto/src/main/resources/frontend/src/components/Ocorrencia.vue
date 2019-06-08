@@ -25,45 +25,29 @@
                 <h5 class="mb-4">Registrar Ocorrência</h5>
                 <div class="row">
                         <div class="col-9">
-                                <form class="form_ocorrencia mb-4">
+                                <form action="#" @submit.prevent="cadastroOcorrencia" class="form_ocorrencia mb-4">
                                         <div class="form-row">
                                         <div class="col">
-                                        <input type="text" class="form-control" placeholder="First name">
+                                        <input type="text" class="form-control" v-model="ocorrencia.titulo" placeholder="Título da Ocorrência">
                                         </div>
-                                        <div class="col">
-                                        <input type="text" class="form-control" placeholder="Last name">
-                                        </div>
+                                    
                                         </div>
 
+                                        
+                                        
+                                        
+                                        
+                                        <label for="exampleFormControlSelect1">Selecione uma imagem:</label>
+                                        <br/>
+                                        <input type="file" multiple>
+                                        <br/>
+                                        <label for="exampleFormControlTextarea1">Informe a data:</label>
+                                        <input type="date" v-model:"ocorrencia.date">
                                         <div class="form-group">
-                                        <label for="exampleFormControlInput1">Endereço de email</label>
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
-                                        </div>
-                                        <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Select de exemplo</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group">
-                                        <label for="exampleFormControlSelect2">Exemplo de select múltiplo</label>
-                                        <select multiple class="form-control" id="exampleFormControlSelect2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Exemplo de textarea</label>
+                                        <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                         </div>
-                                        <button class="btn btn-primary">Registrar Ocorrencai</button>
+                                        <button class="btn btn-primary">Registrar Ocorrencia</button>
                                 </form>
                         </div>
                         <div class="col">
@@ -90,6 +74,7 @@
 import NavbarDash from "./NavbarDashboard.vue";
 import Map from "./MapIndex.vue";
 import AlertElement from "./dashboard/AlertaElement.vue";
+import { mapActions } from 'vuex';
 
 export default {
   components: {
@@ -100,15 +85,27 @@ export default {
   name: "logado",
   data() {
     return {
-      usuario: {
-        id: 0,
-        name: "",
-        active: false
+      ocorrencia: {
+        cpf: "123",
+        titulo:"",
+        date:"",
+        numero:"",
+        endereco:"Rua 2 irmaos",
+        categoria:"Enchente",
+        imagens:null
       },
       submitted: true
     };
   },
   methods: {
+    ...mapActions([
+      'registrarOcorrencia'
+    ]),
+    cadastroOcorrencia() {
+      this.registrarOcorrencia(this.ocorrencia).then(response => {
+        console.log('ocorrencia registrada')
+      })
+    }
     /* eslint-disable no-console */
     /* eslint-enable no-console */
   }

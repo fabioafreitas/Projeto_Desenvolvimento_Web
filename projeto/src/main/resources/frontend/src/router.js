@@ -74,7 +74,14 @@ export default new Router({
     {
     path: "/ocorrencia",
     name: "ocorrencia",
-    component: Ocorrencia
+    component: Ocorrencia,
+    meta: {
+      requiresAuth: true,
+    }
+    },
+    {
+        path: "*",
+        redirect: '/'
     }
   ]
 });

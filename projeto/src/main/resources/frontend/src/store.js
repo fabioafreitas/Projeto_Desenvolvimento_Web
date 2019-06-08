@@ -89,6 +89,17 @@ export default new Vuex.Store({
                         reject(error)
                     });
             })
+        },
+        registrarOcorrencia(context, ocorrencia){
+            return new Promise((resolve, reject) => {
+                http.post("/ocorrencias",ocorrencia)
+                    .then(response => {
+                        resolve(response)
+                    })
+                    .catch(error => {
+                        reject(error)
+                    });
+            })
         }
     },
     getters: {

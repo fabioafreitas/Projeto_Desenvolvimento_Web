@@ -21,10 +21,12 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="/perfil">Usuario Mil Graus</a>
+                  <a class="nav-link" href="/perfil">Usuario Atual</a>
                 </li>
                   <a class="nav-link" href="/servicos"><img class="img_profile" src="../assets/default_user.png"/></a>
+                  <form action="/login">
                   <button @click="sair" class="btn btn-primary">Sair</button>
+                  </form>
               </ul>
             </div>
             
@@ -57,6 +59,7 @@
       methods: {
         sair() {
           this.deslogar()
+          this.$router.push('/login')
         }
       }
     };    
