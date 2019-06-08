@@ -1,22 +1,7 @@
 <template>
     <div class="row no-gutters">
       <div class="col-3 sidebar">
-        <div class="list-group mx-auto">
-
-          <div class="sidebar-header">
-            <a class="navbar-brand" href="/">
-              <img class="logo-brand" src="../assets/logo_mylaert_dark.png"/>
-            </a>
-            <form class="search_dashboard">
-              <input type="text" placeholder="Search..">
-            </form>
-          </div>
-
-          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
-          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
-          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
-          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
-        </div>
+        <Sidebar/>
       </div>
 
       <div class="col-9">
@@ -81,12 +66,13 @@
 import NavbarDash from "./NavbarDashboard.vue";
 import Map from "./MapIndex.vue";
 import AlertElement from "./dashboard/AlertaElement.vue";
+import Sidebar from "./dashboard/SideBar.vue";
 import { mapActions } from 'vuex';
 
 export default {
   components: {
     NavbarDash,
-   // Map,
+    Sidebar
     //AlertElement
   },
   name: "logado",

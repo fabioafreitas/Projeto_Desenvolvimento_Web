@@ -1,31 +1,22 @@
 <template>
     <div class="row no-gutters">
       <div class="col-3 sidebar">
-        <div class="list-group mx-auto">
-
-          <div class="sidebar-header">
-            <a class="navbar-brand" href="/">
-              <img class="logo-brand" src="../assets/logo_mylaert_dark.png"/>
-            </a>
-            <form class="search_dashboard">
-              <input type="text" placeholder="Search..">
-            </form>
-          </div>
-
-          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
-          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
-          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
-          <a href="#" class="list-group-item list-group-item-action">Funcionalidade...</a>
-        </div>
+        <Sidebar/>
       </div>
 
       <div class="col-9">
         <NavbarDash/>
         <div class="container">
           <div class="main_head">
-            <a href="/ocorrencia"><button class="btn btn-dark btn-head btn-main">Registrar Ocorrência</button></a>
-            <button class="btn btn-dark btn-head">Funcionalidade2</button>
-            <button class="btn btn-dark btn-head">Funcionalidade3</button>
+            <button class="btn btn-dark btn-head btn-text">
+              <i class="fas fa-1x fa-cloud-rain mr-2"></i>Tempo
+            </button>
+            <button class="btn btn-dark btn-head btn-text">
+              <i class="fas fa-1x fa-wallet mr-2"></i>Crimes
+            </button>
+            <button class="btn btn-dark btn-head btn-text">
+              <i class="fas fa-1x fa-traffic-light mr-2"></i>Acidentes
+            </button>
           </div>
           
           <div class="row content-dash">
@@ -34,7 +25,7 @@
             </div>
 
             <div class="col-4 latest-occurences">
-              <p class="title-alert-elements">Alertas</p>
+              <p class="title-alert-elements mt-1">Alertas Recentes (10)</p>
               <AlertElement/>
               <AlertElement/>
               <AlertElement/>
@@ -57,12 +48,14 @@
 import NavbarDash from "./NavbarDashboard.vue";
 import Map from "./MapIndex.vue";
 import AlertElement from "./dashboard/AlertaElement.vue";
+import Sidebar from "./dashboard/SideBar.vue";
 
 export default {
   components: {
     NavbarDash,
     Map,
-    AlertElement
+    AlertElement,
+    Sidebar
   },
   name: "logado",
   data() {
@@ -82,7 +75,17 @@ export default {
 };
 </script>
  
-<style>
+<style scoped>
+
+.btn-dark{
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.btn-text{
+  font-size: 18pt;
+  border-radius: 3px;
+}
 
 .logo-brand{
 width: 160px;

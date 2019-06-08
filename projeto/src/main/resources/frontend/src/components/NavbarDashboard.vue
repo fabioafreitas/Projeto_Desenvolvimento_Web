@@ -23,10 +23,18 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/perfil">Usuario Atual</a>
                 </li>
-                  <a class="nav-link" href="/servicos"><img class="img_profile" src="../assets/default_user.png"/></a>
-                  <form action="/login">
-                  <button @click="sair" class="btn btn-primary">Sair</button>
-                  </form>
+                  <div class="btn-group">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img class="w-100" src="../assets/default_user.png">
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">Meu Perfil</a>
+                      <a class="dropdown-item" href="#">Configurações</a>
+                      <a class="dropdown-item" href="#">Ajuda</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Sair</a>
+                    </div>
+                  </div>
               </ul>
             </div>
             
@@ -66,6 +74,16 @@
 </script>
 
 <style scoped>
+
+.dropdown-toggle{
+  width: 50px;
+  background: none;
+  border: none;
+}
+
+.dropdown-toggle:focus{
+  outline: none;
+}
 
 #nav_white{
   margin-top: 5px;
