@@ -174,6 +174,14 @@
             description: 'Veja algumas dúvidas frequentes que os usuários geralmente possuem. Não encontrou sua dúvida? Então entre em contato para mais informações.'
           }
         }
+      },
+      methods: {
+        ...mapMutations([
+          'NAV_ATIVO'
+        ])
+      },
+      created(){
+        this.NAV_ATIVO('duvidas')
       }
     };    
 </script>
