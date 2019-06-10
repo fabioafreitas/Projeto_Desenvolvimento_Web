@@ -59,6 +59,7 @@
               required
               name="senha"
               title="mínimo de 5, máximo de 15 caracteres"
+              :class="{'border border-success': confirmada}"
             >
           </div>
 
@@ -75,6 +76,7 @@
               required
               name="confirmacao_senha"
               title="mínimo de 5, máximo de 15 caracteres"
+              :class="{'border border-success': confirmada}"
             >
           </div>
 
@@ -111,6 +113,7 @@ export default {
     ...mapActions(["cadastrar"]),
     realizarCadastro() {
       this.cadastrar(this.usuario).then(response => {
+        alert('Usuário cadastrado com sucesso!')
         this.$router.push("/login");
       });
     },
@@ -118,10 +121,10 @@ export default {
       if (this.usuario.password == this.confirm) {
         if (this.usuario.password != "") {
           this.confirmada = true
-          alert("Senhas iguais!");
         }
       } else {
         alert("As senhas não conferem!")
+        this.confirmada=false
         return false
       }
     },
