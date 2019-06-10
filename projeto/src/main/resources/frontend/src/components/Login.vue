@@ -9,7 +9,7 @@
       <div class="form-group">
         <label for="email-usuario">Email do usuário</label>
         <input
-                type="text"
+                type="email"
                 placeholder="Digite seu email"
                 class="form-control"
                 id="email-usuario"
@@ -29,6 +29,8 @@
                 required
                 name="senha"
                 v-model="login.password"
+                pattern=".{5,15}"
+                title="mínimo de 5, máximo de 15 caracteres"
         >
       </div>
       <div class="form-group">
@@ -44,8 +46,9 @@
 
 <script>
 //import Login from '../services/login'
-import { mapActions } from 'vuex'
+import { mapActions, mapMutations } from 'vuex'
 import Navbar from "./Navbar.vue";
+import { error } from 'util';
 
 export default {
   components: {
@@ -69,11 +72,19 @@ export default {
     ...mapActions([
       'logar'
     ]),
+    ...mapMutations([
+          'NAV_ATIVO'
+    ]),
     realizarLogin() {
       this.logar(this.login).then(response => {
         this.enderecoLogin=response.headers.Authorization
         this.booleanLogin=response.data
         this.$router.push('/logado')
+      }).catch(error => {
+        alert('Usuario ou senhas incorretos.')
+                        //console.log(error);
+                        //console.log(error.response.data.errorMessage)
+        
       })
       /*Login.realizarLogin(this.login).then(resposta => {
 
@@ -88,7 +99,10 @@ export default {
         this.error = e.response.data.errorMessage
       })*/
     }
-  }
+  },
+   created(){
+        this.NAV_ATIVO('login')
+      }
 };
 </script>
  

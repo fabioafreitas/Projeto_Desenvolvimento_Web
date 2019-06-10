@@ -32,7 +32,7 @@
                       <a class="dropdown-item" href="#">Configurações</a>
                       <a class="dropdown-item" href="#">Ajuda</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Sair</a>
+                      <a class="dropdown-item" @click="sair" href="/login">Sair</a>
                     </div>
                   </div>
               </ul>

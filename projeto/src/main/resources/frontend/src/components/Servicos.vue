@@ -33,7 +33,15 @@ export default {
             title: 'Serviços',
             description: 'A nossa plataforma fornece diversos serviços que visam ajudar as pessoas que estejam em áreas de risco.'
           }
-      }
+        }
+      },
+      methods: {
+        ...mapMutations([
+          'NAV_ATIVO'
+        ])
+      },
+      created(){
+        this.NAV_ATIVO('servicos')
       }
     };    
 </script>

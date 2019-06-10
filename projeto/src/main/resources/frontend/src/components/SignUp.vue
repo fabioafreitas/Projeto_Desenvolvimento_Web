@@ -27,7 +27,10 @@
               id="email-usuario"
               required
               name="numero_cpf"
+              pattern=".{11,11}"
               maxlength="11"
+              title="o cpf deve possuir 11 dígitos"
+              @keyup="checkforms"
             >
           </div>
 
@@ -52,8 +55,10 @@
               placeholder="******"
               class="form-control"
               id="senha-usuario"
+              pattern=".{5,15}"
               required
               name="senha"
+              title="mínimo de 5, máximo de 15 caracteres"
             >
           </div>
 
@@ -66,8 +71,10 @@
               placeholder="******"
               class="form-control"
               id="senha-usuario"
+              pattern=".{5,15}"
               required
               name="confirmacao_senha"
+              title="mínimo de 5, máximo de 15 caracteres"
             >
           </div>
 
@@ -81,7 +88,7 @@
  
 <script>
 import Navbar from "./Navbar.vue";
-import { mapMutations, mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   components: {
@@ -115,7 +122,16 @@ export default {
         }
       } else {
         alert("As senhas não conferem!")
+        return false
       }
+    },
+    checkforms: function() {
+      if(isNaN(this.usuario.cpf)){
+        alert('Digite um CPF válido!')
+        this.usuario.cpf=""
+        return false
+      }
+      return true
     }
     //this.$store.actions.cadastrar
     /* eslint-disable no-console */

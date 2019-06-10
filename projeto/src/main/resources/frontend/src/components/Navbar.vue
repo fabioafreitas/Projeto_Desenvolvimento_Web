@@ -11,24 +11,25 @@
             </button>
             <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <li class="nav-item" v-on:click="setActive('principal')" :class="{ active: isActive('principal')}">
+                <li class="nav-item" :class="{ active: isActive('principal')}">
                   <a class="nav-link" href="/">Página Inicial<span class="sr-only">(Página atual)</span></a>
                 </li>
-                <li class="nav-item" v-on:click="setActive('institucional')" :class="{ active: isActive('institucional')}">
+                <li class="nav-item" :class="{ active: isActive('institucional')}">
                   <a class="nav-link" href="/institucional">Institucional</a>
                 </li>
-                <li class="nav-item" v-on:click="setActive('duvidas')" :class="{ active: isActive('duvidas')}">
+                <li class="nav-item" :class="{ active: isActive('duvidas')}">
                   <a class="nav-link" href="/duvidas">Dúvidas Frequentes</a>
                 </li>
-                <li class="nav-item" v-on:click="setActive('servicos')" :class="{ active: isActive('servicos')}">
+                <li class="nav-item" :class="{ active: isActive('servicos')}">
                   <a class="nav-link" href="/servicos">Serviços</a>
                 </li>
               </ul>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <li v-if="!isLoggedIn" class="active nav-item  mr-2" v-on:click="setActive('login')">
-                  <a href="/login" class="nav-link btn btn-outline-dark border px-3">Login</a>
+                <li v-if="!isLoggedIn" class="active nav-item  mr-2">
+                  <a href="/login" class="nav-link btn btn-outline-secondary border px-3" 
+                  :class="{ 'btn-secondary': isActive('login') }">Login</a>
                 </li>
                 <li v-if="!isLoggedIn" class="nav-item active">
                   <a class="nav-link btn btn-danger" href="/registrar">Registre-se</a>
