@@ -1,6 +1,6 @@
 
 <template>
-  <div id="footer">
+  <div id="footer" class="sticky-bottom">
     <p class="text-center">Copyright&copy; - 2019 - myalert.org</p>
 
     <center> 

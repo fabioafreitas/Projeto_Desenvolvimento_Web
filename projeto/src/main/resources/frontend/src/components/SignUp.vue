@@ -14,6 +14,7 @@
               id="email-usuario"
               required
               name="nome_completo"
+              @keyup="checkformUser"
             >
           </div>
 
@@ -135,6 +136,15 @@ export default {
         return false
       }
       return true
+    },
+    checkformUser: function() {
+      
+    var regex=/^[a-zA-Z]+$/;
+    if (!this.usuario.nome.match(regex))
+    {
+        alert("Nomes não podem ter números!");
+        return false;
+    }
     }
     //this.$store.actions.cadastrar
     /* eslint-disable no-console */

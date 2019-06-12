@@ -1,9 +1,9 @@
 
 <template>
         <div class="about pb-sm-5 pt-sm-5">
-          <div class="container">
-            <img class="icon-med pt-2" src="../../assets/conected.png"/>
-            <article class="float-right">
+          <div class="container d-sm-inline d-lg-block">
+            <img class="icon-med pt-2 img-fluid" src="../../assets/conected.png"/>
+            <article class="float-lg-right ">
               <p class="text-justify p-section-icon">
               Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.
               Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi.
@@ -13,7 +13,7 @@
               Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi.
               At nos hinc posthac, sitientis piros Afros.
               </p>
-              <button class="mt-3 btn btn-primary">Saiba mais</button>
+              <button class="mt-3 mb-3 btn btn-primary">Saiba mais</button>
             </article>
           </div>
         </div>
