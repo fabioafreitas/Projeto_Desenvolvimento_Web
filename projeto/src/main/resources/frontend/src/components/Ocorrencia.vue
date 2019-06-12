@@ -34,6 +34,7 @@
                                 type="date"
                                 v-model="ocorrencia.date"
                                 required
+                                :max="hoje"
                               >
                               <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
@@ -87,7 +88,8 @@ export default {
         categoria:"Enchente",
         imagens:null
       },
-      submitted: true
+      submitted: true,
+      hoje:""
     };
   },
   methods: {
@@ -96,11 +98,30 @@ export default {
     ]),
     cadastroOcorrencia() {
       this.registrarOcorrencia(this.ocorrencia).then(response => {
-       
+       alert('Ocorrência registrada com sucesso!')
       })
+    },
+    dataHoje: function(){
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0!
+      var yyyy = today.getFullYear();
+      if(dd<10){
+         dd='0'+dd
+      } 
+      if(mm<10){
+         mm='0'+mm
+      } 
+      today = yyyy+'-'+mm+'-'+dd;
+      this.hoje=today
+      //return today
     }
     /* eslint-disable no-console */
     /* eslint-enable no-console */
+  },
+  created(){
+  this.dataHoje()
+  console.log(this.hoje)
   }
 };
 </script>
