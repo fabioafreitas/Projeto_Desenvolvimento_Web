@@ -10,6 +10,7 @@ import Index from "./components/Index.vue";
 import Sobre from "./components/Sobre.vue";
 import Servicos from "./components/Servicos.vue";
 import Ocorrencia from "./components/Ocorrencia.vue";
+import Profile from "./components/Profile.vue";
 
 
 Vue.use(Router);
@@ -70,6 +71,11 @@ export default new Router({
       path: "/",
       name: "index",
       component: Index
+    },
+    {
+      path: "/profile",
+      name: "profile",
+      component: Profile
     },
     {
     path: "/ocorrencia",

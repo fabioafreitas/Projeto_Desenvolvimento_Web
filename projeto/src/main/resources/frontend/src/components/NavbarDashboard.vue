@@ -21,14 +21,15 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="/perfil">Usuario Atual</a>
+                  <a class="nav-link" href="/">Usuario Atual</a>
                 </li>
                   <div class="btn-group">
                     <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <img class="w-100" src="../assets/default_user.png">
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item" href="#">Meu Perfil</a>
+                      <a class="dropdown-item" href="/logado">Página Inicial</a>
+                      <a class="dropdown-item" href="/profile">Meu Perfil</a>
                       <a class="dropdown-item" href="#">Configurações</a>
                       <a class="dropdown-item" href="#">Ajuda</a>
                       <div class="dropdown-divider"></div>
