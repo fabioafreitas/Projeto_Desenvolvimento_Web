@@ -5,13 +5,12 @@
             <img class="icon-med pt-2 img-fluid" src="../../assets/conected.png"/>
             <article class="float-lg-right ">
               <p class="text-justify p-section-icon">
-              Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.
-              Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi.
-              At nos hinc posthac, sitientis piros Afros.
-              Petierunt uti sibi concilium totius Galliae in diem certam indicere.
-              Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.
-              Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi.
-              At nos hinc posthac, sitientis piros Afros.
+              O MyAlert é uma aplicação inteligente que automatiza o serviço de comunicação de órgãos do
+              governo, afim de alertar os usuários que estão em situação de risco. Aqui, é possível alertar
+              e também se informar sobre problemas naturais que acontecem no dia a dia, como por exemplo
+              alagamentos, deslizamentos, incêndios, temporais, etc. Desta forma, unificamos diversos órgãos, 
+              que são responsáveis por cada um destes problemas, filtramos as ocorrências registradas na plataforma,
+              e direcinamos para os destinatários corretos.
               </p>
               <button class="mt-3 mb-3 btn btn-primary">Saiba mais</button>
             </article>

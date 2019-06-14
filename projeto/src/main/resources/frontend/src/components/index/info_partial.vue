@@ -5,14 +5,10 @@
             <article class="mt-4 float-lg-right">
               <p class="text-justify p-section-icon ">
       
-              Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.
-              Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi.
-              At nos hinc posthac, sitientis piros Afros.
-              Petierunt uti sibi concilium totius Galliae in diem certam indicere.
-              Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.
-              Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi.
-              At nos hinc posthac, sitientis piros Afros.
-              Donec sed odio operae, eu vulputate felis rhoncus. 
+              Apesar de ser uma aplicação Web, visto que é uma plataforma responsiva, também é possível
+              acessar realizar todos os serviços, de onde estiver diretamente do seu aparelho celular.
+              Para acessar a plataforma, basta clicar no botão abaixo e realizar seu cadastro gratuitamente.
+              
               </p>
             </article>
           </div>
