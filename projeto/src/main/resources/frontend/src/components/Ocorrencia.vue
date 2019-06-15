@@ -21,33 +21,33 @@
                                required
                               >
                           </div>          
-                        </div>
+                        </div> <br>
                           <label for="exampleFormControlSelect1">Selecione uma imagem:</label>
                           <br/>
                             <input 
                               type="file" 
                               multiple
                             >
-                            <br/>
-                              <label for="exampleFormControlTextarea1">Informe a data:</label>
+                            <br/> <br>
+                              <label for="exampleFormControlTextarea1">Informe a data:</label> <br>
                               <input 
                                 type="date"
                                 v-model="ocorrencia.date"
                                 required
                                 :max="hoje"
-                              >
+                              > <br> <br>
                               <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                               </div>
-                              <button class="btn btn-primary">Registrar Ocorrencia</button>
+                              <button class="btn btn-primary">Registrar Ocorrência</button>
                                 </form>
                         </div>
                         <div class="col">
                                 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-                                <div class="card-header">Atenção!</div>
+                                <div class="card-header"><h4>Avisos</h4></div>
                                 <div class="card-body">
-                                <h5 class="card-title">Danger card title</h5>
+                                <h5 class="card-title">Atenção!</h5>
                                 <p class="card-text">Ao registrar uma ocorrência
                                                 você garante que essas informações sejam verdadeiras e que
                                                 a falsificação da mesma pode configurar crime de acordo com
