@@ -1,13 +1,15 @@
 package br.ufrpe.myalert.controllers;
 
-import br.ufrpe.myalert.dao.LoginDAO;
 import br.ufrpe.myalert.models.Login;
 import br.ufrpe.myalert.models.Usuario;
+import br.ufrpe.myalert.services.LoginService;
 import br.ufrpe.myalert.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 //@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin("*")
@@ -16,8 +18,18 @@ import org.springframework.web.bind.annotation.*;
 class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
+
     @Autowired
-    private LoginDAO loginDAO;
+    private LoginService loginService;
+
+    @GetMapping
+    public ResponseEntity<?> getAll() {
+        List<Usuario> list = usuarioService.getAll();
+        if(list.isEmpty()) {
+            return new ResponseEntity<>("Não há usuários cadastrados!", HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
 
     @GetMapping("/{cpf}")
     public ResponseEntity<?> getByCpf(@PathVariable("cpf") String cpf) {
@@ -29,30 +41,38 @@ class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody Usuario usuario) {
-        Usuario usuarioAux = usuarioService.create(usuario);
-        Login login = loginDAO.save(new Login(usuario.getUsername(), usuario.getPassword()));
-        if(usuarioAux == null) {
+    public ResponseEntity<?> save(@RequestBody Usuario usuario) {
+        Usuario usuarioAux = usuarioService.getByCpf(usuario.getCpf());
+        if(usuarioAux != null) {
             return new ResponseEntity<>("Usuário já cadastrado", HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(usuarioAux, HttpStatus.OK);
+        Login loginAux = loginService.getByUsername(usuario.getUsername());
+        if(loginAux != null) {
+            return new ResponseEntity<>("Login já cadastrado", HttpStatus.BAD_REQUEST);
+        }
+        Login loginNovo = loginService.save(new Login(usuario.getUsername(), usuario.getPassword()));
+        usuario.setPassword("");
+        Usuario usuarioNovo = usuarioService.save(usuario);
+        return new ResponseEntity<>(usuarioNovo, HttpStatus.OK);
     }
 
     @PutMapping
     public ResponseEntity<?> update(@RequestBody Usuario usuario) {
-        Usuario usuarioAux = usuarioService.update(usuario);
+        Usuario usuarioAux = usuarioService.getByCpf(usuario.getCpf());
         if(usuarioAux == null) {
             return new ResponseEntity<>("Usuário não está cadastrado", HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(usuarioAux, HttpStatus.OK);
+        usuario.setId(usuarioAux.getId());
+        return new ResponseEntity<>(usuarioService.update(usuario), HttpStatus.OK);
     }
 
     @DeleteMapping
     public ResponseEntity<?> delete(@RequestBody Usuario usuario) {
-        boolean deletado = usuarioService.delete(usuario);
-        if(!deletado) {
-            return new ResponseEntity<>("Usuario não existe para ser deletado", HttpStatus.BAD_REQUEST);
+        Usuario usuarioAux = usuarioService.getByCpf(usuario.getCpf());
+        if(usuarioAux == null) {
+            return new ResponseEntity<>("Usuario não está cadastrado", HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(deletado, HttpStatus.OK);
+        usuarioService.delete(usuarioAux);
+        return new ResponseEntity<>("Usuario deletado", HttpStatus.OK);
     }
 }

@@ -97,7 +97,7 @@
                 aria-labelledby="headingThree"
                 data-parent="#accordion"
               >
-                <div class="card-body">Entre em contato conosco através do ... e escreva sua dúvida ou sugestão</div>
+                <div class="card-body">Entre em telefone conosco através do ... e escreva sua dúvida ou sugestão</div>
               </div>
             </div>
 
@@ -189,7 +189,7 @@ export default {
       pageHeader: {
         title: "Dúvidas",
         description:
-          "Veja algumas dúvidas frequentes que os usuários geralmente possuem. Não encontrou sua dúvida? Então entre em contato para mais informações."
+          "Veja algumas dúvidas frequentes que os usuários geralmente possuem. Não encontrou sua dúvida? Então entre em telefone para mais informações."
       }
     };
   },

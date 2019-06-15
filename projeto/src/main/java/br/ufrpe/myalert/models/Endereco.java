@@ -19,6 +19,9 @@ public class Endereco {
         this.uf = uf;
     }
 
+    public Endereco() {
+    }
+
     public Endereco(String cep) {
         this.cep = cep;
     }

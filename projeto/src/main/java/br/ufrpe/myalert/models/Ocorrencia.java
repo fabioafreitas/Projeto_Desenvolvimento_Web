@@ -9,23 +9,33 @@ import java.util.List;
 @Document(collection = "ocorrencia")
 public class Ocorrencia {
     @Id
-    private String id;
+    private String id;//
     private String cpf;
     private String titulo;
-    private String date;
-    private String number;
-    private String endereco;
-    private String categoria;
+    private String descricao;
+    private Date date;
+    private int urgencia;
+    private Endereco localizacao;
+    private int categoria;
     private String imagens;
 
-    public Ocorrencia(String cpf, String titulo, String date, String number, String endereco, String categoria, String imagens) {
+    public Ocorrencia(String cpf, String titulo, String descricao, Date date, int urgencia, Endereco localizacao, int categoria, String imagens) {
         this.cpf = cpf;
         this.titulo = titulo;
+        this.descricao = descricao;
         this.date = date;
-        this.number = number;
-        this.endereco = endereco;
+        this.urgencia = urgencia;
+        this.localizacao = localizacao;
         this.categoria = categoria;
         this.imagens = imagens;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCpf() {
@@ -44,35 +54,43 @@ public class Ocorrencia {
         this.titulo = titulo;
     }
 
-    public String getDate() {
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getNumber() {
-        return number;
+    public int getUrgencia() {
+        return urgencia;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setUrgencia(int urgencia) {
+        this.urgencia = urgencia;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public Endereco getLocalizacao() {
+        return localizacao;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setLocalizacao(Endereco localizacao) {
+        this.localizacao = localizacao;
     }
 
-    public String getCategoria() {
+    public int getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(int categoria) {
         this.categoria = categoria;
     }
 
