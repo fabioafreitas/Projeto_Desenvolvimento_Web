@@ -1,33 +1,56 @@
 package br.ufrpe.myalert.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
-import java.util.List;
 
 @Document(collection = "ocorrencia")
 public class Ocorrencia {
+    public enum Urgencia {
+        URGENTE (5), ALTA    (4),
+        NORMAL  (3), BAIXA   (2),
+        MINIMA  (1);
+
+        private final int nivel;
+
+        Urgencia(int nivel) {
+            this.nivel = nivel;
+        }
+
+        public int getNivel() {
+            return nivel;
+        }
+    }
+
+
     @Id
-    private String id;//
+    private String id;
     private String cpf;
     private String titulo;
     private String descricao;
-    private Date date;
-    private int urgencia;
+
+    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
+    private Date data;
+
+    private Urgencia urgencia;
     private Endereco localizacao;
     private int categoria;
-    private String imagens;
+    private String imagens; //TODO
 
-    public Ocorrencia(String cpf, String titulo, String descricao, Date date, int urgencia, Endereco localizacao, int categoria, String imagens) {
+    public Ocorrencia(String cpf, String titulo, String descricao, Date data, Urgencia urgencia, Endereco localizacao, int categoria, String imagens) {
         this.cpf = cpf;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.date = date;
+        this.data = data;
         this.urgencia = urgencia;
         this.localizacao = localizacao;
         this.categoria = categoria;
         this.imagens = imagens;
+    }
+
+    public Ocorrencia() {
     }
 
     public String getId() {
@@ -62,19 +85,19 @@ public class Ocorrencia {
         this.descricao = descricao;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getData() {
+        return data;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(Date data) {
+        this.data = data;
     }
 
-    public int getUrgencia() {
+    public Urgencia getUrgencia() {
         return urgencia;
     }
 
-    public void setUrgencia(int urgencia) {
+    public void setUrgencia(Urgencia urgencia) {
         this.urgencia = urgencia;
     }
 
