@@ -21,6 +21,10 @@ public class UsuarioService {
         return usuarioDAO.getByCpf(cpf);
     }
 
+    public Usuario getByUsername(String usernae) {
+        return usuarioDAO.getByUsername(usernae);
+    }
+
     public Usuario save(Usuario usuario) {
         return usuarioDAO.save(usuario);
     }

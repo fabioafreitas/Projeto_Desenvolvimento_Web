@@ -24,11 +24,11 @@
                                 </div>
 
                                 <div class="col-4">
-                                        <h5>Nome: </h5>
-                                        <h5>Email: </h5>
-                                        <h5>Naturalidade: </h5>
-                                        <h5>Endereço: </h5>
-                                        <h5>Naturalidade </h5>
+                                        <h5> {{usuario.username}} </h5>
+                                        <h5>  {{usuario.username}} </h5>
+                                        <h5>  {{usuario.username}} </h5>
+                                        <h5>  {{usuario.password}} </h5>
+                                        <h5> {{usuario.password}} </h5>
                                 </div>
                         </div>
                         
@@ -100,26 +100,18 @@ export default {
   name: "logado",
   data() {
     return {
-      ocorrencia: {
-        cpf: "123",
-        titulo:"",
-        date:"",
-        numero:"",
-        endereco:"Rua 2 irmaos",
-        categoria:"Enchente",
-        imagens:null
-      },
+      usuario: JSON.parse(localStorage.getItem('acess_user')),
       submitted: true,
       hoje:""
     };
   },
   methods: {
     ...mapActions([
-      'registrarOcorrencia'
+      'getUsuario'
     ]),
-    cadastroOcorrencia() {
-      this.registrarOcorrencia(this.ocorrencia).then(response => {
-       alert('Ocorrência registrada com sucesso!')
+    getData() {
+      this.getUsuario(this.usuario.username).then(response => {
+        
       })
     },
     dataHoje: function(){
