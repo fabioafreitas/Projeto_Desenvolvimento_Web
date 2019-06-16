@@ -9,4 +9,6 @@ import java.util.List;
 public interface UsuarioDAO extends MongoRepository<Usuario, String>{
     public Usuario getByCpf(String cpf);
     public List<Usuario> getByEndereco(Endereco endereco);
+
+    public Usuario getByUsername(String username);
 }
