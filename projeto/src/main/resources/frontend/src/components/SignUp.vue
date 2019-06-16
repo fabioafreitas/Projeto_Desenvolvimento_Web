@@ -14,7 +14,7 @@
               id="email-usuario"
               required
               name="nome_completo"
-              @keyup="checkformUser"
+              v-on:blur="checkNomeValido"
             >
           </div>
 
@@ -31,7 +31,7 @@
               pattern=".{11,11}"
               maxlength="11"
               title="o cpf deve possuir 11 dígitos"
-              @keyup="checkforms"
+              v-on:blur="checkCpfValido"
             >
           </div>
 
@@ -45,6 +45,7 @@
               id="email-usuario"
               required
               name="email"
+              v-on:blur="checkEmailValido"
             >
           </div>
 
@@ -88,7 +89,7 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 import Navbar from "./Navbar.vue";
 import { mapActions } from "vuex";
@@ -118,6 +119,35 @@ export default {
         this.$router.push("/login");
       });
     },
+    checkCpfValido: function() {
+      if(isNaN(this.usuario.cpf)){
+        alert('Digite um CPF válido!')
+        this.usuario.cpf=""
+        return false
+      }
+      return true
+    },
+    checkNomeValido: function() {
+      var regex= /^(?![\s.]+$)[a-zA-Z\s.]*$/;
+      if (!this.usuario.nome.match(regex))
+      {
+          alert("Nomes não podem ter números!");
+          return false;
+      }
+    },
+    checkEmailValido: function() {
+      var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/;
+      if (!this.usuario.username.match(regex)) {
+        alert("Email inválido");
+        return false;
+      }
+    }
+    //this.$store.actions.cadastrar
+    /* eslint-disable no-console */
+    /* eslint-enable no-console */
+  },
+
+  computed: {
     compararSenha: function() {
       if (this.usuario.password == this.confirm) {
         if (this.usuario.password != "") {
@@ -128,35 +158,11 @@ export default {
         this.confirmada=false
         return false
       }
-    },
-    checkforms: function() {
-      if(isNaN(this.usuario.cpf)){
-        alert('Digite um CPF válido!')
-        this.usuario.cpf=""
-        return false
-      }
-      return true
-    },
-    checkformUser: function() {
-      
-    var regex=/^[a-zA-Z]+$/;
-    if (!this.usuario.nome.match(regex))
-    {
-        alert("Nomes não podem ter números!");
-        return false;
     }
-    }
-    //this.$store.actions.cadastrar
-    /* eslint-disable no-console */
-    /* eslint-enable no-console */
-  },
-
-  computed: {
-    
   }
 };
 </script>
- 
+
 <style>
 .submitform {
   max-width: 400px;
