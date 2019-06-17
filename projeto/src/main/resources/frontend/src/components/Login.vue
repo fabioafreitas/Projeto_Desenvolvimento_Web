@@ -45,10 +45,8 @@
 </template>
 
 <script>
-//import Login from '../services/login'
 import { mapActions, mapMutations } from 'vuex'
 import Navbar from "./Navbar.vue";
-import { error } from 'util';
 
 export default {
   components: {
@@ -82,30 +80,15 @@ export default {
         this.$router.push('/logado')
       }).catch(error => {
         alert('Usuario ou senhas incorretos.')
-                        //console.log(error);
-                        //console.log(error.response.data.errorMessage)
-        
       })
-      /*Login.realizarLogin(this.login).then(resposta => {
-
-        this.booleanLogin = resposta.data
-        if(this.booleanLogin) {
-          //this.LOGOU(booleanLogin)
-          this.LOGOU(true)
-          this.$router.push('/logado')
-          //this.enderecoLogin = "/logado"
-        }
-      }).catch(e => {
-        this.error = e.response.data.errorMessage
-      })*/
     }
   },
-   created(){
+  created(){
         this.NAV_ATIVO('login')
       }
 };
 </script>
- 
+
 <style>
 
         .login{

@@ -8,7 +8,8 @@ export default new Vuex.Store({
     state: {
         token: localStorage.getItem('access_token') || null,
         navActive: 'principal',
-        logado: false
+        logado: false,
+        usuario: null
     },
     mutations: {
         NAV_ATIVO: (state, menuItem) => {
@@ -50,9 +51,12 @@ export default new Vuex.Store({
                         var a = tokens.split(' ')[1]
                         //var a = tokens.split(' ')[1]
                         localStorage.setItem('access_token', a)
+
+                        localStorage.setItem('acess_user', response.config.data)
+
                         context.commit('retrieveToken', a)
                         //this.LOGOU(true)
-                        context.commit("LOGOU", response.data)
+                        context.commit("LOGOU", response.url)
                         //console.log(response)
                         //this.usuario.id = response.data.id;
                         resolve(response)
@@ -94,6 +98,17 @@ export default new Vuex.Store({
             http.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token 
             return new Promise((resolve, reject) => {
                 http.post("/ocorrencias",ocorrencia)
+                    .then(response => {
+                        resolve(response)
+                    })
+                    .catch(error => {
+                        reject(error)
+                    });
+            })
+        },
+        getUsuario(context, email) {
+            return new Promise((resolve, reject) => {
+                http.post("/profile", email)
                     .then(response => {
                         resolve(response)
                     })

@@ -9,13 +9,19 @@
         <div class="container">
           <div class="main_head">
             <button class="btn btn-dark btn-head btn-text">
-              <i class="fas fa-1x fa-cloud-rain mr-2"></i>Tempo
+              <span class=" fas fa-1x fa-cloud-rain badge badge-danger"> 3 </span> Tempo
             </button>
             <button class="btn btn-dark btn-head btn-text">
-              <i class="fas fa-1x fa-wallet mr-2"></i>Crimes
+              <span class=" fas fa-1x fa-wallet badge badge-danger"> 4 </span> Crimes
             </button>
             <button class="btn btn-dark btn-head btn-text">
-              <i class="fas fa-1x fa-traffic-light mr-2"></i>Acidentes
+              <span class=" fas fa-1x fa-traffic-light badge badge-danger"> 5 </span> Acidentes
+            </button>
+            <button class="btn btn-dark btn-head btn-text">
+              <span class=" fas fa-1x fa-traffic-light badge badge-danger"> 4 </span> Acidentes
+            </button>
+            <button class="btn btn-dark btn-head btn-text">
+              <span class=" fas fa-1x fa-traffic-light badge badge-danger"> 2 </span> Acidentes
             </button>
           </div>
           
@@ -83,7 +89,7 @@ export default {
 }
 
 .btn-text{
-  font-size: 18pt;
+  font-size: 16pt;
   border-radius: 3px;
 }
 

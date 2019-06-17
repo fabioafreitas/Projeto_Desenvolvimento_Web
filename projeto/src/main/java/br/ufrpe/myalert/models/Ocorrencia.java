@@ -1,31 +1,64 @@
 package br.ufrpe.myalert.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
-import java.util.List;
 
 @Document(collection = "ocorrencia")
 public class Ocorrencia {
+    public enum Urgencia {
+        URGENTE (5), ALTA    (4),
+        NORMAL  (3), BAIXA   (2),
+        MINIMA  (1);
+
+        private final int nivel;
+
+        Urgencia(int nivel) {
+            this.nivel = nivel;
+        }
+
+        public int getNivel() {
+            return nivel;
+        }
+    }
+
+
     @Id
     private String id;
     private String cpf;
     private String titulo;
-    private String date;
-    private String number;
-    private String endereco;
-    private String categoria;
-    private String imagens;
+    private String descricao;
 
-    public Ocorrencia(String cpf, String titulo, String date, String number, String endereco, String categoria, String imagens) {
+    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
+    private Date data;
+
+    private Urgencia urgencia;
+    private Endereco localizacao;
+    private int categoria;
+    private String imagens; //TODO
+
+    public Ocorrencia(String cpf, String titulo, String descricao, Date data, Urgencia urgencia, Endereco localizacao, int categoria, String imagens) {
         this.cpf = cpf;
         this.titulo = titulo;
-        this.date = date;
-        this.number = number;
-        this.endereco = endereco;
+        this.descricao = descricao;
+        this.data = data;
+        this.urgencia = urgencia;
+        this.localizacao = localizacao;
         this.categoria = categoria;
         this.imagens = imagens;
+    }
+
+    public Ocorrencia() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCpf() {
@@ -44,35 +77,43 @@ public class Ocorrencia {
         this.titulo = titulo;
     }
 
-    public String getDate() {
-        return date;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public String getNumber() {
-        return number;
+    public Date getData() {
+        return data;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setDate(Date data) {
+        this.data = data;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public Urgencia getUrgencia() {
+        return urgencia;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setUrgencia(Urgencia urgencia) {
+        this.urgencia = urgencia;
     }
 
-    public String getCategoria() {
+    public Endereco getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(Endereco localizacao) {
+        this.localizacao = localizacao;
+    }
+
+    public int getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(int categoria) {
         this.categoria = categoria;
     }
 

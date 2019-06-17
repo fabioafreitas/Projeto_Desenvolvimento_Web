@@ -2,7 +2,7 @@
         <div class="list-group mx-auto">
 
           <div class="sidebar-header">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/logado">
               <img class="logo-brand" src="../../assets/logo_mylaert_dark.png"/>
             </a>
             <form class="search_dashboard">
