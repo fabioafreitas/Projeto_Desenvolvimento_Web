@@ -54,6 +54,9 @@ export default new Vuex.Store({
 
                         localStorage.setItem('acess_user', response.config.data)
 
+                        console.log(response)
+                        
+
                         context.commit('retrieveToken', a)
                         //this.LOGOU(true)
                         context.commit("LOGOU", response.url)
@@ -75,6 +78,7 @@ export default new Vuex.Store({
                 //takvez colocar num new promise para apagar do backend o token
                 //aí colocar as duas linhas no sucesso e no erro
                 localStorage.removeItem('access_token')
+                localStorage.removeItem('acess_user')
                 context.commit('destroyToken')
 
             }

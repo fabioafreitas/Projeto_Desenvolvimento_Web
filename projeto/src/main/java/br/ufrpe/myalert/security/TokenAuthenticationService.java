@@ -27,6 +27,12 @@ public class TokenAuthenticationService {
                 .compact();
 
         response.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+        try {
+            response.getWriter().write("Testando resposta do login: "+username);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     static Authentication getAuthentication(HttpServletRequest request) {

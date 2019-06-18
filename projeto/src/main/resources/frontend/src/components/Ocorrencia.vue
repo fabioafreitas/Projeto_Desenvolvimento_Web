@@ -10,15 +10,15 @@
             <h5 class="mb-4">Registrar Ocorrência</h5>
               <div class="row">
                 <div class="col-9">
-                   <form action="#" @submit.prevent="cadastroOcorrencia" class="form_ocorrencia mb-4">
+                    <form action="#" @submit.prevent="cadastroOcorrencia" class="form_ocorrencia mb-4">
                         <div class="form-row">
                           <div class="col">
                               <input
-                               type="text"
-                               class="form-control" 
-                               v-model="ocorrencia.titulo" 
-                               placeholder="Título da Ocorrência"
-                               required
+                              type="text"
+                              class="form-control" 
+                              v-model="ocorrencia.titulo" 
+                              placeholder="Título da Ocorrência"
+                              required
                               >
                           </div>          
                         </div> <br>
@@ -38,7 +38,11 @@
                               > <br> <br>
                               <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea 
+                                v-model="ocorrencia.descricao"
+                                class="form-control" 
+                                id="exampleFormControlTextarea1" 
+                                rows="3"></textarea>
                               </div>
                               <button class="btn btn-primary">Registrar Ocorrência</button>
                                 </form>
@@ -80,13 +84,14 @@ export default {
   data() {
     return {
       ocorrencia: {
-        cpf: "123",
-        titulo:"",
-        date:"",
-        numero:"",
-        endereco:"Rua 2 irmaos",
-        categoria:"Enchente",
-        imagens:null
+        cpf: '',
+        titulo: '',///////
+        descricao: '', //////////
+        date: '',///////////
+        numero: '',
+        endereco: '',
+        categoria: '',
+        imagens: {}
       },
       submitted: true,
       hoje:""
