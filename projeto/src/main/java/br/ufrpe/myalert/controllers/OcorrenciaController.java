@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -54,4 +55,14 @@ public class OcorrenciaController {
     }
 
     //TODO put e delete
+
+    @PostMapping("/codecipe")
+    public String getCodecipe(@RequestBody Ocorrencia ocorrencia) {
+        final String uri = "http://localhost:10101/codecipe";
+
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(uri, String.class);
+
+        return result;
+    }
 }
