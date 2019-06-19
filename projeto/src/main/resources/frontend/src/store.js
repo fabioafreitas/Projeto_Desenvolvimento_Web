@@ -9,7 +9,8 @@ export default new Vuex.Store({
         token: localStorage.getItem('access_token') || null,
         navActive: 'principal',
         logado: false,
-        usuario: null
+        usuario: null,
+        username: null
     },
     mutations: {
         NAV_ATIVO: (state, menuItem) => {
@@ -23,6 +24,12 @@ export default new Vuex.Store({
         },
         destroyToken(state) {
             state.token = null
+        },
+        retrieveUsername(state, username){
+            state.username = username
+        },
+        retrieveUser(state, usuario){
+            state.usuario = usuario
         }
     },
     actions: {
@@ -52,12 +59,13 @@ export default new Vuex.Store({
                         //var a = tokens.split(' ')[1]
                         localStorage.setItem('access_token', a)
 
-                        localStorage.setItem('acess_user', response.config.data)
+                        localStorage.setItem('access_user', response.config.data)
 
                         console.log(response)
                         
 
                         context.commit('retrieveToken', a)
+                        context.commit('retrieveUsername',data.username)
                         //this.LOGOU(true)
                         context.commit("LOGOU", response.url)
                         //console.log(response)
@@ -78,7 +86,7 @@ export default new Vuex.Store({
                 //takvez colocar num new promise para apagar do backend o token
                 //aí colocar as duas linhas no sucesso e no erro
                 localStorage.removeItem('access_token')
-                localStorage.removeItem('acess_user')
+                localStorage.removeItem('access_user')
                 context.commit('destroyToken')
 
             }
@@ -87,13 +95,9 @@ export default new Vuex.Store({
             return new Promise((resolve, reject) => {
                 http.post("/usuarios", pessoa)
                     .then(response => {
-                        //context.commit("LOGOU", response.data)
-                        
                         resolve(response)
-                        //console.log(response.data);
                     })
                     .catch(error => {
-                        //console.log(error);
                         reject(error)
                     });
             })
@@ -111,14 +115,22 @@ export default new Vuex.Store({
             })
         },
         getUsuario(context, email) {
+            http.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
             return new Promise((resolve, reject) => {
-                http.post("/profile", email)
+                http.get('/profile',{
+                    params:{
+                        email: email
+                    }
+                })
                     .then(response => {
+                        context.commit('retrieveUser',response.data)
+                        //localStorage.setItem('access_user', response.data)
                         resolve(response)
                     })
                     .catch(error => {
                         reject(error)
                     });
+
             })
         }
     },
@@ -128,6 +140,12 @@ export default new Vuex.Store({
         },
         isLoggedIn(state) {
             return state.token != null
+        },
+        getUsername(state) {
+            return state.username
+        },
+        getUser(state) {
+            return state.usuario
         }
     }
 })

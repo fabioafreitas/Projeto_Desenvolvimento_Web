@@ -89,7 +89,7 @@ import NavbarDash from "./NavbarDashboard.vue";
 import Map from "./MapIndex.vue";
 import AlertElement from "./dashboard/AlertaElement.vue";
 import Sidebar from "./dashboard/SideBar.vue";
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -100,7 +100,8 @@ export default {
   name: "logado",
   data() {
     return {
-      usuario: JSON.parse(localStorage.getItem('acess_user')),
+      usuario: JSON.parse(localStorage.getItem('access_user')),
+
       submitted: true,
       hoje:""
     };
@@ -108,6 +109,9 @@ export default {
   methods: {
     ...mapActions([
       'getUsuario'
+    ]),
+    ...mapGetters([
+      'getUser'
     ]),
     getData() {
       this.getUsuario(this.usuario.username).then(response => {

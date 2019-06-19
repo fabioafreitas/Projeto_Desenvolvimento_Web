@@ -1,7 +1,11 @@
 package br.ufrpe.myalert.security;
 
+import br.ufrpe.myalert.models.Usuario;
+import br.ufrpe.myalert.services.LoginService;
+import br.ufrpe.myalert.services.UsuarioService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
@@ -27,6 +31,10 @@ public class TokenAuthenticationService {
                 .compact();
 
         response.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+
+        //UsuarioService usuarioService = new UsuarioService();
+        //Usuario usuario = new Usuario();
+        //usuario = usuarioService.getByUsername()
         try {
             response.getWriter().write("Testando resposta do login: "+username);
         } catch (IOException e) {

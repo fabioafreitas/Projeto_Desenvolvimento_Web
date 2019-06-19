@@ -55,6 +55,7 @@ import NavbarDash from "./NavbarDashboard.vue";
 import Map from "./MapIndex.vue";
 import AlertElement from "./dashboard/AlertaElement.vue";
 import Sidebar from "./dashboard/SideBar.vue";
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -71,12 +72,32 @@ export default {
         name: "",
         active: false
       },
+      email:"",
       submitted: true
     };
   },
   methods: {
+    ...mapActions([
+      'getUsuario'
+    ]),
+    ...mapGetters([
+      'getUsername'
+    ]),
+    getPerfil: function () {
+      this.email = this.getUsername()
+      console.log(this.email+" email dsadsadsa")
+      this.getUsuario(this.email).then(response =>{
+        usuario = response.data
+        console.log(response)
+      }).catch(error =>{
+
+      })
+    }
     /* eslint-disable no-console */
     /* eslint-enable no-console */
+  },
+  mounted() {
+    this.getPerfil()
   }
 };
 </script>
