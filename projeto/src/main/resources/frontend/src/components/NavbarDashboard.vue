@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="/">Usuario Atual</a>
+                  <a class="nav-link" href="/" >Usuario</a>
                 </li>
                   <div class="btn-group">
                     <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,7 +51,8 @@
       name: "navbar",
       data(){
         return {
-          active: this.isActive
+          active: this.isActive,
+          usuario:this.getUser
         }
       },
       computed: {
@@ -59,7 +60,7 @@
           'navActive'
         ]),
         ...mapGetters([
-          'isActive', 'isLoggedIn'
+          'isActive', 'isLoggedIn', 'getUser'
         ]),
         ...mapActions([
           'deslogar'
@@ -70,6 +71,9 @@
           this.deslogar()
           this.$router.push('/login')
         }
+      },
+      created(){
+
       }
     };    
 </script>

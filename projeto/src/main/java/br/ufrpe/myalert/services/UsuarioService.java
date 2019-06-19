@@ -21,8 +21,8 @@ public class UsuarioService {
         return usuarioDAO.getByCpf(cpf);
     }
 
-    public Usuario getByUsername(String usernae) {
-        return usuarioDAO.getByUsername(usernae);
+    public Usuario getByUsername(String username) {
+        return usuarioDAO.findByUsername(username);
     }
 
     public Usuario save(Usuario usuario) {

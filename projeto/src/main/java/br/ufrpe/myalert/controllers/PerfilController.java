@@ -15,8 +15,8 @@ public class PerfilController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping("/{email}")
-    public ResponseEntity<?> getByUsername(@PathVariable("email") String email) {
+    @GetMapping
+    public ResponseEntity<?> getByUsername(@RequestParam("email") String email) {
         Usuario usuario = usuarioService.getByUsername(email);
         if(usuario == null) {
             return new ResponseEntity<>("Usuario não encontrado!", HttpStatus.NOT_FOUND);
