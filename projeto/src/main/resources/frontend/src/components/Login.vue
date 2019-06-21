@@ -96,6 +96,8 @@ export default {
           width: 100%;
           min-height: 500px;
           color: #424242;
+          padding: 35px;
+          border: 1px solid #e5e5e5;
         }
 
         .submitform {

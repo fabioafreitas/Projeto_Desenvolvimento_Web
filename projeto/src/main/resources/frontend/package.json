@@ -16,6 +16,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^2.6.5",
     "express": "^4.17.1",
+    "http2": "^3.3.7",
     "jquery": "^3.4.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",

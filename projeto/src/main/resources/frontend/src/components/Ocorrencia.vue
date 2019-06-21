@@ -148,19 +148,6 @@ margin: 10px;
   padding: 20px;
 }
 
-.search_dashboard input{
-  width: 250px;
-  height: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid #cecece;
-  border-radius: 40px;
-}
-
-.search_dashboard input:focus{
-  outline: none;
-
-}
 
 .latest-occurences{
   overflow: scroll;
