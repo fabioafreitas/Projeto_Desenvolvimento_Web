@@ -74,7 +74,6 @@
 </script>
 
 <style>
-
     .logo{
       width: 120px;
     }

@@ -32,37 +32,6 @@
                                 </div>
                         </div>
                         
-                        <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Pessoais</a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profissionais</a>
-                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Educação</a>
-                                </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                        Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia.
-                                        Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi.
-                                        Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad.
-                                        Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur quis.
-                                        Occaecat sit eu exercitation irure Lorem incididunt nostrud.
-                                </div>
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                        Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia.
-                                        Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi.
-                                        Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad.
-                                        Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur quis.
-                                        Occaecat sit eu exercitation irure Lorem incididunt nostrud.
-                                </div>
-                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                        Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia.
-                                        Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi.
-                                        Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad.
-                                        Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur quis.
-                                        Occaecat sit eu exercitation irure Lorem incididunt nostrud.
-                                </div>
-                        </div>
-
                 </div>
                         <div class="col">
                                 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
@@ -161,20 +130,6 @@ export default {
         font-style: normal;
         font-weight: normal;
         color: #393939;
-}
-
-.search_dashboard input{
-  width: 250px;
-  height: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid #cecece;
-  border-radius: 40px;
-}
-
-.search_dashboard input:focus{
-  outline: none;
-
 }
 
 .latest-occurences{
