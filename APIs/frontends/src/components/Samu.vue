@@ -58,7 +58,8 @@ export default {
   name: "samu",
   data() {
     return {
-      uri: 'http://localhost:9999/samu',
+      //uri: 'http://localhost:9999/samu',
+      uri: 'https://orgao-samu-api.herokuapp.com/samu',
       ocorrencias: []
     };
   },

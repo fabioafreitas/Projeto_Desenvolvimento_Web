@@ -55,7 +55,8 @@ export default {
   name: "apac",
   data() {
     return {
-      uri: 'http://localhost:9996/apac',
+      //uri: 'http://localhost:9996/apac',
+      uri: 'https://orgao-apac-api.herokuapp.com/apac',
       ocorrencias: []
     };
   },
