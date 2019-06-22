@@ -7,46 +7,41 @@
       <div class="col-9">
         <NavbarDash/>
         <div class="container mt-4">
-            <h5 class="mb-4">Registrar Ocorrência</h5>
+            <h4 class="mb-4">Registrar Ocorrência</h4>
               <div class="row">
-                <div class="col-9">
+                <div class="col-9 form-ocorrencia mb-5">
                     <form action="#" @submit.prevent="cadastroOcorrencia" class="form_ocorrencia mb-4">
-                        <div class="form-row">
+                        <div class="form-row mb-4">
                           <div class="col">
-                              <input
-                              type="text"
-                              class="form-control" 
-                              v-model="ocorrencia.titulo" 
-                              placeholder="Título da Ocorrência"
-                              required
-                              >
+                              <input type="text" class="form-control" v-model="ocorrencia.titulo" placeholder="Título da Ocorrência" required>
                           </div>          
-                        </div> <br>
-                          <label for="exampleFormControlSelect1">Selecione uma imagem:</label>
-                          <br/>
-                            <input 
-                              type="file" 
-                              multiple
-                            >
-                            <br/> <br>
-                              <label for="exampleFormControlTextarea1">Informe a data:</label> <br>
-                              <input 
-                                type="date"
-                                v-model="ocorrencia.date"
-                                required
-                                :max="hoje"
-                              > <br> <br>
-                              <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
-                                <textarea 
-                                v-model="ocorrencia.descricao"
-                                class="form-control" 
-                                id="exampleFormControlTextarea1" 
-                                rows="3"></textarea>
-                              </div>
-                              <button class="btn btn-primary">Registrar Ocorrência</button>
-                                </form>
+                        </div> 
+                        
+                        <div class="form-row mb-4">
+
+                          <div class="col">
+                          <label for="exampleFormControlSelect1" id="label-file">Escolha as imagens:</label>
+                            <div class="upload-btn-wrapper">
+                              <button class="btn-primary btn-file">Selecionar</button>
+                              <input type="file" name="myfile" multiple/>
+                            </div>
+                          </div>
+                            
+                          <div class="col">
+                            <label for="exampleFormControlTextarea1">Informe a data:</label>
+                            <input type="date" v-model="ocorrencia.date" required :max="hoje">
+                          </div>
                         </div>
+
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
+                          <textarea v-model="ocorrencia.descricao" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                          <button class="btn btn-primary">Registrar Ocorrência</button>
+                        </form>
+                        </div>
+
                         <div class="col">
                                 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
                                 <div class="card-header"><h4>Avisos</h4></div>
@@ -131,7 +126,15 @@ export default {
 };
 </script>
  
-<style>
+<style scoped>
+
+input[type=file]{
+  margin-left: 10px;
+  width: 140px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
 
 .logo-brand{
 width: 160px;
@@ -159,8 +162,45 @@ margin: 10px;
   font-size: 13pt;
 }
 
-.graph img{
-  width: 100%;
+.form-ocorrencia{
+  padding: 30px;
+  margin: 5px;
+  background-color: #f6f6f6;
+  border: 1px solid #e5e5e5;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn-file {
+  border: none;
+  color: whitesmoke;
+  padding: 6px 18px;
+  border-radius: 2px;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+input[type=date] {
+  border: 1px solid #e5e5e5;
+  margin-left: 10px;
+  padding: 5px;
+  height: 35px;
+}
+
+#label-file{
+  position: relative;
+  top: -15px;
+  margin-right: 10px;
 }
 
 </style>
