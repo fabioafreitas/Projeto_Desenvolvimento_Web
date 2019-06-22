@@ -1,7 +1,7 @@
 <template>
   <div class="signup-wrapper">
     <Navbar/>
-    <div class="submitform mt-4 mb-5 col-4">
+    <div class="signup submitform mt-4 mb-5 col-4">
         <h2 class="text-center mb-5">Registre-se no MyAlert</h2>
         <form action="#" @submit.prevent="realizarCadastro">
           <div class="form-group">
@@ -164,6 +164,12 @@ export default {
 </script>
 
 <style>
+
+.signup{
+  padding: 35px;
+  border: 1px solid #e5e5e5;
+}
+
 .submitform {
   max-width: 400px;
   margin: auto;

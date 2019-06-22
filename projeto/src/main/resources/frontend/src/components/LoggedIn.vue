@@ -8,40 +8,13 @@
         <NavbarDash/>
         <div class="container">
           <div class="main_head">
-            <button class="btn btn-dark btn-head btn-text">
-              <span class=" fas fa-1x fa-cloud-rain badge badge-danger"> 3 </span> Tempo
-            </button>
-            <button class="btn btn-dark btn-head btn-text">
-              <span class=" fas fa-1x fa-wallet badge badge-danger"> 4 </span> Crimes
-            </button>
-            <button class="btn btn-dark btn-head btn-text">
-              <span class=" fas fa-1x fa-traffic-light badge badge-danger"> 5 </span> Acidentes
-            </button>
-            <button class="btn btn-dark btn-head btn-text">
-              <span class=" fas fa-1x fa-traffic-light badge badge-danger"> 4 </span> Acidentes
-            </button>
-            <button class="btn btn-dark btn-head btn-text">
-              <span class=" fas fa-1x fa-traffic-light badge badge-danger"> 2 </span> Acidentes
-            </button>
+            <h3>Bem vindo!</h3>
           </div>
           
           <div class="row content-dash">
-            <div class="col-8 map_dashboard">
+            <div class="map_dashboard">
               <Map/>
             </div>
-
-            <div class="col-4 latest-occurences">
-              <p class="title-alert-elements mt-1">Alertas Recentes (10)</p>
-              <AlertElement/>
-              <AlertElement/>
-              <AlertElement/>
-              <AlertElement/>
-              <AlertElement/>
-            </div>
-          </div>
-
-          <div class="graph">
-            <img src="../assets/graph.png">
           </div>
         </div>
       </div>
@@ -125,36 +98,12 @@ margin: 10px;
   height: 350px;
 }
 
-.content-dash{
-  padding: 20px;
-}
-
-.search_dashboard input{
-  width: 250px;
-  height: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid #cecece;
-  border-radius: 40px;
-}
-
-.search_dashboard input:focus{
-  outline: none;
-
-}
-
-.latest-occurences{
-  overflow: scroll;
-  border: 1px solid #ccc;
-  height: 350px;
-}
-
-.title-alert-elements{
-  font-size: 13pt;
-}
-
-.graph img{
+@media (max-width: 850px) and (min-width: 100px){
+  .map_dashboard{
   width: 100%;
+  height: 300px;
 }
+}
+
 
 </style>

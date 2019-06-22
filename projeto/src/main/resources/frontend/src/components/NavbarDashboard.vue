@@ -7,16 +7,6 @@
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <select class="custom-select custom-select">
-                  <option selected>Filtrar Painel</option>
-                  <option value="1">Deslizamentos</option>
-                  <option value="2">Enchentes</option>
-                  <option value="3">Incêndio</option>
-                </select>
-              </ul>
-            </div>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
@@ -38,7 +28,6 @@
                   </div>
               </ul>
             </div>
-            
           </div>
         </nav>
       </div>
