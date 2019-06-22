@@ -59,27 +59,30 @@ public class OcorrenciaController {
 
     @PostMapping("/apac")
     public String requisicaoApac(@RequestBody Ocorrencia ocorrencia) {
-        String uriLocal = "http://localhost:9996/apac";
-        String uriRemoto =
-        return requisicaoOcorrenciaOrgao(uri, ocorrencia);
+        //String uriLocal = "http://localhost:9996/apac";
+        String uriRemoto = "https://orgao-apac-api.herokuapp.com/apac";
+        return requisicaoOcorrenciaOrgao(uriRemoto, ocorrencia);
     }
 
     @PostMapping("/bombeiros")
     public String requisicaoBombeiros(@RequestBody Ocorrencia ocorrencia) {
-        String uri = "http://localhost:9997/bombeiros";
-        return requisicaoOcorrenciaOrgao(uri, ocorrencia);
+        //String uriLocal = "http://localhost:9997/bombeiros";
+        String uriRemoto = "https://orgao-bombeiros-api.herokuapp.com/bombeiros";
+        return requisicaoOcorrenciaOrgao(uriRemoto, ocorrencia);
     }
 
     @PostMapping("/codecipe")
     public String requisicaoCodecipe(@RequestBody Ocorrencia ocorrencia) {
-        String uri = "http://localhost:9998/codecipe";
-        return requisicaoOcorrenciaOrgao(uri, ocorrencia);
+        //String uriLocal = "http://localhost:9998/codecipe";
+        String uriRemoto = "https://orgao-codecipe-api.herokuapp.com/codecipe";
+        return requisicaoOcorrenciaOrgao(uriRemoto, ocorrencia);
     }
 
     @PostMapping("/samu")
     public String requisicaoSamu(@RequestBody Ocorrencia ocorrencia) {
-        String uri = "http://localhost:9999/samu";
-        return requisicaoOcorrenciaOrgao(uri, ocorrencia);
+        //String uriLocal = "http://localhost:9999/samu";
+        String uriRemoto = "https://orgao-samu-api.herokuapp.com/samu";
+        return requisicaoOcorrenciaOrgao(uriRemoto, ocorrencia);
     }
 
     private String requisicaoOcorrenciaOrgao(String uri, Ocorrencia ocorrencia) {
