@@ -58,7 +58,8 @@ export default {
   name: "codecipe",
   data() {
     return {
-      uri: 'http://localhost:9998/codecipe',
+      //uri: 'http://localhost:9998/codecipe',
+      uri: 'https://orgao-codecipe-api.herokuapp.com/codecipe',
       ocorrencias: []
     };
   },

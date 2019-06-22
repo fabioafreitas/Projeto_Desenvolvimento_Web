@@ -59,7 +59,8 @@ public class OcorrenciaController {
 
     @PostMapping("/apac")
     public String requisicaoApac(@RequestBody Ocorrencia ocorrencia) {
-        String uri = "http://localhost:9996/apac";
+        String uriLocal = "http://localhost:9996/apac";
+        String uriRemoto =
         return requisicaoOcorrenciaOrgao(uri, ocorrencia);
     }
 

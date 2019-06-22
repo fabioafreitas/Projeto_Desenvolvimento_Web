@@ -58,7 +58,8 @@ export default {
   name: "bombeiros",
   data() {
     return {
-      uri: 'http://localhost:9997/bombeiros',
+      //uri: 'http://localhost:9997/bombeiros',
+      uri: 'https://orgao-bombeiros-api.herokuapp.com/bombeiros',
       ocorrencias: []
     };
   },
