@@ -24,8 +24,7 @@
             </div>
           </div>
         </header>
-        <button class="btn btn-primary" @click="getOcorrencias()">getOcorrencias</button>
-        <table class="table table-hover">
+        <table class="table table-hover text-center">
           <thead class="thead-info">
             <tr>
               <th style="width:15%">CPF</th>
@@ -59,19 +58,13 @@ export default {
   name: "samu",
   data() {
     return {
-      uri: 'http://localhost:9999',
+      //uri: 'http://localhost:9999/samu',
+      uri: 'https://orgao-samu-api.herokuapp.com/samu',
       ocorrencias: []
     };
   },
-  methods: {
-    getOcorrencias() {
-      axios.get(this.uri+'/bombeiros').then(response => {
-        this.ocorrencias = response.data
-      })
-    }
-  },
   mounted() {
-    axios.get(this.uri+'/bombeiros').then(response => {
+    axios.get(this.uri).then(response => {
         this.ocorrencias = response.data
       })
   }

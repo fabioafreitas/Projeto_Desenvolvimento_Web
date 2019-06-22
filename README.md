@@ -7,45 +7,58 @@
 
 [Documentação do Projeto](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/Web-IHM-MyAlert.pdf)
 
-## links importantes: 
-1. Sprint 1:
+## Deploys
+  * [Front-end do MyAlert](https://my-alert.herokuapp.com)
+  * [Front-end dos Ogãos Fantasia](https://myalert-orgaos.herokuapp.com)
+
+## Projeto
+1. Sprint:
   - [Protótipos de telas - Papel](https://drive.google.com/drive/folders/1U7h-68QPXF1d1G1QWx4O2X3_-EF4PnZc)
   - [Protótipos de tela - IHM Marvel](https://marvelapp.com/8d4chib)
   - [Protótipos de tela - WEB Marvel](https://marvelapp.com/4i90286)
   
- 2. Sprint 2:
+ 2. Sprint:
   - Single Page Application
   - [Arquivos de IHM da sprint](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/tree/master/arquivos-ihm)
   
-3. Sprint 3:
+3. Sprint:
   - Definição do modelo de dados
   - Componentização do Front-end
-  - Implementação do Back-end I
   - Integração Front/Back/Banco
+  - Funcionalidade de Login
   - [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
   
-4. Sprint 4:
+4. Sprint:
+  - Funcionalidade de Cadastro
+  - Criação de Ocorrências
   - [Task 10 - IHM](https://docs.google.com/document/d/1eW4HEi4riAPxemU5XjPSJO2pi8u4ll52QXxF3bMQgsc/edit)
   - [Task 16 - IHM](https://docs.google.com/document/d/1KNI_hE90SN9R3uyK5QdZ6UmKqxyeqiQ5NPfgviqaklU/edit)
   - [Task 17 - IHM](https://docs.google.com/document/d/1oywq4TdkCy-yOdA86Oy-wrLfhKjtNQwhz879e5hYY10/edit)
+ 
+5. Strint:
+  - Criação de Orgãos Fantasia, que recebem as Ocorrências
+  - Deploy do Front-end e Back-end
   
+6. Sprint:
+  - Marcação das ocorrências no mapa
+  - Envio de imagens anexadas às ocorrências
+  - Criação dos testes unitários e de integração
+  
+## Executando o Front-End
 
-## Running Front-End
-
-In the folder: projeto/src/main/resources/frontend, run the command:
+No diretório *projeto/src/main/resources/frontend/*, execute os comandos:
 
 #### `npm install`
 #### `npm run serve`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
+Executa o front-end no modo de desenvolvimento.<br>
+Abra [http://localhost:4200](http://localhost:4200) para ver a aplicação no browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Executando o Back-End
 
-## Running Back-End
-
-Run MyalertApplication.java with a Spring Boot IDE
+Importe o arquivo *projeto/* no Intellij como projeto Maven
+Execute o arquivo *MyalertApplication.java* como aplicação Spring
+Aplicação funciona na porta 8080
 
 
 
