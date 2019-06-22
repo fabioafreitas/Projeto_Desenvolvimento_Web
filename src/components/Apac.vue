@@ -1,53 +1,77 @@
 <template>
-	<div class="container-fluid lay-site-shadow" style="height:700px">
-		<div class="lay-site">
-			<header class="lay-header ">
-					<div class="row justify-content-center">
-						<div class="col text-center">
-							<a class="navbar-brand" href="/">
-								<img class="img-fluid" src="imagens/logo.png" alt="logo"
-										style="max-width:200%; padding: 10%">
-							</a>
-							<a class="navbar-brand" href="#">
-								<img class="img-fluid" src="imagens/apac-logo.png" alt="logo"
-										style="max-width:80%; padding: 10%">
-							</a>
-						</div>
-					</div>
-			</header>
-			<table class="table table-hover">
-				<thead class="thead-info">
-					<tr>
-						<th>TÍTULO</th>
-						<th>CPF</th>
-						<th>DESCRIÇÃO</th>
-						<th>URGÊNCIA</th>
-						<th>CATEGORIA</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr v-for="ocorrencia of ocorrencias" :key="ocorrencia.key">
-						<td>{{ ocorrencia.titulo }}</td>
-						<td>{{ ocorrencia.cpf }}</td>
-						<td>{{ ocorrencia.descricao }}</td>
-						<td>{{ ocorrencia.urgencia }}</td>
-						<td>{{ ocorrencia.categoria }}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+  <div class="container-fluid lay-site-shadow" style="height:700px">
+    <div class="lay-site">
+      <header class="lay-header">
+        <div class="row justify-content-center">
+          <div class="col text-center">
+            <a class="navbar-brand" href="/">
+              <img
+                class="img-fluid"
+                src="imagens/logo.png"
+                alt="logo"
+                style="max-width:200%; padding: 10%"
+              >
+            </a>
+            <a class="navbar-brand" href="#">
+              <img
+                class="img-fluid"
+                src="imagens/apac-logo.png"
+                alt="logo"
+                style="max-width:80%; padding: 10%"
+              >
+            </a>
+          </div>
+        </div>
+      </header>
+      <button class="btn btn-primary" @click="getOcorrencias()">getOcorrencias</button>
+        <table class="table table-hover">
+          <thead class="thead-info">
+            <tr>
+              <th style="width:15%">CPF</th>
+              <th style="width:15%">TÍTULO</th>
+              <th style="width:30%">DESCRIÇÃO</th>
+              <th style="width:15%">DATA</th>
+              <th style="width:15%">URGÊNCIA</th>
+              <th style="width:10%">CATEGORIA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="ocorrencia of ocorrencias" :key="ocorrencia.key">
+              <td>{{ ocorrencia.cpf }}</td>
+              <td>{{ ocorrencia.titulo }}</td>
+              <td>{{ ocorrencia.descricao }}</td>
+              <td>{{ ocorrencia.data }}</td>
+              <td>{{ ocorrencia.urgencia }}</td>
+              <td>{{ ocorrencia.categoria }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-name: "apac",
-data() {
+  name: "apac",
+  data() {
     return {
-    ocorrencias: []
+      uri: 'http://localhost:9996',
+      ocorrencias: []
     };
-},
-methods: {}
+  },
+  methods: {
+    getOcorrencias() {
+      axios.get(this.uri+'/bombeiros').then(response => {
+        this.ocorrencias = response.data
+      })
+    }
+  },
+  mounted() {
+    axios.get(this.uri+'/bombeiros').then(response => {
+        this.ocorrencias = response.data
+      })
+  }
 };
 </script>
 
