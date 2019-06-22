@@ -24,8 +24,7 @@
             </div>
           </div>
         </header>
-        <button class="btn btn-primary" @click="getOcorrencias()">getOcorrencias</button>
-        <table class="table table-hover">
+        <table class="table table-hover text-center">
           <thead class="thead-info">
             <tr>
               <th style="width:15%">CPF</th>
@@ -59,19 +58,12 @@ export default {
   name: "bombeiros",
   data() {
     return {
-      uri: 'http://localhost:9997',
+      uri: 'http://localhost:9997/bombeiros',
       ocorrencias: []
     };
   },
-  methods: {
-    getOcorrencias() {
-      axios.get(this.uri+'/bombeiros').then(response => {
-        this.ocorrencias = response.data
-      })
-    }
-  },
   mounted() {
-    axios.get(this.uri+'/bombeiros').then(response => {
+    axios.get(this.uri).then(response => {
         this.ocorrencias = response.data
       })
   }
