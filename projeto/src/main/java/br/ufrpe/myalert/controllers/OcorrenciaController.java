@@ -5,18 +5,17 @@ import br.ufrpe.myalert.models.Usuario;
 import br.ufrpe.myalert.services.OcorrenciaService;
 import br.ufrpe.myalert.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
 import java.util.List;
 
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/ocorrencias")
 public class OcorrenciaController {
-
     @Autowired
     private OcorrenciaService ocorrenciaService;
 
@@ -54,15 +53,40 @@ public class OcorrenciaController {
         return new ResponseEntity<>(ocorrenciaService.save(ocorrencia), HttpStatus.OK);
     }
 
-    //TODO put e delete
+    
+    
+    //COMUNICAÇÃO COM OS ORGÃOS FANTASIA
+
+    @PostMapping("/apac")
+    public String requisicaoApac(@RequestBody Ocorrencia ocorrencia) {
+        String uri = "http://localhost:9996/apac";
+        return requisicaoOcorrenciaOrgao(uri, ocorrencia);
+    }
+
+    @PostMapping("/bombeiros")
+    public String requisicaoBombeiros(@RequestBody Ocorrencia ocorrencia) {
+        String uri = "http://localhost:9997/bombeiros";
+        return requisicaoOcorrenciaOrgao(uri, ocorrencia);
+    }
 
     @PostMapping("/codecipe")
-    public String getCodecipe(@RequestBody Ocorrencia ocorrencia) {
-        final String uri = "http://localhost:10101/codecipe";
+    public String requisicaoCodecipe(@RequestBody Ocorrencia ocorrencia) {
+        String uri = "http://localhost:9998/codecipe";
+        return requisicaoOcorrenciaOrgao(uri, ocorrencia);
+    }
 
+    @PostMapping("/samu")
+    public String requisicaoSamu(@RequestBody Ocorrencia ocorrencia) {
+        String uri = "http://localhost:9999/samu";
+        return requisicaoOcorrenciaOrgao(uri, ocorrencia);
+    }
+
+    private String requisicaoOcorrenciaOrgao(String uri, Ocorrencia ocorrencia) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<Ocorrencia> entity = new HttpEntity<>(ocorrencia,headers);
         RestTemplate restTemplate = new RestTemplate();
-        String result = restTemplate.getForObject(uri, String.class);
-
-        return result;
+        return restTemplate.exchange(
+                uri, HttpMethod.POST, entity, String.class).getBody();
     }
 }
