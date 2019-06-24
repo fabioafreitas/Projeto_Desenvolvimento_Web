@@ -9,8 +9,8 @@ export default new Vuex.Store({
         token: localStorage.getItem('access_token') || null,
         navActive: 'principal',
         logado: false,
-        usuario: null,
-        username: null
+        usuario: JSON.parse(localStorage.getItem('access_usuario')) || null,
+        username: localStorage.getItem('access_username') || null
     },
     mutations: {
         NAV_ATIVO: (state, menuItem) => {
@@ -30,6 +30,9 @@ export default new Vuex.Store({
         },
         retrieveUser(state, usuario){
             state.usuario = usuario
+        },
+        destroyUser(state){
+            state.usuario = null
         }
     },
     actions: {
@@ -59,7 +62,7 @@ export default new Vuex.Store({
                         //var a = tokens.split(' ')[1]
                         localStorage.setItem('access_token', a)
 
-                        localStorage.setItem('access_user', response.config.data)
+                        localStorage.setItem('access_username', data.username)
 
                         console.log(response)
                         
@@ -86,9 +89,10 @@ export default new Vuex.Store({
                 //takvez colocar num new promise para apagar do backend o token
                 //aí colocar as duas linhas no sucesso e no erro
                 localStorage.removeItem('access_token')
-                localStorage.removeItem('access_user')
+                localStorage.removeItem('access_username')
+                localStorage.removeItem('access_usuario')
                 context.commit('destroyToken')
-
+                context.commit('destroyUser')
             }
         },
         cadastrar(context, pessoa) {
@@ -123,8 +127,8 @@ export default new Vuex.Store({
                     }
                 })
                     .then(response => {
+                        localStorage.setItem('access_usuario', JSON.stringify(response.data))
                         context.commit('retrieveUser',response.data)
-                        //localStorage.setItem('access_user', response.data)
                         resolve(response)
                     })
                     .catch(error => {
@@ -147,5 +151,6 @@ export default new Vuex.Store({
         getUser(state) {
             return state.usuario
         }
+
     }
 })

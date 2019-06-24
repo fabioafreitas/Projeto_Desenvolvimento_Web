@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="/" >Usuario</a>
+                  <a class="nav-link" href="/" >{{usuario.nome}}</a>
                 </li>
                   <div class="btn-group">
                     <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,35 +34,31 @@
 </template>
 
 <script>
-    import { mapState, mapGetters, mapActions } from 'vuex';
+    import { mapGetters, mapActions } from 'vuex';
 
     export default {
       name: "navbar",
       data(){
         return {
-          active: this.isActive,
-          usuario:this.getUser
+          usuario: {}
         }
       },
       computed: {
-        ...mapState([
-          'navActive'
-        ]),
         ...mapGetters([
-          'isActive', 'isLoggedIn', 'getUser'
-        ]),
-        ...mapActions([
-          'deslogar'
+          'isLoggedIn', 'getUser'
         ])
       },
       methods: {
+        ...mapActions([
+          'deslogar'
+        ]),
         sair() {
           this.deslogar()
           this.$router.push('/login')
         }
       },
       created(){
-
+        this.usuario = this.getUser
       }
     };    
 </script>

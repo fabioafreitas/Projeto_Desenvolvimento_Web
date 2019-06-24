@@ -76,7 +76,10 @@ export default new Router({
     {
       path: "/profile",
       name: "profile",
-      component: Profile
+      component: Profile,
+      meta: {
+        requiresAuth: true,
+      }
     },
     {
     path: "/ocorrencia",
