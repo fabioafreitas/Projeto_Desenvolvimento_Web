@@ -55,13 +55,10 @@ export default {
   name: "login",
   data() {
     return {
-      enderecoLogin: "#",
       booleanLogin: false,
-      error: "",
       login: {
         username:"",
         password:""
-        
       }
     };
   },
@@ -69,29 +66,35 @@ export default {
     /* eslint-disable no-console */
     /* eslint-enable no-console */
     ...mapActions([
-      'logar'
+      'logar','getUsuario'
     ]),
     ...mapMutations([
-          'NAV_ATIVO'
+      'NAV_ATIVO'
     ]),
     realizarLogin() {
       this.logar(this.login).then(response => {
-        this.enderecoLogin=response.headers.Authorization
+        this.carregarUsuario()
         this.booleanLogin=response.data
         this.$router.push('/logado')
       }).catch(error => {
-        alert('Usuario ou senhas incorretos.')
+        alert('Usuario ou senha incorretos.')
       })
+    },
+    carregarUsuario(){
+      this.getUsuario(this.login.username).then(response => {
+
+      }).catch(error => {
+        console.log(error)
+      });
     }
   },
   created(){
-        this.NAV_ATIVO('login')
-      }
+    this.NAV_ATIVO('login')
+  }
 };
 </script>
 
 <style>
-
         .login{
           width: 100%;
           min-height: 500px;
@@ -99,16 +102,13 @@ export default {
           padding: 35px;
           border: 1px solid #e5e5e5;
         }
-
         .submitform {
                 max-width: 400px;
                 margin: auto;
         }
-
         .logo-brand{
                 width: 120px;
         }
-
         button{
           background-color: #01a3a4;
         }

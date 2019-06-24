@@ -18,15 +18,15 @@
                                 <div class="col-3">
                                         <h5>Nome: </h5>
                                         <h5>Email: </h5>
-                                        <h5>Naturalidade: </h5>
+                                        <h5>Cpf: </h5>
                                         <h5>Endereço: </h5>
                                         <h5>Naturalidade </h5>
                                 </div>
 
                                 <div class="col-4">
-                                        <h5> {{usuario.username}} </h5>
+                                        <h5> {{usuario.nome}}</h5>
                                         <h5>  {{usuario.username}} </h5>
-                                        <h5>  {{usuario.username}} </h5>
+                                        <h5>  {{usuario.cpf}} </h5>
                                         <h5>  {{usuario.password}} </h5>
                                         <h5> {{usuario.password}} </h5>
                                 </div>
@@ -69,24 +69,24 @@ export default {
   name: "logado",
   data() {
     return {
-      usuario: JSON.parse(localStorage.getItem('access_user')),
-
+      usuario: {
+          username:"",
+          password:''
+      },
+          //JSON.parse(localStorage.getItem('access_user')),
       submitted: true,
       hoje:""
     };
   },
+    computed:{
+    ...mapGetters([
+        'getUser'
+    ])
+    },
   methods: {
     ...mapActions([
       'getUsuario'
     ]),
-    ...mapGetters([
-      'getUser'
-    ]),
-    getData() {
-      this.getUsuario(this.usuario.username).then(response => {
-        
-      })
-    },
     dataHoje: function(){
       var today = new Date();
       var dd = today.getDate();
@@ -106,8 +106,9 @@ export default {
     /* eslint-enable no-console */
   },
   created(){
-  this.dataHoje()
-  console.log(this.hoje)
+      this.usuario = this.getUser
+      this.dataHoje()
+      console.log(this.hoje)
   }
 };
 </script>
