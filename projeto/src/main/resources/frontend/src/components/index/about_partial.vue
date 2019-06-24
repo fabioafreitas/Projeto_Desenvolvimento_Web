@@ -6,13 +6,15 @@
             <article class="float-lg-right ">
               <p class="text-justify p-section-icon">
               O MyAlert é uma aplicação inteligente que automatiza o serviço de comunicação de órgãos do
-              governo, afim de alertar os usuários que estão em situação de risco. Aqui, é possível alertar
-              e também se informar sobre problemas naturais que acontecem no dia a dia, como por exemplo
-              alagamentos, deslizamentos, incêndios, temporais, etc. Desta forma, unificamos diversos órgãos, 
-              que são responsáveis por cada um destes problemas, filtramos as ocorrências registradas na plataforma,
+              governo, afim de alertar os usuários que estão em situação de risco. 
+              </p>
+
+              <p class="text-justify p-section-icon">
+              A plataforma unifica diversos órgãos de serviços públicos, 
+              que são responsáveis por cada serviço em específico e filtra as ocorrências registradas na plataforma,
               e direcinamos para os destinatários corretos.
               </p>
-              <button class="mt-3 mb-3 btn btn-primary">Saiba mais</button>
+              <button class="mt-3 mb-3 btn btn-primary">Saiba mais aqui</button>
             </article>
           </div>
         </div>
@@ -30,7 +32,7 @@ export default {
       font-size: 13pt;
       width: 100%;
       color: #414141;
-      background-color: aliceblue;
+      background-color: #f6f6f6;
     }
 
     .icon-small{
