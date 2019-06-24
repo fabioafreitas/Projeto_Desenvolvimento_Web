@@ -2,7 +2,7 @@
         <div class="callback-section pb-4">
           <div class="pt-2 container d-flex justify-content-center">
             <h4 class="mt-4 mr-4 float-lg-left">Seja um cidadão colaborativo.</h4>
-            <a class="mt-3 btn btn-primary btn-lg" href="/registrar">Cadastre-se</a>
+            <a class="mt-3 btn btn-primary btn-lg" href="/registrar">Cadastre-se aqui</a>
           </div>
         </div>
 </template>

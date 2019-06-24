@@ -46,3 +46,12 @@ i{
         padding-top: 20px;
         padding-left: 20px;
 }
+
+.btn-primary{
+        background-color: #2980b9;
+}
+
+.btn-primary:hover{
+        background-color:brown;
+        border-color: brown;
+}

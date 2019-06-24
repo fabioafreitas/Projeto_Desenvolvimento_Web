@@ -14,7 +14,7 @@ export default {
 };
 </script>
  
-<style>
+<style scoped>
        .video-section{
       width: 100%;
       height: 500px;
