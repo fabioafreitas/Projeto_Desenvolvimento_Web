@@ -44,53 +44,35 @@ public class OcorrenciaController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
+
+    //TODO alterar este método junto com o OrgaosController, quando for criado
     @PostMapping
-    public ResponseEntity<?> save(@RequestBody Ocorrencia ocorrencia) {
+    public ResponseEntity<?> requisicaoOrgao(@RequestBody Ocorrencia ocorrencia) {
         Usuario usuario = usuarioService.getByCpf(ocorrencia.getCpf());
         if(usuario == null) {
             return new ResponseEntity<>("Usuario não está cadastrado", HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(ocorrenciaService.save(ocorrencia), HttpStatus.OK);
+        if(ocorrencia.getCategoria() < 0 || ocorrencia.getCategoria() > 4) {
+            return new ResponseEntity<>("Orgão não está cadastrado", HttpStatus.NOT_FOUND);
+        }
+        Ocorrencia o = ocorrenciaService.save(ocorrencia);
+        String resposta = "";
+        switch(ocorrencia.getCategoria()) {
+            case 1:
+                resposta = ocorrenciaService.requisicaoApac(ocorrencia);
+                break;
+            case 2:
+                resposta = ocorrenciaService.requisicaoBombeiros(ocorrencia);
+                break;
+            case 3:
+                resposta = ocorrenciaService.requisicaoCodecipe(ocorrencia);
+                break;
+            case 4:
+                resposta = ocorrenciaService.requisicaoSamu(ocorrencia);
+                break;
+            default:
+        }
+        return new ResponseEntity<>(resposta, HttpStatus.OK);
     }
 
-    
-    
-    //COMUNICAÇÃO COM OS ORGÃOS FANTASIA
-
-    @PostMapping("/apac")
-    public String requisicaoApac(@RequestBody Ocorrencia ocorrencia) {
-        //String uriLocal = "http://localhost:9996/apac";
-        String uriRemoto = "https://orgao-apac-api.herokuapp.com/apac";
-        return requisicaoOcorrenciaOrgao(uriRemoto, ocorrencia);
-    }
-
-    @PostMapping("/bombeiros")
-    public String requisicaoBombeiros(@RequestBody Ocorrencia ocorrencia) {
-        //String uriLocal = "http://localhost:9997/bombeiros";
-        String uriRemoto = "https://orgao-bombeiros-api.herokuapp.com/bombeiros";
-        return requisicaoOcorrenciaOrgao(uriRemoto, ocorrencia);
-    }
-
-    @PostMapping("/codecipe")
-    public String requisicaoCodecipe(@RequestBody Ocorrencia ocorrencia) {
-        //String uriLocal = "http://localhost:9998/codecipe";
-        String uriRemoto = "https://orgao-codecipe-api.herokuapp.com/codecipe";
-        return requisicaoOcorrenciaOrgao(uriRemoto, ocorrencia);
-    }
-
-    @PostMapping("/samu")
-    public String requisicaoSamu(@RequestBody Ocorrencia ocorrencia) {
-        //String uriLocal = "http://localhost:9999/samu";
-        String uriRemoto = "https://orgao-samu-api.herokuapp.com/samu";
-        return requisicaoOcorrenciaOrgao(uriRemoto, ocorrencia);
-    }
-
-    private String requisicaoOcorrenciaOrgao(String uri, Ocorrencia ocorrencia) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-        HttpEntity<Ocorrencia> entity = new HttpEntity<>(ocorrencia,headers);
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.exchange(
-                uri, HttpMethod.POST, entity, String.class).getBody();
-    }
 }

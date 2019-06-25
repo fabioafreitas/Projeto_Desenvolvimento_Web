@@ -32,18 +32,23 @@ public class Ocorrencia {
     private String descricao;
 
     @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
-    private Date data;
+    private Date dataCriacao; // data de criação da ocorrência
+
+    @JsonFormat(pattern="dd-MM-yyyy")
+    private Date dataOcorrencia; // data do evento retratado na ocorrência
+
 
     private Urgencia urgencia;
     private Endereco localizacao;
     private int categoria;
     private String imagens; //TODO
 
-    public Ocorrencia(String cpf, String titulo, String descricao, Date data, Urgencia urgencia, Endereco localizacao, int categoria, String imagens) {
+    public Ocorrencia(String cpf, String titulo, String descricao, Date dataCriacao, Date dataOcorrencia, Urgencia urgencia, Endereco localizacao, int categoria, String imagens) {
         this.cpf = cpf;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.data = data;
+        this.dataCriacao = dataCriacao;
+        this.dataOcorrencia = dataOcorrencia;
         this.urgencia = urgencia;
         this.localizacao = localizacao;
         this.categoria = categoria;
@@ -85,12 +90,20 @@ public class Ocorrencia {
         this.descricao = descricao;
     }
 
-    public Date getData() {
-        return data;
+    public Date getDataCriacao() {
+        return dataCriacao;
     }
 
-    public void setDate(Date data) {
-        this.data = data;
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public Date getDataOcorrencia() {
+        return dataOcorrencia;
+    }
+
+    public void setDataOcorrencia(Date dataOcorrencia) {
+        this.dataOcorrencia = dataOcorrencia;
     }
 
     public Urgencia getUrgencia() {
@@ -123,5 +136,21 @@ public class Ocorrencia {
 
     public void setImagens(String imagens) {
         this.imagens = imagens;
+    }
+
+    @Override
+    public String toString() {
+        return "Ocorrencia{" +
+                "id='" + id + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", dataCriacao=" + dataCriacao +
+                ", dataOcorrencia=" + dataOcorrencia +
+                ", urgencia=" + urgencia +
+                ", localizacao=" + localizacao +
+                ", categoria=" + categoria +
+                ", imagens='" + imagens + '\'' +
+                '}';
     }
 }
