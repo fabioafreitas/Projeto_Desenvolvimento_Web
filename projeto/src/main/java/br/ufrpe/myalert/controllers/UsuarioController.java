@@ -44,14 +44,8 @@ class UsuarioController {
     public ResponseEntity<?> save(@RequestBody Usuario usuario) {
         Usuario usuarioAux = usuarioService.getByCpf(usuario.getCpf());
         if(usuarioAux != null) {
-            return new ResponseEntity<>("Usuário já cadastrado", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Usuário já cadastrado!", HttpStatus.BAD_REQUEST);
         }
-        Login loginAux = loginService.getByUsername(usuario.getUsername());
-        if(loginAux != null) {
-            return new ResponseEntity<>("Login já cadastrado", HttpStatus.BAD_REQUEST);
-        }
-        Login loginNovo = loginService.save(new Login(usuario.getUsername(), usuario.getPassword()));
-        usuario.setPassword("");
         Usuario usuarioNovo = usuarioService.save(usuario);
         return new ResponseEntity<>(usuarioNovo, HttpStatus.OK);
     }
@@ -60,7 +54,7 @@ class UsuarioController {
     public ResponseEntity<?> update(@RequestBody Usuario usuario) {
         Usuario usuarioAux = usuarioService.getByCpf(usuario.getCpf());
         if(usuarioAux == null) {
-            return new ResponseEntity<>("Usuário não está cadastrado", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Usuário não está cadastrado!", HttpStatus.NOT_FOUND);
         }
         usuario.setId(usuarioAux.getId());
         return new ResponseEntity<>(usuarioService.update(usuario), HttpStatus.OK);
@@ -70,7 +64,7 @@ class UsuarioController {
     public ResponseEntity<?> delete(@RequestBody Usuario usuario) {
         Usuario usuarioAux = usuarioService.getByCpf(usuario.getCpf());
         if(usuarioAux == null) {
-            return new ResponseEntity<>("Usuario não está cadastrado", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Usuario não está cadastrado!", HttpStatus.NOT_FOUND);
         }
         usuarioService.delete(usuarioAux);
         return new ResponseEntity<>("Usuario deletado", HttpStatus.OK);

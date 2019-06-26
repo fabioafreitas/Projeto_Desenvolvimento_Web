@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="/" >{{usuario.nome}}</a>
+                  <a class="nav-link" href="/logado" >{{usuario.nome}}</a>
                 </li>
                   <div class="btn-group">
                     <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,7 +40,8 @@
       name: "navbar",
       data(){
         return {
-          usuario: {}
+          usuario: {},
+          dataReady: true
         }
       },
       computed: {

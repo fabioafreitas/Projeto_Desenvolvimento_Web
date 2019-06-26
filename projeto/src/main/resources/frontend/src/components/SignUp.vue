@@ -69,7 +69,7 @@
             <label for="confirmacao_senha">Confirmar senha</label>
             <input
               v-model="confirm"
-              v-on:blur="compararSenha"
+              v-on:keyup="compararSenha"
               type="password"
               placeholder="******"
               class="form-control"
@@ -84,8 +84,15 @@
 
           <button type="submit" class="btn btn-danger px-2">Registrar</button>
           <a class="float-right" href="/login">Já possui uma conta? Entre aqui!</a>
+
+          <div v-if="erroLogin" class="alert alert-danger fade show" role="alert">
+            {{resposta}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         </form>
-      
+
     </div>
   </div>
 </template>
@@ -108,15 +115,19 @@ export default {
         password: ""
       },
       confirm: "",
-      confirmada: false
+      confirmada: false,
+      erroLogin: false,
+      resposta:""
     };
   },
   methods: {
     ...mapActions(["cadastrar"]),
     realizarCadastro() {
       this.cadastrar(this.usuario).then(response => {
-        alert('Usuário cadastrado com sucesso!')
         this.$router.push("/login");
+      }).catch(error => {
+        this.resposta = error.response.data
+        this.erroLogin = true
       });
     },
     checkCpfValido: function() {
@@ -141,24 +152,21 @@ export default {
         alert("Email inválido");
         return false;
       }
-    }
-    //this.$store.actions.cadastrar
-    /* eslint-disable no-console */
-    /* eslint-enable no-console */
-  },
-
-  computed: {
+    },
     compararSenha: function() {
       if (this.usuario.password == this.confirm) {
         if (this.usuario.password != "") {
           this.confirmada = true
         }
       } else {
-        alert("As senhas não conferem!")
         this.confirmada=false
         return false
       }
-    }
+    },
+
+    //this.$store.actions.cadastrar
+    /* eslint-disable no-console */
+    /* eslint-enable no-console */
   }
 };
 </script>

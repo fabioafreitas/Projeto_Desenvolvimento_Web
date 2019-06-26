@@ -1,10 +1,9 @@
-/* eslint-disable */
-
 <template>
     <div id="map"></div>
 </template>
  
 <script>
+/* eslint-disable */
 export default {
   name: "map-index",
   methods: {
@@ -98,7 +97,7 @@ export default {
     }
   },
 
-  mounted() {
+  async mounted() {
     this.initMap();
   }
 };

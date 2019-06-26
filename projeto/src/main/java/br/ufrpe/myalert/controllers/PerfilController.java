@@ -21,6 +21,8 @@ public class PerfilController {
         if(usuario == null) {
             return new ResponseEntity<>("Usuario não encontrado!", HttpStatus.NOT_FOUND);
         }
+        usuario.setPassword("");
+        usuario.setId("");
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
 }

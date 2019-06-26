@@ -1,6 +1,6 @@
 package br.ufrpe.myalert.security;
 
-import br.ufrpe.myalert.models.Login;
+import br.ufrpe.myalert.models.Usuario;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -30,7 +30,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
     public Authentication attemptAuthentication(
             HttpServletRequest req, HttpServletResponse res)
             throws AuthenticationException, IOException, ServletException {
-        Login creds = new ObjectMapper().readValue(req.getInputStream(), Login.class);
+        Usuario creds = new ObjectMapper().readValue(req.getInputStream(), Usuario.class);
 
         return getAuthenticationManager().authenticate(
                 new UsernamePasswordAuthenticationToken(
