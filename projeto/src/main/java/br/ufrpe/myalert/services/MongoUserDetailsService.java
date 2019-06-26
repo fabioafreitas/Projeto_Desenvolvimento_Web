@@ -1,7 +1,8 @@
 package br.ufrpe.myalert.services;
 
-import br.ufrpe.myalert.dao.LoginDAO;
+import br.ufrpe.myalert.dao.UsuarioDAO;
 import br.ufrpe.myalert.models.Login;
+import br.ufrpe.myalert.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -15,11 +16,11 @@ import java.util.List;
 @Component
 public class MongoUserDetailsService implements UserDetailsService {
     @Autowired
-    private LoginDAO repository;
+    private UsuarioDAO repository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-        Login login = repository.findByUsername(username);
+        Usuario login = repository.findByUsername(username);
         if(login == null){
             throw new UsernameNotFoundException("Usuario nao encontrado");
         }

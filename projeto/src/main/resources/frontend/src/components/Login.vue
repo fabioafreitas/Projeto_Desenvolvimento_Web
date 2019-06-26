@@ -5,7 +5,6 @@
     <h2 class="text-center mb-5">Entrar no MyAlert</h2>
     <form action="#" @submit.prevent="realizarLogin">
 
-
       <div class="form-group">
         <label for="email-usuario">Email do usuário</label>
         <input
@@ -38,7 +37,12 @@
         <a class="float-right" href="/registrar">Esqueceu sua senha?</a>
 
       </div>
-
+      <div v-if="erroLogin" class="alert alert-danger fade show" role="alert">
+        Usuario ou senha incorretos.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     </form>
   </div>
   </div>
@@ -55,6 +59,7 @@ export default {
   name: "login",
   data() {
     return {
+      erroLogin: false,
       booleanLogin: false,
       login: {
         username:"",
@@ -72,12 +77,13 @@ export default {
       'NAV_ATIVO'
     ]),
     realizarLogin() {
-      this.logar(this.login).then(response => {
+        this.logar(this.login).then(response => {
         this.carregarUsuario()
-        this.booleanLogin=response.data
-        this.$router.push('/logado')
+        this.booleanLogin=true
+          setTimeout(() => this.$router.push('/logado'), 300)
+        //this.$router.push('/logado')
       }).catch(error => {
-        alert('Usuario ou senha incorretos.')
+        this.erroLogin = true
       })
     },
     carregarUsuario(){

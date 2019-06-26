@@ -61,12 +61,7 @@ export default new Vuex.Store({
                         var a = tokens.split(' ')[1]
                         //var a = tokens.split(' ')[1]
                         localStorage.setItem('access_token', a)
-
                         localStorage.setItem('access_username', data.username)
-
-                        console.log(response)
-                        
-
                         context.commit('retrieveToken', a)
                         context.commit('retrieveUsername',data.username)
                         //this.LOGOU(true)

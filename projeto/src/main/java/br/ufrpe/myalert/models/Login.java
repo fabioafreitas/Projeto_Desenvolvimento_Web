@@ -15,11 +15,7 @@ public class Login {
     private String username;
     private String password;
 
-    public Login(String _id, String username, String password) {
-        this._id = _id;
-        this.username = username;
-        this.password = password;
-    }
+
 
     public Login(String username, String password) {
         this.username = username;

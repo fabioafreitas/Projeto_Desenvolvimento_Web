@@ -61,6 +61,11 @@ public class Usuario {
 
     }
 
+    public Usuario(String username, String password){
+        this.username = username;
+        this.password = password;
+    }
+
     public String getId() {
         return id;
     }
