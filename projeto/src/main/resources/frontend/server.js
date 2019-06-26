@@ -5,7 +5,6 @@ const path    = require('path')
 const app = express()
 const staticFileMiddleware = express.static(path.join(__dirname, 'dist'))
 
-app.use(staticFileMiddleware)
 app.use(history())
 app.use(staticFileMiddleware)
 

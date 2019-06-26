@@ -14,7 +14,7 @@ export default {
 };
 </script>
  
-<style>
+<style scoped>
        .video-section{
       width: 100%;
       height: 500px;
@@ -29,13 +29,32 @@ export default {
 
     .icon-small{
       transition-duration: .6s;
-      padding-top: 35%;
-      width: 250px;
+      padding-top: 43%;
+      width: 200px;
     }
 
     .icon-small:hover{
       transition-duration: .6s;
-      padding-top: 30%;
-      width: 270px;
+      padding-top: 40%;
+      width: 210px;
+    }
+
+    @media (max-width: 550px) and (min-width: 100px){
+      .video-section{
+        width: 100%;
+        height: 180px;
+      }
+
+      .icon-small{
+      transition-duration: .6s;
+      padding-top: 43%;
+      width: 80px;
+    }
+
+    .icon-small:hover{
+      transition-duration: .6s;
+      padding-top: 40%;
+      width: 85px;
+    }
     }
 </style>

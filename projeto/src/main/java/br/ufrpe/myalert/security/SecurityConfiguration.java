@@ -59,14 +59,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/ocorrencias").permitAll()
                 .antMatchers(HttpMethod.GET, "/ocorrencias").permitAll()
                 .antMatchers(HttpMethod.GET, "/ocorrencias/{cpf}").permitAll()
-
-                /* TODO testar a criação de ocorrencia sem os antMAtcherns abaixo*/
-                .antMatchers(HttpMethod.POST, "/ocorrencias/apac").permitAll()
-                .antMatchers(HttpMethod.POST, "/ocorrencias/bombeiros").permitAll()
-                .antMatchers(HttpMethod.POST, "/ocorrencias/codecipe").permitAll()
-                .antMatchers(HttpMethod.POST, "/ocorrencias/samu").permitAll()
-
-
                 .anyRequest().authenticated()
                 .and()
 
