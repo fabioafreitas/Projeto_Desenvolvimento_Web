@@ -31,13 +31,16 @@
 4. Sprint:
   - Funcionalidade de Cadastro
   - Criação de Ocorrências
-  - [Task 10 - IHM](https://docs.google.com/document/d/1eW4HEi4riAPxemU5XjPSJO2pi8u4ll52QXxF3bMQgsc/edit)
-  - [Task 16 - IHM](https://docs.google.com/document/d/1KNI_hE90SN9R3uyK5QdZ6UmKqxyeqiQ5NPfgviqaklU/edit)
-  - [Task 17 - IHM](https://docs.google.com/document/d/1oywq4TdkCy-yOdA86Oy-wrLfhKjtNQwhz879e5hYY10/edit)
- 
+  - [Task 10 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/Task%2010.pdf)
+  - [Task 16 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/task%2016.pdf)
+  - [Task 17 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/task%2017%20(GreenHouse).pdf)
+  
 5. Strint:
   - Criação de Orgãos Fantasia, que recebem as Ocorrências
   - Deploy do Front-end e Back-end
+  - [Task 11 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/Task%2011.pdf)
+  - [Task 20 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/task%2020.pdf)
+  - [MyAlert Mobile - IHM](https://marvelapp.com/54852bg/screen/58592858)
   
 6. Sprint:
   - Marcação das ocorrências no mapa
