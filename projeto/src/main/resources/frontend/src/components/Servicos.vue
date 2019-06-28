@@ -10,7 +10,17 @@
                               <CardServices/>
                               <CardServices/>
                         </div>
+
                 </div>
+
+    <div class="section-text">
+      <div class="container pt-4 text-center">
+        <h5>Texto de exemplo...</h5>
+      </div>
+    </div>
+
+    <Footer/>
+
   </div>
 </template>
 
@@ -19,12 +29,14 @@
   import Navbar from "./Navbar.vue";
   import PageHeader from "./PageHeader.vue";
   import CardServices from "./cards/CardServices.vue";
+  import Footer from "./Footer.vue";
 
 export default {
   components: {
     Navbar,
     PageHeader,
-    CardServices
+    CardServices,
+    Footer
   },
       name: "servicos",
       data(){
@@ -45,3 +57,11 @@ export default {
       }
     };    
 </script>
+
+<style scoped>
+  .section-text{
+    widows: 100%;
+    height: 70px;
+    background-color: #e5e5e5;
+  }
+</style>

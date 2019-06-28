@@ -44,16 +44,21 @@
                 aut perferendis doloribus asperiores repellat
             </p>
         </div>
+
+        <Footer/>
+
         </div>
 </template>
  
 <script>
   import { mapMutations } from 'vuex';
   import Navbar from "./Navbar.vue";
+  import Footer from "./Footer.vue";
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Footer
   },
       name: "sobre",
         methods: {

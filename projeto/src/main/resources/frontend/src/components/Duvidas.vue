@@ -14,13 +14,11 @@
               <p class="card-text mb-4">
                 Não conseguiu esclarecer suas dúvidas sem nosso SAQ? Entre em contato para mais informações.
               </p>
-
               
               <p><h6 class="float-left">Rua Dom Manuel de Medeiros</h6></p>
               <p><h6 class="float-left">Dois Irmãos, Recife - PE</h6></p>
               <p><h6 class="float-left">contato@myalert.com.br</h6></p>
               <p><h6 class="float-left">(081) 99999 - 9999</h6></p>
-
             </div>
             
           </div>
@@ -82,6 +80,7 @@
         </div>
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
  
@@ -89,11 +88,13 @@
 import { mapMutations } from "vuex";
 import Navbar from "./Navbar.vue";
 import PageHeader from "./PageHeader.vue";
+import Footer from "./Footer.vue";
 
 export default {
   components: {
     Navbar,
-    PageHeader
+    PageHeader,
+    Footer
   },
   name: "servicos",
   data() {

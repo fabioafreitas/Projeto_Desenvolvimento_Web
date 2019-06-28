@@ -31,6 +31,7 @@
                 pattern=".{5,15}"
                 title="mínimo de 5, máximo de 15 caracteres"
         >
+
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-info">Login</button>
@@ -45,16 +46,21 @@
       </div>
     </form>
   </div>
+
+  <Footer/>
+
   </div>
 </template>
 
 <script>
 import { mapActions, mapMutations } from 'vuex'
 import Navbar from "./Navbar.vue";
+import Footer from "./Footer.vue";
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Footer
   },
   name: "login",
   data() {
@@ -108,10 +114,12 @@ export default {
           padding: 35px;
           border: 1px solid #e5e5e5;
         }
+        
         .submitform {
                 max-width: 400px;
                 margin: auto;
         }
+        
         .logo-brand{
                 width: 120px;
         }
