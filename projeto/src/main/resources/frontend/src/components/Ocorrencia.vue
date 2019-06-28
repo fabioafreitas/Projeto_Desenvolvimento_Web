@@ -209,12 +209,12 @@ export default {
 }
 
 .search_dashboard input {
-  width: 250px;
+  width: 200px;
   height: 30px;
   padding-left: 10px;
   padding-right: 10px;
   border: 1px solid #cecece;
-  border-radius: 40px;
+  border-radius: 4px;
 }
 
 .search_dashboard input:focus {

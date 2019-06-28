@@ -10,6 +10,7 @@
             <VideoPartial/>
             <InfoPartial/>
             <CallbackPartial/>
+            <Footer/>
         </div>
 </template>
  
@@ -20,6 +21,7 @@ import VideoPartial from "./index/video_partial.vue";
 import InfoPartial from "./index/info_partial.vue";
 import CallbackPartial from "./index/callback_partial.vue";
 import Navbar from "./Navbar.vue";
+import Footer from "./Footer.vue";
 
 export default {
   components: {
@@ -28,7 +30,8 @@ export default {
         AboutPartial,
         VideoPartial,
         InfoPartial,
-        CallbackPartial
+        CallbackPartial,
+        Footer
       },      
   name: "index"
 };

@@ -1,15 +1,14 @@
 <template>
-        <div class="list-group mx-auto sidebar-1">
+        <div class="list-group mx-auto p-1 sidebar-2">
 
           <div class="sidebar-header">
-            <a class="navbar-brand" href="/logado">
-              <img class="logo-brand" src="../../assets/logo_mylaert_dark.png"/>
-            </a>
             <form class="search_dashboard">
               <input type="text" placeholder="Buscar região...">
             </form>
           </div>
-
+          
+          <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
+          <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
           <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
           <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
           <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
@@ -25,8 +24,7 @@ export default {
  
 <style scoped>
 
-.sidebar-1{
-  background-color: #2c3e50;
+.sidebar-2{
   height: 100%;
 }
 
@@ -35,9 +33,8 @@ export default {
   height: 30px;
   padding-left: 15px;
   padding-right: 15px;
-  color: #e5e5e5;
-  border: 1px solid #2c3e50;
-  background-color: #1b2631;
+  border: 1px solid #ecf0f1;
+  background-color: #e2e8e9;
 }
 
 .search_dashboard input:focus{
@@ -45,12 +42,15 @@ export default {
 }
 
 .list-group{
-  background-color: #2c3e50;
+  border: 1px solid #e5e5e5;
 }
 
 .list-group-item{
-  background-color: #243342;
-  color: #ccc;
+  background-color: #fff;
+}
+
+.list-group-item:hover{
+  background-color: #e2e8e9;
 }
 
 @media (max-width: 1000px) {
