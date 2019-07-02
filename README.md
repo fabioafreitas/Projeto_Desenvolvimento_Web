@@ -6,7 +6,7 @@
 
 # Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
-A título de exemplo, o aplicativo MyAlert cria ocorrências para diferentes APIs. Foi criado uma página, que consome da aplicação e exibe essas ocorrências. A página pode ser acessada no link a seguir: [WebSite Exemplo](https://myalert-orgaos.herokuapp.com).
+A título de exemplo, o aplicativo MyAlert cria ocorrências para diferentes APIs. Foi criado uma página, que consome da aplicação e exibe essas ocorrências. A página de exemplo pode ser acessada no link a seguir: [WebSite Exemplo](https://myalert-orgaos.herokuapp.com).
 
 ## [Documentos IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/tree/master/Documentation/arquivos-ihm)
  * [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
