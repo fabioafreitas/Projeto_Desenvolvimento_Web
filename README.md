@@ -11,13 +11,12 @@ A título de exemplo, o aplicativo MyAlert cria ocorrências para diferentes API
 ## [Documentos IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/tree/master/Documentation/arquivos-ihm)
  * [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
  * [IHM - Protótipo Mobile App do MyAlert](https://marvelapp.com/54852bg/screen/58592858)
- *
- *
+ * [IHM - Protótipos de tela do Marvel](https://marvelapp.com/8d4chib)
 
 ## Projeto
 1. Sprint:
   - [Protótipos de telas - Papel](https://drive.google.com/drive/folders/1U7h-68QPXF1d1G1QWx4O2X3_-EF4PnZc)
-  - [Protótipos de tela - IHM Marvel](https://marvelapp.com/8d4chib)
+  
   - [Protótipos de tela - WEB Marvel](https://marvelapp.com/4i90286)
   
  2. Sprint:
