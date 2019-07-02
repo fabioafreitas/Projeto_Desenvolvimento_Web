@@ -2,14 +2,17 @@
 [![Vue.js version](https://img.shields.io/badge/vue.js-3.7.0-4fc08d.svg)](https://vuejs.org/v2/guide/)
 [![Spring Boot Version](https://img.shields.io/badge/spring%20boot-2.1.4-brightgreen.svg)](https://spring.io/guides/gs/spring-boot/)
 [![MongoDB Atlas](https://img.shields.io/badge/mongoDB-atlas-13aa52.svg)](https://www.mongodb.com/)
+[![MyAlert](https://img.shields.io/badge/website-myalert-2980b9.svg)](https://my-alert.herokuapp.com)
 
 # Projeto de Desenvolvimento de Aplicações Web - 2019.1
 
-[Documentação do Projeto](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/Web-IHM-MyAlert.pdf)
+A título de exemplo, o aplicativo MyAlert cria ocorrências para diferentes APIs. Foi criado uma página, que consome da aplicação e exibe essas ocorrências. A página pode ser acessada no link a seguir: [WebSite Exemplo](https://myalert-orgaos.herokuapp.com).
 
-## Deploys
-  * [Front-end do MyAlert](https://my-alert.herokuapp.com)
-  * [Front-end dos Ogãos Fantasia](https://myalert-orgaos.herokuapp.com)
+## [Documentos IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/tree/master/Documentation/arquivos-ihm)
+ * [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
+ * [IHM - Protótipo Mobile App do MyAlert](https://marvelapp.com/54852bg/screen/58592858)
+ *
+ *
 
 ## Projeto
 1. Sprint:
@@ -19,28 +22,20 @@
   
  2. Sprint:
   - Single Page Application
-  - [Arquivos de IHM da sprint](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/tree/master/arquivos-ihm)
   
 3. Sprint:
   - Definição do modelo de dados
   - Componentização do Front-end
   - Integração Front/Back/Banco
   - Funcionalidade de Login
-  - [Avaliação de Usabilidade](https://docs.google.com/forms/d/e/1FAIpQLSdQzAIQfseZvHt6IrsVSS4tNF4cRZL-A8PSkQQm7GI6obcQYw/viewform)
   
 4. Sprint:
   - Funcionalidade de Cadastro
   - Criação de Ocorrências
-  - [Task 10 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/Task%2010.pdf)
-  - [Task 16 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/task%2016.pdf)
-  - [Task 17 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/task%2017%20(GreenHouse).pdf)
   
 5. Strint:
   - Criação de Orgãos Fantasia, que recebem as Ocorrências
   - Deploy do Front-end e Back-end
-  - [Task 11 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/Task%2011.pdf)
-  - [Task 20 - IHM](https://github.com/fabioafreitas/Projeto_Desenvolvimento_Web/blob/master/arquivos-ihm/task%2020.pdf)
-  - [MyAlert Mobile - IHM](https://marvelapp.com/54852bg/screen/58592858)
   
 6. Sprint:
   - Marcação das ocorrências no mapa
@@ -49,7 +44,7 @@
   
 ## Executando o Front-End
 
-No diretório *projeto/src/main/resources/frontend/*, execute os comandos:
+No diretório *Project/frontend/*, execute os comandos:
 
 #### `npm install`
 #### `npm run serve`
@@ -59,7 +54,7 @@ Abra [http://localhost:4200](http://localhost:4200) para ver a aplicação no br
 
 ## Executando o Back-End
 
-Importe o arquivo *projeto/* no Intellij como projeto Maven
+Importe o arquivo */Project/backend/* no Intellij como projeto Maven
 Execute o arquivo *MyalertApplication.java* como aplicação Spring
 Aplicação funciona na porta 8080
 
