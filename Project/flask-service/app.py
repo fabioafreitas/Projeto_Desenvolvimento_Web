@@ -56,6 +56,7 @@ def update():
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         if FS.exists({"filename": filename}):
+            delete(filename)
             oid = FS.put(file, content_type=file.content_type, filename=filename)
             return jsonify(objectid=str(oid)), 200
         return jsonify("Nome de imagem nao existe"), 404
