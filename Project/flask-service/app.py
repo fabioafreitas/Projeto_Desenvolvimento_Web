@@ -3,16 +3,15 @@
 from flask import Flask, request, make_response,  jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
-from pymongo import database
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from gridfs import GridFS
 from gridfs.errors import NoFile
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
-mongo = MongoClient('mongodb+srv://maikpaixao:92368024@collenotes-faem7.mongodb.net/FileDB?retryWrites=true', maxPoolSize=50, connect=False)
-DB = database.Database(mongo, "testeImagem") #conexão com o mongo e collection
-FS = GridFS(DB)
+MONGO = MongoClient('mongodb+srv://maikpaixao:92368024@collenotes-faem7.mongodb.net/FileDB?retryWrites=true', maxPoolSize=50, connect=False)
+COLL = MONGO['testeImagem'] #Collection que está sendo utilizada
+FS = GridFS(COLL)
 
 
 app = Flask(__name__)
@@ -27,7 +26,6 @@ def allowed_file(filename):
 def getAll():
     return jsonify(FS.list()), 200
 
-
 #Recupera uma imagem baseado em seu filename
 @app.route('/imagens/<filename>', methods=['GET'])
 def get(filename):
@@ -39,9 +37,9 @@ def get(filename):
     except NoFile:
         return jsonify("Imagem nao existe"), 404
 
-#Insere uma imagem, recebe o nome do arquivo como param TODO
-@app.route('/imagens/<filename>', methods=['POST'])
-def save(filename):
+#Insere uma imagem e a insere baseado em seu filename
+@app.route('/imagens', methods=['POST'])
+def save():
     file = request.files['file']
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
@@ -51,7 +49,7 @@ def save(filename):
         return jsonify("Nome de imagem ja existe"), 400
     return jsonify("Formato nao permitido"), 400
 
-#Recebe uma imagem, atualiza o arquivo de acordo com o filename TODO
+#Recebe uma imagem, atualiza o arquivo de acordo com seu filename TODO deletar o arquivo antes de atualizar
 @app.route('/imagens', methods=['PUT'])
 def update():
     file = request.files['file']
@@ -63,15 +61,15 @@ def update():
         return jsonify("Nome de imagem nao existe"), 404
     return jsonify("Formato nao permitido"), 400
 
-#Recebe um ObjectID e deleta a imagem com esse OID TODO
-@app.route('/imagens/<oid>', methods=['DELETE'])
-def delete(oid):
-    objectid = ObjectId(oid)
-    if FS.exists(objectid):
-        FS.delete(objectid)
-        return jsonify("Imagem deletada"), 200
+@app.route('/imagens/<fname>', methods=['DELETE'])
+def delete(fname):
+    DOCS = COLL["fs.files"]
+    for x in DOCS.find():
+        if x['filename'] == fname:
+            objectid = ObjectId(x['_id'])
+            FS.delete(objectid)
+            return jsonify("Deletado com sucesso"), 200
     return jsonify("Imagem nao existe"), 404
-
 
 if __name__ == '__main__':
     app.run()
