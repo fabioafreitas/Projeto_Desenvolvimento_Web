@@ -5,23 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
-    <div id="app">
-        <div>
+    <div class="row" id="app">
+        <div class="col-3">
             <h1>GET</h1>
             <p>
-                <select class="custom-select" v-model="selectImagem">
+                <select v-model="selectImagem">
                     <option v-for="img in imagens">{{img}}</option>
                 </select>
             </p>
-            <p><button @click="get()">Botão</button></p>
+            <p><button @click="get()">Get</button></p>
             <img :src="imagem">
         </div>
-        <div style="margin-top: 5vh">
-            <!--TODO criação de arquivos escolhendo o nome da imagem-->
+        <div class="col-3">
+            <h1>POST</h1>
+            <p><input type="file" name="file" ref="filePost" @change="previewFilePost" multiple></p>
+            <p><button @click="post()">Post</button></p>
+
+            <!--OUTRA FORMA DE REALIZAR ESTA REQUISIÇÃO-->
+            <!--<form :action="uri" method="post" enctype="multipart/form-data">
+                <p><input type="file" name="file"></p>
+                <p><input type="submit" value="Upload"></p>
+            </form> -->
+
+        </div>
+        <div class="col-3">
+            <h1>PUT</h1>
+            <p><input type="file" name="file" ref="filePut" @change="previewFilePut" multiple></p>
+            <p><button @click="put()">Put</button></p>
+        </div>
+        <div class="col-3">
+            <h1>DELETE</h1>
+            <p>
+                <select v-model="deleteImagem">
+                    <option v-for="img in imagens">{{img}}</option>
+                </select>
+            </p>
+
+            <p><button @click="deletar()">Delete</button></p>
         </div>
     </div>
     <footer>
@@ -34,16 +60,72 @@
                     uri: 'http://localhost:5000/imagens',
                     imagens: [],
                     selectImagem: '',
-                    imagem: ''
+                    deleteImagem: '',
+                    imagem: '',
+                    filePost: '',
+                    filePut: ''
                 },
                 methods: {
+                    previewFilePost() {
+                        this.filePost = this.$refs.filePost.files[0];
+                    },
+
+                    previewFilePut() {
+                        this.filePut = this.$refs.filePut.files[0];
+                    },
+
                     get() {
-                        this.imagem = this.uri + '/' + this.selectImagem
-                    }
+                        this.imagem = this.uri + '/' + this.selectImagem;
+                    },
+
+                    post() {
+                        let formData = new FormData();
+                        formData.append('file', this.filePost)
+                        let header = {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
+                        };
+                        axios.post(
+                            this.uri, formData, header
+                        ).then(response => {
+                            alert("Adicionou");
+                        }).catch(error => {
+                            alert("Nao Adicionou")
+                        });
+                    },
+
+                    put() {
+                        let formData = new FormData();
+                        formData.append('file', this.filePut)
+                        let header = {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
+                        };
+                        axios.put(
+                            this.uri, formData, header
+                        ).then(response => {
+                            alert("Alterou");
+                        }).catch(error => {
+                            alert("Nao Alterou")
+                        });
+                    },
+
+                    deletar() {
+                        axios.delete(this.uri+'/'+this.deleteImagem)
+                        .then(response => {
+                            alert("Imagem deletada")
+                        }).catch( error => {
+                            alert("Nao foi deletada")
+                        });
+                    },
+
+
                 },
                 mounted() {
                     axios.get(this.uri).then(response => {
-                        this.imagens = response.data
+                        this.imagens = response.data;
                     });
                 }
             })
