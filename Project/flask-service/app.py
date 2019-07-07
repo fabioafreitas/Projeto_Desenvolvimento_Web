@@ -8,6 +8,8 @@ from bson.objectid import ObjectId
 from gridfs import GridFS
 from gridfs.errors import NoFile
 
+
+
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 MONGO = MongoClient('mongodb+srv://maikpaixao:92368024@collenotes-faem7.mongodb.net/FileDB?retryWrites=true', maxPoolSize=50, connect=False)
 COLL = MONGO['imagens']
