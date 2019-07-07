@@ -10,7 +10,8 @@ from gridfs.errors import NoFile
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 MONGO = MongoClient('mongodb+srv://maikpaixao:92368024@collenotes-faem7.mongodb.net/FileDB?retryWrites=true', maxPoolSize=50, connect=False)
-COLL = MONGO['testeImagem'] #Collection que está sendo utilizada
+#COLL = MONGO['testeImagem'] #Collection que está sendo utilizada
+COLL = MONGO['imagens']
 FS = GridFS(COLL)
 
 
@@ -49,7 +50,7 @@ def save():
         return jsonify("Nome de imagem ja existe"), 400
     return jsonify("Formato nao permitido"), 400
 
-#Recebe uma imagem, atualiza o arquivo de acordo com seu filename TODO deletar o arquivo antes de atualizar
+#Recebe uma imagem, atualiza o arquivo de acordo com seu filename
 @app.route('/imagens', methods=['PUT'])
 def update():
     file = request.files['file']
