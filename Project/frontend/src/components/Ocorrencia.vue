@@ -1,11 +1,11 @@
 <template>
   <div class="row no-gutters">
     <div class="col-3 sidebar">
-      <Sidebar/>
+      <Sidebar />
     </div>
 
     <div class="col-9">
-      <NavbarDash/>
+      <NavbarDash />
       <div class="container mt-4">
         <h5 class="mb-4">Registrar Ocorrência</h5>
         <div class="row">
@@ -19,51 +19,58 @@
                     v-model="ocorrencia.titulo"
                     placeholder="Título da Ocorrência"
                     required
-                  >
+                  />
                 </div>
               </div>
-              <br>
+              <br />
               <div class="row">
                 <div class="col-5">
                   <label for="exampleFormControlSelect1">Selecione as imagens:</label>
-                  <br>
-                  <input type="file" multiple>
+                  <br />
+                  <input
+                    type="file"
+                    name="file"
+                    ref="filesUpload"
+                    @change="previewFilesUpload"
+                    multiple
+                    required
+                  />
                 </div>
                 <div class="col-2"></div>
                 <div class="col-5">
                   <label for="exampleFormControlTextarea1">Informe a data:</label>
-                  <br>
-                  <input type="date" v-model="ocorrencia.dataOcorrencia" required :max="hoje">
+                  <br />
+                  <input type="date" v-model="ocorrencia.dataOcorrencia" required :max="hoje" />
                 </div>
               </div>
-              <br>
+              <br />
               <div class="row">
                 <div class="col-4">
                   <label for="exampleFormControlUrgencia1">Grau de urgência:</label>
-                  <br>
+                  <br />
                   <select class="custom-select" v-model="ocorrencia.urgencia">
-                      <option 
-                      v-for="urgencia in urgencias" 
+                    <option
+                      v-for="urgencia in urgencias"
                       v-bind:value="urgencia[0]"
                       :key="urgencia.key"
-                      >{{urgencia[1]}}</option>
+                    >{{urgencia[1]}}</option>
                   </select>
                 </div>
                 <div class="col-3"></div>
                 <div class="col-4">
                   <label for="exampleFormControlCategoria1">Selecione o orgão:</label>
-                  <br>
-                  <select class="custom-select" v-model="ocorrencia.categoria" >
-                      <option 
-                      v-for="categoria in categorias" 
+                  <br />
+                  <select class="custom-select" v-model="ocorrencia.categoria">
+                    <option
+                      v-for="categoria in categorias"
                       v-bind:value="categoria[0]"
                       :key="categoria.key"
-                      >{{categoria[1]}}</option>
+                    >{{categoria[1]}}</option>
                   </select>
                 </div>
                 <div class="col-2"></div>
               </div>
-              <br>
+              <br />
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Descreva melhor o ocorrido</label>
                 <textarea
@@ -138,27 +145,38 @@ export default {
         urgencia: "",
         endereco: null, // TODO geolocalização
         categoria: "",
-        imagens: null // TODO enviar as imagens
+        imagem: null // TODO enviar as imagens
       },
       submitted: true,
-      hoje: ""
+      hoje: "",
+      fileImagem: ""
     };
   },
   methods: {
     ...mapActions(["registrarOcorrencia"]),
+    ...mapActions(["uploadImagensOcorrencia"]),
     cadastroOcorrencia() {
-      this.dataCriacaoOcorrencia
+      this.dataCriacaoOcorrencia;
+      this.imagem = this.fileImagem.name;
+      console.log(this.imagem);
       this.registrarOcorrencia(this.ocorrencia).then(response => {
         alert(response.data);
       });
+      this.uploadImagensOcorrencia(this.fileImagem)
+        .then(response => {
+          console.log("imagem enviada");
+        })
+        .catch(error => {
+          console.log("imagem nao enviada");
+        });
+    },
+
+    previewFilesUpload() {
+      this.fileImagem = this.$refs.filesUpload.files[0];
     }
-    /* eslint-disable no-console */
-    /* eslint-enable no-console */
   },
   computed: {
-    ...mapGetters([
-      'getUser'
-    ]),
+    ...mapGetters(["getUser"]),
     dataCriacaoOcorrencia: function() {
       var today = new Date();
       var dd = today.getDate();
@@ -172,7 +190,8 @@ export default {
       if (hh < 10) hh = "0" + hh;
       if (min < 10) min = "0" + min;
       if (ss < 10) ss = "0" + ss;
-      this.ocorrencia.dataCriacao = "" +dd+ "-" +mm+ "-" +yyyy+ " " +hh+ ":" +min+ ":" +ss+ "";
+      this.ocorrencia.dataCriacao =
+        "" + dd + "-" + mm + "-" + yyyy + " " + hh + ":" + min + ":" + ss + "";
     },
     dataHoje: function() {
       var today = new Date();
@@ -186,7 +205,7 @@ export default {
     }
   },
   created() {
-    this.ocorrencia.cpf = this.getUser.cpf
+    this.ocorrencia.cpf = this.getUser.cpf;
     this.dataHoje;
     console.log(this.hoje);
   }
