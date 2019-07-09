@@ -11,9 +11,7 @@
           </div>
 
           <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
-          <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
-          <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
-          <a href="/ocorrencia" class="list-group-item list-group-item-action">Registrar Ocorrência</a>
+          <a href="/ocorrencia" class="list-group-item list-group-item-action">Ocorrências Criadas</a>
         </div>
 </template>
  
