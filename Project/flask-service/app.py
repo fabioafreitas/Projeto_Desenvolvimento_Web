@@ -1,5 +1,4 @@
-# Parte do codigo foi implementada gracas ao seguinte projeto: https://gist.github.com/kevgathuku/51e30f08a552084b1130#file-flask_gridfs_server-py
-
+﻿# Parte do codigo foi implementada gracas ao seguinte projeto: https://gist.github.com/kevgathuku/51e30f08a552084b1130#file-flask_gridfs_server-py
 from flask import Flask, request, make_response,  jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
@@ -12,7 +11,6 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 MONGO = MongoClient('mongodb+srv://maikpaixao:92368024@collenotes-faem7.mongodb.net/FileDB?retryWrites=true', maxPoolSize=50, connect=False)
 COLL = MONGO['testeImagem'] #Collection que está sendo utilizada
 FS = GridFS(COLL)
-
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/imagens/*": {"origins": "*"}})
@@ -45,7 +43,7 @@ def save():
         filename = secure_filename(file.filename)
         if not FS.exists({"filename": filename}):
             oid = FS.put(file, content_type=file.content_type, filename=filename)
-            return jsonify(objectid=str(oid)), 200
+            return jsonify(filename=filename), 200
         return jsonify("Nome de imagem ja existe"), 400
     return jsonify("Formato nao permitido"), 400
 
@@ -58,7 +56,7 @@ def update():
         if FS.exists({"filename": filename}):
             delete(filename)
             oid = FS.put(file, content_type=file.content_type, filename=filename)
-            return jsonify(objectid=str(oid)), 200
+            return jsonify(filename=filename), 200
         return jsonify("Nome de imagem nao existe"), 404
     return jsonify("Formato nao permitido"), 400
 

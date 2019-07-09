@@ -1,11 +1,12 @@
 <template>
+  <div>
     <div class="row no-gutters">
       <div class="col-2 sidebar">
-        <Sidebar/>
+        <Sidebar />
       </div>
 
       <div class="col-10">
-        <NavbarDash/>
+        <NavbarDash />
         <div class="row no-gutters">
           <div class="col-9">
             <div class="container">
@@ -14,20 +15,20 @@
               </div>
               <div class="row content-dash">
                 <div class="map_dashboard">
-                  <Map/>
+                  <Map />
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-3 sidebar mt-5">
-            <Sidebar2/>
+            <Sidebar2 />
           </div>
         </div>
       </div>
     </div>
-  <!--</div>
-  </div>-->
+    <Footer />
+  </div>
 </template>
  
 <script>
@@ -36,7 +37,8 @@ import Map from "./MapIndex.vue";
 import AlertElement from "./dashboard/AlertaElement.vue";
 import Sidebar from "./dashboard/SideBar.vue";
 import Sidebar2 from "./dashboard/Sidebar2.vue";
-import { mapGetters } from 'vuex'
+import Footer from "./Footer";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -44,7 +46,8 @@ export default {
     Map,
     AlertElement,
     Sidebar,
-    Sidebar2
+    Sidebar2,
+    Footer
   },
   name: "logado",
   data() {
@@ -53,9 +56,7 @@ export default {
     };
   },
   methods: {
-    ...mapGetters([
-      'getUser'
-    ])
+    ...mapGetters(["getUser"])
     /* eslint-disable no-console */
     /* eslint-enable no-console */
   }
@@ -63,33 +64,30 @@ export default {
 </script>
  
 <style scoped>
-
-.btn-dark{
+.btn-dark {
   background-color: #fff;
   border: 1px solid #ccc;
 }
 
-.btn-text{
+.btn-text {
   font-size: 16pt;
   border-radius: 3px;
 }
 
-.logo-brand{
-width: 160px;
-margin: 10px;
+.logo-brand {
+  width: 160px;
+  margin: 10px;
 }
 
-.map_dashboard{
+.map_dashboard {
   width: 100%;
   height: 500px;
 }
 
-@media (max-width: 850px) and (min-width: 100px){
-  .map_dashboard{
-  width: 100%;
-  height: 300px;
+@media (max-width: 850px) and (min-width: 100px) {
+  .map_dashboard {
+    width: 100%;
+    height: 300px;
+  }
 }
-
-}
-
 </style>

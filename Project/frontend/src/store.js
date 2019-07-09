@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import http from './http-common'
+import flask from './flask-common'
 
 Vue.use(Vuex)
 
@@ -25,13 +26,13 @@ export default new Vuex.Store({
         destroyToken(state) {
             state.token = null
         },
-        retrieveUsername(state, username){
+        retrieveUsername(state, username) {
             state.username = username
         },
-        retrieveUser(state, usuario){
+        retrieveUser(state, usuario) {
             state.usuario = usuario
         },
-        destroyUser(state){
+        destroyUser(state) {
             state.usuario = null
         }
     },
@@ -63,7 +64,7 @@ export default new Vuex.Store({
                         localStorage.setItem('access_token', a)
                         localStorage.setItem('access_username', data.username)
                         context.commit('retrieveToken', a)
-                        context.commit('retrieveUsername',data.username)
+                        context.commit('retrieveUsername', data.username)
                         //this.LOGOU(true)
                         context.commit("LOGOU", response.url)
                         //console.log(response)
@@ -101,10 +102,10 @@ export default new Vuex.Store({
                     });
             })
         },
-        registrarOcorrencia(context, ocorrencia){
-            http.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token 
+        registrarOcorrencia(context, ocorrencia) {
+            http.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
             return new Promise((resolve, reject) => {
-                http.post("/ocorrencias",ocorrencia)
+                http.post("/ocorrencias", ocorrencia)
                     .then(response => {
                         resolve(response)
                     })
@@ -116,20 +117,37 @@ export default new Vuex.Store({
         getUsuario(context, email) {
             http.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
             return new Promise((resolve, reject) => {
-                http.get('/profile',{
-                    params:{
+                http.get('/profile', {
+                    params: {
                         email: email
                     }
                 })
                     .then(response => {
                         localStorage.setItem('access_usuario', JSON.stringify(response.data))
-                        context.commit('retrieveUser',response.data)
+                        context.commit('retrieveUser', response.data)
                         resolve(response)
                     })
                     .catch(error => {
                         reject(error)
                     });
 
+            })
+        },
+        uploadImagensOcorrencia(context, imagem) {
+            // enviando a imagem para a API Flask
+            let formData = new FormData();
+            formData.append("file", imagem);
+            let header = {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            };
+            return new Promise((resolve, reject) => {
+                flask.post('/imagens', formData, header).then(response => {
+                    resolve(response)
+                }).catch(error => {
+                    reject(error)
+                });
             })
         }
     },

@@ -41,9 +41,9 @@ public class Ocorrencia {
     private Urgencia urgencia;
     private Endereco localizacao;
     private int categoria;
-    private String imagens; //TODO
+    private String imagem;
 
-    public Ocorrencia(String cpf, String titulo, String descricao, Date dataCriacao, Date dataOcorrencia, Urgencia urgencia, Endereco localizacao, int categoria, String imagens) {
+    public Ocorrencia(String cpf, String titulo, String descricao, Date dataCriacao, Date dataOcorrencia, Urgencia urgencia, Endereco localizacao, int categoria, String imagem) {
         this.cpf = cpf;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -52,7 +52,7 @@ public class Ocorrencia {
         this.urgencia = urgencia;
         this.localizacao = localizacao;
         this.categoria = categoria;
-        this.imagens = imagens;
+        this.imagem = imagem;
     }
 
     public Ocorrencia() {
@@ -114,6 +114,14 @@ public class Ocorrencia {
         this.urgencia = urgencia;
     }
 
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
+
     public Endereco getLocalizacao() {
         return localizacao;
     }
@@ -130,13 +138,7 @@ public class Ocorrencia {
         this.categoria = categoria;
     }
 
-    public String getImagens() {
-        return imagens;
-    }
 
-    public void setImagens(String imagens) {
-        this.imagens = imagens;
-    }
 
     @Override
     public String toString() {
@@ -150,7 +152,7 @@ public class Ocorrencia {
                 ", urgencia=" + urgencia +
                 ", localizacao=" + localizacao +
                 ", categoria=" + categoria +
-                ", imagens='" + imagens + '\'' +
+                ", imagens='" + imagem + '\'' +
                 '}';
     }
 }
