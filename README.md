@@ -4,7 +4,7 @@
 [![MongoDB Atlas](https://img.shields.io/badge/mongoDB-atlas-13aa52.svg)](https://www.mongodb.com/)
 [![MyAlert](https://img.shields.io/badge/website-myalert-2980b9.svg)](https://my-alert.herokuapp.com)
 
-# Projeto de Desenvolvimento de Aplicações Web - 2019.1
+# Projeto de Desenvolvimento de Aplicações Web - 2019.1 :)
 
 A título de exemplo, o aplicativo MyAlert cria ocorrências para diferentes APIs. Foi criado uma página, que consome da aplicação e exibe essas ocorrências. A página de exemplo pode ser acessada no link a seguir: [WebSite Exemplo](https://myalert-orgaos.herokuapp.com).
 
